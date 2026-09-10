@@ -298,7 +298,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-10 17:42 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-10 17:44 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -314,7 +314,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-10 17:42</span>
+      <span class="v num">09-10 17:44</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
@@ -424,8 +424,9 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <div class="finder">
         <input id="q" type="search" placeholder="종목명 또는 코드로 검색" aria-label="종목 검색">
         <select id="sort" aria-label="정렬 기준">
-          <option value="value">거래대금 많은 순</option>
+          <!-- 첫 항목이 기본 선택이다. 돌파강도가 이 전략의 판정 기준이라 앞에 둔다 -->
           <option value="strength">돌파강도 높은 순</option>
+          <option value="value">거래대금 많은 순</option>
           <option value="close">주가 높은 순</option>
           <option value="name">가나다 순</option>
         </select>
