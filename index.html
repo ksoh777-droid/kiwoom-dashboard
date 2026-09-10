@@ -161,6 +161,10 @@ svg{display:block; max-width:100%; height:auto}
 .g-line{stroke:var(--line)} .g-zero{stroke:var(--line-2)}
 .ax{fill:var(--muted); font-family:var(--mono); font-size:12.5px}
 .axl{fill:var(--ink-2); font-family:var(--sans); font-size:13px; font-weight:500}
+/* 감시 종목 추출(c3)만 글자를 키운다. 차트가 절반 크기로 그려지므로
+   SVG 안의 값을 +4 해야 화면에서 +2 로 보인다. c1 은 그대로 둔다. */
+#c3 .ax{font-size:16.5px}
+#c3 .axl{font-size:17px}
 .bar-a{fill:var(--accent)}
 .bar-b{fill:none; stroke:var(--flat); stroke-width:1.25}
 .legend{display:flex; flex-wrap:wrap; gap:18px; margin:2px 0 14px; font-size:14.5px; color:var(--ink-2)}
@@ -298,7 +302,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-10 17:46 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-10 17:52 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -314,7 +318,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-10 17:46</span>
+      <span class="v num">09-10 17:52</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
