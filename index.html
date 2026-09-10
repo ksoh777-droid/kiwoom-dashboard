@@ -262,6 +262,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
   background:var(--surface); border:1px solid var(--line-2); border-radius:3px; padding:8px 14px}
 .gbtn:hover{border-color:var(--accent)}
 .gbtn svg{width:15px; height:15px; flex:none}
+.svc{font-size:13px; font-weight:600; color:var(--ink-2)}
 .who{font-size:12.5px; color:var(--muted); font-family:var(--mono)}
 .who b{color:var(--accent); font-weight:500}
 .lock{color:var(--muted); font-family:var(--mono); letter-spacing:.06em}
@@ -275,15 +276,15 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     <h1>20일 변곡 자동매매 운용판</h1>
     <p>매일 15:05에 코스피·코스닥 전 종목을 훑어 20일 모멘텀이 상향 돌파하는 종목을 사고, 정해진 조건에 닿으면 판다. 아래는 그 시스템의 현재 상태와, 실제로 돈을 넣기 전에 확인한 검증 결과다.</p>
     <div class="auth">
-      <button id="signin" class="gbtn" type="button">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45 24c0-1.6-.1-2.7-.4-3.9H24v7.1h12c-.2 1.8-1.5 4.6-4.4 6.5l6.7 5.2C42.2 35.3 45 30.1 45 24z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-7.1 5.5C8.1 41.1 15.5 46 24 46z"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l-7.1-5.5C2.9 17 2 20.4 2 24s.9 7 2.4 10z"/><path fill="#EA4335" d="M24 10.7c3.2 0 5.4 1.4 6.7 2.6l5.9-5.8C33 4.1 29.9 2 24 2 15.5 2 8.1 6.9 4.4 14l7.1 5.5c1.8-5.3 6.7-9.1 12.5-9.1z"/></svg>
-        자동매매서비스
+      <span class="svc">자동매매서비스</span>
+      <button id="authbtn" class="gbtn" type="button">
+        <span id="gicon"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45 24c0-1.6-.1-2.7-.4-3.9H24v7.1h12c-.2 1.8-1.5 4.6-4.4 6.5l6.7 5.2C42.2 35.3 45 30.1 45 24z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-7.1 5.5C8.1 41.1 15.5 46 24 46z"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l-7.1-5.5C2.9 17 2 20.4 2 24s.9 7 2.4 10z"/><path fill="#EA4335" d="M24 10.7c3.2 0 5.4 1.4 6.7 2.6l5.9-5.8C33 4.1 29.9 2 24 2 15.5 2 8.1 6.9 4.4 14l7.1 5.5c1.8-5.3 6.7-9.1 12.5-9.1z"/></svg></span>
+        <span id="authlabel">로그인</span>
       </button>
-      <button id="signout" class="gbtn" type="button" hidden>로그아웃</button>
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-10 17:08 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-10 17:16 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -299,7 +300,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-10 17:08</span>
+      <span class="v num">09-10 17:16</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
@@ -308,62 +309,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
   <!-- ================= 보유 포지션 ================= -->
   <section>
     <div class="sechead"><h2>보유 포지션</h2><span class="rule"></span><span class="note">2026-09-08 매수</span></div>
-    <div class="card" style="margin-bottom:12px">
-      <div class="pos-top">
-        <span class="pos-name">지엔씨에너지</span>
-        <span class="pos-code">119850</span><span class="tag">이 프로그램이 매수한 종목이 아님</span>
-      </div>
-      <div class="pos-grid">
-        <div class="cell"><div class="k">수량</div><div class="v num">7주</div></div>
-        <div class="cell"><div class="k">매수가</div><div class="v num">51,200</div></div>
-        <div class="cell"><div class="k">현재가</div><div class="v num">51,200</div></div>
-        <div class="cell"><div class="k">평가금액</div><div class="v num">358,400</div></div>
-        <div class="cell"><div class="k">평가손익</div><div class="v num down">−816</div></div>
-        <div class="cell"><div class="k">수익률</div><div class="v num down">-0.23%</div></div>
-      </div>
-      <div class="ladder">
-        <div class="eyebrow">청산 구간</div>
-        <div class="ladder-track">
-          <span class="mark stop" style="left:0%"><i></i><span>손절 -10%<b>46,080</b></span></span>
-          <span class="mark now" style="left:33.3%"><i></i><span>현재<b>51,200</b></span></span>
-          <span class="mark buy" style="left:33.3%"><i></i><span>&nbsp;<b>매수 51,200</b></span></span>
-          <span class="mark tp" style="left:100%"><i></i><span>익절 +20%<b>61,440</b></span></span>
-        </div>
-        <div class="ladder-foot">
-          <span>손절까지 -10.0%</span>
-          <span>최대 보유 30영업일 ·  매수</span>
-          <span>익절까지 +20.0%</span>
-        </div>
-      </div>
-    </div>
-    <div class="card" style="margin-bottom:12px">
-      <div class="pos-top">
-        <span class="pos-name">*금호타이어</span>
-        <span class="pos-code">073240</span><span class="tag">이 프로그램이 매수한 종목이 아님</span>
-      </div>
-      <div class="pos-grid">
-        <div class="cell"><div class="k">수량</div><div class="v num">207주</div></div>
-        <div class="cell"><div class="k">매수가</div><div class="v num">7,650</div></div>
-        <div class="cell"><div class="k">현재가</div><div class="v num">7,680</div></div>
-        <div class="cell"><div class="k">평가금액</div><div class="v num">1,589,760</div></div>
-        <div class="cell"><div class="k">평가손익</div><div class="v num up">+2,572</div></div>
-        <div class="cell"><div class="k">수익률</div><div class="v num up">+0.16%</div></div>
-      </div>
-      <div class="ladder">
-        <div class="eyebrow">청산 구간</div>
-        <div class="ladder-track">
-          <span class="mark stop" style="left:0%"><i></i><span>손절 -10%<b>6,885</b></span></span>
-          <span class="mark now" style="left:34.6%"><i></i><span>현재<b>7,680</b></span></span>
-          <span class="mark buy" style="left:33.3%"><i></i><span>&nbsp;<b>매수 7,650</b></span></span>
-          <span class="mark tp" style="left:100%"><i></i><span>익절 +20%<b>9,180</b></span></span>
-        </div>
-        <div class="ladder-foot">
-          <span>손절까지 -10.4%</span>
-          <span>최대 보유 30영업일 ·  매수</span>
-          <span>익절까지 +19.5%</span>
-        </div>
-      </div>
-    </div>
+    <div class="blank" id="poslock">구글 로그인 후 볼 수 있습니다.</div><div id="posbox" hidden></div>
   </section>
 
 
@@ -378,7 +324,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="sv-ar">&rarr;</span>
       <span class="sv"><b class="num">10</b><small>돌파강도 3%&uarr;</small></span>
       <span class="sv-ar">&rarr;</span>
-      <span class="sv on"><b class="num">2</b><small>매수</small></span>
+      <span class="sv on"><b class="num">0</b><small>매수</small></span>
     </div>
     <div class="tbl-wrap">
       <table>
@@ -388,10 +334,10 @@ td.up{color:var(--up)} td.down{color:var(--down)}
           <th style="text-align:right">돌파강도</th><th style="text-align:right">종가위치</th>
           <th style="text-align:right">거래대금</th><th style="text-align:right">결과</th>
         </tr></thead>
-        <tbody><tr><td class="n">1</td><td>펄어비스 <span class="pos-code">263750</span></td><td class="n">36,200</td><td class="n">31,550</td><td class="n st">+14.74%</td><td class="n">100%</td><td class="n">148억</td><td class="n"><span class="pill skip">미집행</span></td></tr><tr><td class="n">2</td><td>케이에스피 <span class="pos-code">073010</span></td><td class="n">3,350</td><td class="n">3,005</td><td class="n st">+11.48%</td><td class="n">75%</td><td class="n">14억</td><td class="n"><span class="pill skip">미집행</span></td></tr><tr><td class="n">3</td><td>퀄리타스반도체 <span class="pos-code">432720</span></td><td class="n">10,080</td><td class="n">9,430</td><td class="n st">+6.89%</td><td class="n">65%</td><td class="n">14억</td><td class="n"><span class="pill skip">미집행</span></td></tr><tr class="bought"><td class="n">4</td><td>지엔씨에너지 <span class="pos-code">119850</span></td><td class="n">51,200</td><td class="n">48,200</td><td class="n st">+6.22%</td><td class="n">76%</td><td class="n">366억</td><td class="n"><span class="pill buy">매수 9주</span></td></tr><tr><td class="n">5</td><td>심텍홀딩스 <span class="pos-code">036710</span></td><td class="n">4,140</td><td class="n">3,915</td><td class="n st">+5.75%</td><td class="n">72%</td><td class="n">9억</td><td class="n"><span class="pill skip">미집행</span></td></tr><tr><td class="n">6</td><td>컴투스 <span class="pos-code">078340</span></td><td class="n">34,850</td><td class="n">33,100</td><td class="n st">+5.29%</td><td class="n">94%</td><td class="n">68억</td><td class="n"><span class="pill skip">미집행</span></td></tr><tr><td class="n">7</td><td>휴스틸 <span class="pos-code">005010</span></td><td class="n">4,085</td><td class="n">3,910</td><td class="n st">+4.48%</td><td class="n">58%</td><td class="n">15억</td><td class="n"><span class="pill skip">미집행</span></td></tr><tr class="bought"><td class="n">8</td><td>금호타이어 <span class="pos-code">073240</span></td><td class="n">7,680</td><td class="n">7,420</td><td class="n st">+3.50%</td><td class="n">80%</td><td class="n">319억</td><td class="n"><span class="pill buy">매수 65주</span></td></tr><tr><td class="n">9</td><td>에스투더블유 <span class="pos-code">488280</span></td><td class="n">11,750</td><td class="n">11,400</td><td class="n st">+3.07%</td><td class="n">93%</td><td class="n">14억</td><td class="n"><span class="pill skip">미집행</span></td></tr><tr><td class="n">10</td><td>우리금융지주 <span class="pos-code">316140</span></td><td class="n">34,000</td><td class="n">33,000</td><td class="n st">+3.03%</td><td class="n">71%</td><td class="n">951억</td><td class="n"><span class="pill skip">미집행</span></td></tr></tbody>
+        <tbody><tr><td class="n">1</td><td>펄어비스 <span class="pos-code">263750</span></td><td class="n">36,200</td><td class="n">31,550</td><td class="n st">+14.74%</td><td class="n">100%</td><td class="n">148억</td><td class="n"></td></tr><tr><td class="n">2</td><td>케이에스피 <span class="pos-code">073010</span></td><td class="n">3,350</td><td class="n">3,005</td><td class="n st">+11.48%</td><td class="n">75%</td><td class="n">14억</td><td class="n"></td></tr><tr><td class="n">3</td><td>퀄리타스반도체 <span class="pos-code">432720</span></td><td class="n">10,080</td><td class="n">9,430</td><td class="n st">+6.89%</td><td class="n">65%</td><td class="n">14억</td><td class="n"></td></tr><tr><td class="n">4</td><td>지엔씨에너지 <span class="pos-code">119850</span></td><td class="n">51,200</td><td class="n">48,200</td><td class="n st">+6.22%</td><td class="n">76%</td><td class="n">366억</td><td class="n"></td></tr><tr><td class="n">5</td><td>심텍홀딩스 <span class="pos-code">036710</span></td><td class="n">4,140</td><td class="n">3,915</td><td class="n st">+5.75%</td><td class="n">72%</td><td class="n">9억</td><td class="n"></td></tr><tr><td class="n">6</td><td>컴투스 <span class="pos-code">078340</span></td><td class="n">34,850</td><td class="n">33,100</td><td class="n st">+5.29%</td><td class="n">94%</td><td class="n">68억</td><td class="n"></td></tr><tr><td class="n">7</td><td>휴스틸 <span class="pos-code">005010</span></td><td class="n">4,085</td><td class="n">3,910</td><td class="n st">+4.48%</td><td class="n">58%</td><td class="n">15억</td><td class="n"></td></tr><tr><td class="n">8</td><td>금호타이어 <span class="pos-code">073240</span></td><td class="n">7,680</td><td class="n">7,420</td><td class="n st">+3.50%</td><td class="n">80%</td><td class="n">319억</td><td class="n"></td></tr><tr><td class="n">9</td><td>에스투더블유 <span class="pos-code">488280</span></td><td class="n">11,750</td><td class="n">11,400</td><td class="n st">+3.07%</td><td class="n">93%</td><td class="n">14억</td><td class="n"></td></tr><tr><td class="n">10</td><td>우리금융지주 <span class="pos-code">316140</span></td><td class="n">34,000</td><td class="n">33,000</td><td class="n st">+3.03%</td><td class="n">71%</td><td class="n">951억</td><td class="n"></td></tr></tbody>
       </table>
     </div>
-    <div class="callout">자리가 <b>2개</b>뿐이라 후보 <b>10개</b> 중 8개는 사지 못했다. 같은 날 신호가 여럿이면 <b>돌파강도 큰 순</b>으로 산다. <b>무엇을 고르느냐가 성적을 좌우한다</b>는 것이 포트폴리오 시뮬레이션의 결론이었고, 이 표가 매일 그 선택을 기록한다.</div>
+    <div class="callout">자리가 <b>2개</b>뿐이라 후보 <b>10개</b> 중 10개는 사지 못했다. 같은 날 신호가 여럿이면 <b>돌파강도 큰 순</b>으로 산다. <b>무엇을 고르느냐가 성적을 좌우한다</b>는 것이 포트폴리오 시뮬레이션의 결론이었고, 이 표가 매일 그 선택을 기록한다.</div>
   </section>
 
   <!-- ================= 판정 ================= -->
@@ -767,6 +713,23 @@ function fill(secret){
     if (k === "orderable") el.textContent = won(secret.orderable);
   });
   drawStats(secret && secret.trade_stats);
+  drawPositions(secret && secret.positions_html);
+}
+
+// 보유 포지션도 공개 HTML 에 없다. 서버에서 만든 HTML 을 Firestore 에서 받아 넣는다.
+// 카드 구조가 복잡해 JS 로 다시 그리면 같은 로직이 두 벌이 된다.
+function drawPositions(html){
+  const lock = $("poslock"), box = $("posbox");
+  if (!lock || !box) return;           // 내부용 빌드에는 이 자리가 없다
+  if (!html){
+    lock.hidden = false;
+    lock.textContent = "구글 로그인 후 볼 수 있습니다.";
+    box.hidden = true; box.innerHTML = "";
+    return;
+  }
+  box.innerHTML = html;
+  box.hidden = false;
+  lock.hidden = true;
 }
 
 // 매매 성적은 공개 HTML 에 값이 없다. 로그인해야 Firestore 에서 받아 여기서 그린다.
@@ -823,17 +786,21 @@ function drawStats(st){
   lock.hidden = true;
 }
 
-$("signin").addEventListener("click", function(){
+// 버튼 하나로 로그인/로그아웃을 모두 처리한다. 두 버튼을 hidden 으로 번갈아
+// 보이게 하면 지금 어느 상태인지 알기 어렵다.
+let currentUser = null;
+$("authbtn").addEventListener("click", function(){
   $("authmsg").textContent = "";
+  if (currentUser){ signOut(auth); return; }
   signInWithPopup(auth, new GoogleAuthProvider()).catch(function(e){
     $("authmsg").textContent = "로그인에 실패했습니다: " + (e.code || e.message);
   });
 });
-$("signout").addEventListener("click", function(){ signOut(auth); });
 
 onAuthStateChanged(auth, async function(user){
-  $("signin").hidden  = !!user;
-  $("signout").hidden = !user;
+  currentUser = user;
+  $("authlabel").textContent = user ? "로그아웃" : "로그인";
+  $("gicon").hidden = !!user;          // 구글 아이콘은 로그인할 때만 뜻이 있다
   $("who").textContent = user ? user.email : "";
   if (!user){ fill(null); return; }
   try {
