@@ -314,7 +314,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-10 18:06 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-10 18:08 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -330,7 +330,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-10 18:06</span>
+      <span class="v num">09-10 18:08</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
@@ -375,23 +375,6 @@ td.up{color:var(--up)} td.down{color:var(--down)}
 
   <!-- ================= 청산 조합 ================= -->
 
-  <!-- ================= 퍼널 ================= -->
-  <section>
-    <div class="sechead"><h2>감시 종목 추출</h2><span class="rule"></span><span class="note">매 실행마다 재계산 · 약 10분</span></div>
-    <div class="card">
-      <div class="chart-wrap half"><svg id="c3" viewBox="0 0 900 250" role="img" aria-label="종목 필터 단계별 잔존 수 막대그래프"></svg></div>
-      <div class="steps" style="margin-top:20px">
-        <div class="step"><span class="i">시작</span><span class="lbl">코스피 + 코스닥 전체<small>mrkt_tp 0, 10</small></span><span class="cnt">4,308</span></div>
-        <div class="step"><span class="i">−1,569</span><span class="lbl">ETF · ETN · 리츠 · ELW 제외<small>별도 시장구분 코드를 받아 차집합</small></span><span class="cnt">2,739</span></div>
-        <div class="step"><span class="i">−32</span><span class="lbl">관리 · 투자경고 · 정리매매 · 단기과열<small>orderWarning ≠ 0</small></span><span class="cnt">2,707</span></div>
-        <div class="step"><span class="i">−78</span><span class="lbl">문자 섞인 임시코드 제외<small>0120G0 등 분할 · 재상장 종목</small></span><span class="cnt">2,629</span></div>
-        <div class="step"><span class="i">−81</span><span class="lbl">우선주 제외<small>단축코드 끝자리 ≠ 0</small></span><span class="cnt">2,548</span></div>
-        <div class="step"><span class="i">−163</span><span class="lbl">스팩 · 이름 키워드 · 가격 1천~50만원<small>동전주와 초고가주 제외</small></span><span class="cnt">2,385</span></div>
-        <div class="step final"><span class="i">−140</span><span class="lbl">종목상태 · 감리구분 텍스트 필터<small>거래정지 · 환기 · 불성실공시 등</small></span><span class="cnt">2,245</span></div>
-      </div>
-      <p style="margin:16px 0 0; font-size:13px; color:var(--muted)">국내 상장 외국기업(950xxx · 900xxx)은 <b style="color:var(--ink-2)">포함</b>하기로 했다. 제외하려면 <span class="num">exclude_foreign: true</span>.</p>
-    </div>
-  </section>
 
 
   <!-- ================= 종가배팅 ================= -->
@@ -473,6 +456,23 @@ td.up{color:var(--up)} td.down{color:var(--down)}
   </section>
 
   <!-- ================= 운영 ================= -->
+  <!-- ================= 퍼널 ================= -->
+  <section>
+    <div class="sechead"><h2>감시 종목 추출</h2><span class="rule"></span><span class="note">매 실행마다 재계산 · 약 10분</span></div>
+    <div class="card">
+      <div class="chart-wrap half"><svg id="c3" viewBox="0 0 900 250" role="img" aria-label="종목 필터 단계별 잔존 수 막대그래프"></svg></div>
+      <div class="steps" style="margin-top:20px">
+        <div class="step"><span class="i">시작</span><span class="lbl">코스피 + 코스닥 전체<small>mrkt_tp 0, 10</small></span><span class="cnt">4,308</span></div>
+        <div class="step"><span class="i">−1,569</span><span class="lbl">ETF · ETN · 리츠 · ELW 제외<small>별도 시장구분 코드를 받아 차집합</small></span><span class="cnt">2,739</span></div>
+        <div class="step"><span class="i">−32</span><span class="lbl">관리 · 투자경고 · 정리매매 · 단기과열<small>orderWarning ≠ 0</small></span><span class="cnt">2,707</span></div>
+        <div class="step"><span class="i">−78</span><span class="lbl">문자 섞인 임시코드 제외<small>0120G0 등 분할 · 재상장 종목</small></span><span class="cnt">2,629</span></div>
+        <div class="step"><span class="i">−81</span><span class="lbl">우선주 제외<small>단축코드 끝자리 ≠ 0</small></span><span class="cnt">2,548</span></div>
+        <div class="step"><span class="i">−163</span><span class="lbl">스팩 · 이름 키워드 · 가격 1천~50만원<small>동전주와 초고가주 제외</small></span><span class="cnt">2,385</span></div>
+        <div class="step final"><span class="i">−140</span><span class="lbl">종목상태 · 감리구분 텍스트 필터<small>거래정지 · 환기 · 불성실공시 등</small></span><span class="cnt">2,245</span></div>
+      </div>
+      <p style="margin:16px 0 0; font-size:13px; color:var(--muted)">국내 상장 외국기업(950xxx · 900xxx)은 <b style="color:var(--ink-2)">포함</b>하기로 했다. 제외하려면 <span class="num">exclude_foreign: true</span>.</p>
+    </div>
+  </section>
   <section>
     <div class="sechead"><h2>중지 방법</h2><span class="rule"></span><span class="note">위에서부터 강한 순</span></div>
     <div class="ops">
