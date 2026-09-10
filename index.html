@@ -103,6 +103,8 @@ section{margin:0 0 34px}
 .cell .k{font-size:11px; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; font-weight:600}
 .cell .v{font-family:var(--mono); font-size:17px; font-weight:500; margin-top:2px; letter-spacing:-.01em}
 .v.down{color:var(--down)} .v.up{color:var(--up)}
+/* 매매 성적 표의 손익 셀. .v 안에서만 색이 먹던 것을 표에도 적용한다 */
+td.up{color:var(--up)} td.down{color:var(--down)}
 
 /* 가격 사다리: 손절 - 매수 - 현재 - 익절 */
 .ladder{margin-top:6px}
@@ -281,7 +283,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-10 16:34 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-10 16:45 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -297,11 +299,48 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-10 16:34</span>
+      <span class="v num">09-10 16:45</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
   </div>
+
+  <!-- ================= 매매 성적 ================= -->
+  <section>
+    <div class="sechead"><h2>매매 성적</h2><span class="rule"></span><span class="note">실현된 왕복 거래 · 수수료·세금 반영</span></div>
+    <div class="strip">
+    <div class="chip">
+      <span class="k">실현 거래</span>
+      <span class="v num">1건</span>
+      <span class="s">승 1 · 패 0</span>
+    </div>
+    <div class="chip">
+      <span class="k">승률</span>
+      <span class="v num">100%</span>
+      <span class="s">손익비 -</span>
+    </div>
+    <div class="chip">
+      <span class="k">누적손익</span>
+      <span class="v num up">+7,359원</span>
+      <span class="s">수수료·거래세 반영</span>
+    </div>
+    <div class="chip">
+      <span class="k">평균 수익률</span>
+      <span class="v num up">+0.73%</span>
+      <span class="s">중앙 +0.73%</span>
+    </div>
+    <div class="chip">
+      <span class="k">이익 / 손실</span>
+      <span class="v num">+0.73% / -</span>
+      <span class="s">최고 +0.73% · 최저 +0.73%</span>
+    </div>
+    <div class="chip">
+      <span class="k">체결 정확도</span>
+      <span class="v num">- / +0.00%</span>
+      <span class="s">매수 종가차 · 매도 시가차 — 0 이면 가정과 일치</span>
+    </div>
+  </div><div class="tbl-wrap"><table><tr><th>매수일</th><th>매도일</th><th>종목</th><th>수량</th><th>매수가</th><th>매도가</th><th>수익률</th><th>손익</th><th>강도</th><th>신용</th></tr><tr><td>2026-09-09</td><td>2026-09-10</td><td>SK이터닉스</td><td class=n>19</td><td class=n>53,200</td><td class=n>53,700</td><td class='n up'>+0.73%</td><td class='n up'>+7,359</td><td class=n>4.79</td><td>N</td></tr></table></div>
+  </section>
 
   <!-- ================= 보유 포지션 ================= -->
   <section>
