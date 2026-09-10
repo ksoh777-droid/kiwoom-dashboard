@@ -142,7 +142,10 @@ td.up{color:var(--up)} td.down{color:var(--down)}
 }
 .verdict blockquote{
   margin:0 0 18px; font-family:var(--serif); font-weight:500;
-  font-size:clamp(18px,2.6vw,23px); line-height:1.5; letter-spacing:-.01em; max-width:34ch;
+  /* 한 줄로 보이게 한다. max-width:34ch 가 두 줄로 접고 있었다.
+     좁은 화면에서는 글자가 줄어들며 맞춰지도록 clamp 하한을 낮췄다. */
+  font-size:clamp(15px,2.1vw,23px); line-height:1.5; letter-spacing:-.01em;
+  max-width:none; text-wrap:nowrap;
 }
 .verdict blockquote em{font-style:normal; color:var(--accent)}
 .vgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden}
@@ -304,7 +307,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-10 17:56 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-10 17:57 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -320,7 +323,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-10 17:56</span>
+      <span class="v num">09-10 17:57</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
