@@ -162,7 +162,8 @@ td.up{color:var(--up)} td.down{color:var(--down)}
 .chart-wrap.half{max-width:min(100%, 450px)}
 /* 연도별 기대값(c1)은 여기서 20% 더 크게. 450 * 1.2 = 540 */
 /* c1 은 450 * 1.2 = 540px */
-.chart-wrap.half:has(#c1){max-width:min(100%, 540px)}
+/* c1 은 450 * 1.2 * 1.2 = 648px */
+.chart-wrap.half:has(#c1){max-width:min(100%, 648px)}
 /* c3 는 거기서 30% 더 — 540 * 1.3 = 702px.
    viewBox 가 그대로라 그래프와 글자가 같은 비율로 함께 커진다.
    따라서 #c3 의 font-size 는 손대지 않는다. */
@@ -177,8 +178,8 @@ svg{display:block; max-width:100%; height:auto}
 #c3 .axl{font-size:16.3px}
 /* 연도별 기대값(c1)은 540/900 = 0.6배로 그려진다.
    화면에서 +2 로 보이려면 SVG 값을 +3.3 해야 한다 (2 / 0.6). */
-#c1 .ax{font-size:15.8px}
-#c1 .axl{font-size:16.3px}
+#c1 .ax{font-size:13.2px}
+#c1 .axl{font-size:13.6px}
 .bar-a{fill:var(--accent)}
 .bar-b{fill:none; stroke:var(--flat); stroke-width:1.25}
 .legend{display:flex; flex-wrap:wrap; gap:18px; margin:2px 0 14px; font-size:14.5px; color:var(--ink-2)}
@@ -326,7 +327,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-10 18:20 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-10 18:23 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -338,11 +339,11 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     <div class="chip">
       <span class="k">보유</span>
       <span class="v num">2 / 2 종목</span>
-      <span class="s">1종목당 상한 500,000원</span>
+      <span class="s">1종목당 상한 <span class="num" data-secret="pertrade" data-masked="••••••">••••••</span></span>
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-10 18:20</span>
+      <span class="v num">09-10 18:23</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
@@ -760,6 +761,7 @@ function fill(secret){
     if (k === "account")   el.textContent = secret.account;
     if (k === "cash")      el.textContent = won(secret.cash);
     if (k === "orderable") el.textContent = won(secret.orderable);
+    if (k === "pertrade")  el.textContent = won(secret.per_trade);
   });
   drawStats(secret && secret.trade_stats);
   drawPositions(secret && secret.positions_html);
