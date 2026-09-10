@@ -283,7 +283,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-10 16:58 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-10 17:04 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -299,48 +299,11 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-10 16:58</span>
+      <span class="v num">09-10 17:04</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
   </div>
-
-  <!-- ================= 매매 성적 ================= -->
-  <section>
-    <div class="sechead"><h2>매매 성적</h2><span class="rule"></span><span class="note">실현된 왕복 거래 · 수수료·세금 반영</span></div>
-    <div class="strip">
-    <div class="chip">
-      <span class="k">실현 거래</span>
-      <span class="v num">1건</span>
-      <span class="s">승 1 · 패 0</span>
-    </div>
-    <div class="chip">
-      <span class="k">승률</span>
-      <span class="v num">100%</span>
-      <span class="s">손익비 -</span>
-    </div>
-    <div class="chip">
-      <span class="k">누적손익</span>
-      <span class="v num up">+7,359원</span>
-      <span class="s">수수료·거래세 반영</span>
-    </div>
-    <div class="chip">
-      <span class="k">평균 수익률</span>
-      <span class="v num up">+0.73%</span>
-      <span class="s">중앙 +0.73%</span>
-    </div>
-    <div class="chip">
-      <span class="k">이익 / 손실</span>
-      <span class="v num">+0.73% / -</span>
-      <span class="s">최고 +0.73% · 최저 +0.73%</span>
-    </div>
-    <div class="chip">
-      <span class="k">체결 정확도</span>
-      <span class="v num">- / +0.00%</span>
-      <span class="s">매수 종가차 · 매도 시가차 — 0 이면 가정과 일치</span>
-    </div>
-  </div><div class="tbl-wrap"><table><tr><th>매수일</th><th>매도일</th><th>종목</th><th>수량</th><th>매수가</th><th>매도가</th><th>수익률</th><th>손익</th><th>강도</th><th>신용</th></tr><tr><td>2026-09-09</td><td>2026-09-10</td><td>SK이터닉스</td><td class=n>19</td><td class=n>53,200</td><td class=n>53,700</td><td class='n up'>+0.73%</td><td class='n up'>+7,359</td><td class=n>4.79</td><td>N</td></tr></table></div>
-  </section>
 
   <!-- ================= 보유 포지션 ================= -->
   <section>
@@ -605,6 +568,12 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
   </section>
 
+  <!-- ================= 매매 성적 ================= -->
+  <section>
+    <div class="sechead"><h2>매매 성적</h2><span class="rule"></span><span class="note">실현된 왕복 거래 · 수수료·세금 반영</span></div>
+    <div class="blank" id="statlock">구글 로그인 후 볼 수 있습니다.</div><div id="statbox" hidden></div>
+  </section>
+
   <footer>
     <p>모든 수치는 코스피·코스닥 403종목의 2019-05 ~ 2026-09 일봉으로 계산했다. 거래비용은 매수 0.015% + 매도 0.015% + 거래세 0.18%를 차감했고, 같은 날 손절가와 익절가에 모두 닿은 경우 손절이 먼저 체결된 것으로 보수적으로 잡았다.</p>
     <p>청산 조합 27개와 신호 변형 6개를 같은 데이터에 모두 돌려 고른 값이므로, 실제 성적은 이보다 낮게 나오는 것이 정상이다. 이 페이지는 2026-09-08 시점의 고정 스냅샷이다.</p>
@@ -797,6 +766,61 @@ function fill(secret){
     if (k === "cash")      el.textContent = won(secret.cash);
     if (k === "orderable") el.textContent = won(secret.orderable);
   });
+  drawStats(secret && secret.trade_stats);
+}
+
+// 매매 성적은 공개 HTML 에 값이 없다. 로그인해야 Firestore 에서 받아 여기서 그린다.
+// 값을 넣어두고 가리기만 하면 소스 보기로 다 보이므로, 아예 넣지 않는다.
+function esc(v){
+  return String(v === undefined || v === null ? "" : v)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function pct(v){ return (v === undefined || v === null) ? "-" : (v >= 0 ? "+" : "") + v.toFixed(2) + "%"; }
+function cls(v){ return v > 0 ? "up" : (v < 0 ? "down" : ""); }
+function num(v){ return (v || 0).toLocaleString("ko-KR"); }
+
+function drawStats(st){
+  const lock = $("statlock"), box = $("statbox");
+  if (!lock || !box) return;                 // 내부용 빌드에는 이 자리가 없다
+  if (!st || !st["건수"]){
+    lock.hidden = false;
+    lock.textContent = st ? "아직 완료된 왕복 거래가 없습니다." : "구글 로그인 후 볼 수 있습니다.";
+    box.hidden = true; box.innerHTML = "";
+    return;
+  }
+  const chip = (k, v, s2, c) =>
+    '<div class="chip"><span class="k">' + esc(k) + '</span>' +
+    '<span class="v num ' + (c || "") + '">' + esc(v) + '</span>' +
+    '<span class="s">' + esc(s2) + '</span></div>';
+  const pnl = st["누적손익"] || 0, avg = st["평균수익률"] || 0;
+  const strip = '<div class="strip">' +
+    chip("실현 거래", st["건수"] + "건", "승 " + (st["승"] || 0) + " · 패 " + (st["패"] || 0)) +
+    chip("승률", (st["승률"] || 0).toFixed(0) + "%", "손익비 " + (st["손익비"] != null ? st["손익비"] : "-")) +
+    chip("누적손익", num(pnl) + "원", "수수료·거래세 반영", cls(pnl)) +
+    chip("평균 수익률", pct(st["평균수익률"]), "중앙 " + pct(st["중앙수익률"]), cls(avg)) +
+    chip("이익 / 손실", pct(st["평균이익"]) + " / " + pct(st["평균손실"]),
+         "최고 " + pct(st["최고"]) + " · 최저 " + pct(st["최저"])) +
+    chip("체결 정확도", pct(st["매수괴리평균"]) + " / " + pct(st["매도괴리평균"]),
+         "매수 종가차 · 매도 시가차") + '</div>';
+
+  let rows = "";
+  (st["거래"] || []).slice().reverse().forEach(function(t){
+    const r = t["수익률"] || 0, c = cls(r);
+    rows += "<tr><td>" + esc(t["매수일"]) + "</td><td>" + esc(t["매도일"]) + "</td>" +
+      "<td>" + esc(t["종목명"] || t["종목"]) + "</td>" +
+      '<td class="n">' + num(t["수량"]) + "</td>" +
+      '<td class="n">' + num(t["매수가"]) + "</td>" +
+      '<td class="n">' + num(t["매도가"]) + "</td>" +
+      '<td class="n ' + c + '">' + pct(r) + "</td>" +
+      '<td class="n ' + c + '">' + num(t["손익"]) + "</td>" +
+      '<td class="n">' + (t["돌파강도"] != null ? t["돌파강도"] : "-") + "</td>" +
+      "<td>" + esc(t["신용"]) + "</td></tr>";
+  });
+  const head = "<tr><th>매수일</th><th>매도일</th><th>종목</th><th>수량</th>" +
+    "<th>매수가</th><th>매도가</th><th>수익률</th><th>손익</th><th>강도</th><th>신용</th></tr>";
+  box.innerHTML = strip + '<div class="tbl-wrap"><table>' + head + rows + "</table></div>";
+  box.hidden = false;
+  lock.hidden = true;
 }
 
 $("signin").addEventListener("click", function(){
