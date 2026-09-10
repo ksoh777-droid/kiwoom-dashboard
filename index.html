@@ -283,7 +283,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-10 16:45 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-10 16:58 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -299,7 +299,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-10 16:45</span>
+      <span class="v num">09-10 16:58</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
@@ -469,18 +469,6 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
   </section>
 
-  <!-- ================= 차트 2 ================= -->
-  <section>
-    <div class="sechead"><h2>수익 대비 낙폭</h2><span class="rule"></span><span class="note"><span data-secret="capital" data-masked="자금 약 1백만원">자금 약 1백만원</span> · 동시 2종목</span></div>
-    <div class="card">
-      <div class="legend">
-        <span><i class="sw-a"></i>전략 (종목 선택 규칙별)</span>
-        <span><i class="sw-k"></i>KOSPI 매수 후 보유</span>
-      </div>
-      <div class="chart-wrap"><svg id="c2" viewBox="0 0 900 340" role="img" aria-label="최대낙폭 대비 연평균수익률 산점도. KOSPI 보유가 낙폭은 작고 수익은 비슷하다"></svg></div>
-      <p style="margin:12px 0 0; font-size:13px; color:var(--muted)">오른쪽 위가 좋은 자리다. <b style="color:var(--ink-2)">KOSPI 보유가 가장 오른쪽 위에 있다.</b> 전략은 같은 수익을 내려고 낙폭을 두 배 가까이 감수한다. 게다가 종목 선택 규칙 하나로 CAGR이 0.4%에서 18.9%까지 갈린다 — 어느 쪽이 맞는지 미리 알 방법이 없다.</p>
-    </div>
-  </section>
 
   <!-- ================= 청산 조합 ================= -->
   <section>
@@ -708,41 +696,6 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     });
   })();
 
-  /* ---------- 2. 수익 대비 낙폭 ---------- */
-  (function(){
-    var svg = document.getElementById("c2");
-    var pts = [
-      {n:"돌파강도 순", x:-67.5, y:18.9, k:false, r:"총 +249.4% · 288거래"},
-      {n:"거래대금 순", x:-73.6, y:0.4,  k:false, r:"총 +3.0% · 253거래"},
-      {n:"무작위 평균", x:-62.8, y:6.8,  k:false, r:"30회 평균 · 총 +89.0%"},
-      {n:"KOSPI 보유", x:-38.6, y:18.4, k:true,  r:"총 +239.6% · 거래 1회"}
-    ];
-    var W=900, H=340, L=60, R=110, T=20, B=48;
-    var xlo=-80, xhi=-32, ylo=-2, yhi=22;
-    var px = function(v){ return L + (v - xlo)/(xhi - xlo) * (W - L - R); };
-    var py = function(v){ return T + (yhi - v)/(yhi - ylo) * (H - T - B); };
-
-    [0,5,10,15,20].forEach(function(t){
-      svg.appendChild(el("line", {x1:L, x2:W-R, y1:py(t), y2:py(t), class:"g-line", "stroke-width":1}));
-      svg.appendChild(el("text", {x:L-9, y:py(t)+3.5, class:"ax", "text-anchor":"end"}, t+"%"));
-    });
-    [-80,-70,-60,-50,-40].forEach(function(t){
-      svg.appendChild(el("text", {x:px(t), y:H-B+18, class:"ax", "text-anchor":"middle"}, t+"%"));
-    });
-    svg.appendChild(el("text", {x:(L+W-R)/2, y:H-8, class:"axl", "text-anchor":"middle"}, "최대낙폭  ←  깊을수록 나쁨"));
-    svg.appendChild(el("text", {x:14, y:T+10, class:"axl"}, "연평균수익률"));
-
-    pts.forEach(function(p){
-      var cx = px(p.x), cy = py(p.y);
-      svg.appendChild(el("circle", {cx:cx, cy:cy, r:p.k?8:7, class:p.k?"pt-k":"pt"}));
-      if (p.k) svg.appendChild(el("circle", {cx:cx, cy:cy, r:2.5, fill:"var(--ink)"}));
-      svg.appendChild(el("text", {x:cx+13, y:cy+4, class:"plabel"}, p.n));
-      var hit = el("circle", {cx:cx, cy:cy, r:16, class:"hit"});
-      svg.appendChild(hit);
-      bind(hit, "<b>"+p.n+"</b><br>연평균수익률 <b>"+p.y.toFixed(1)+"%</b><br>최대낙폭 <b>"+p.x.toFixed(1)+"%</b><br>"+p.r);
-    });
-  })();
-
   /* ---------- 3. 종목 퍼널 ---------- */
   (function(){
     var svg = document.getElementById("c3");
@@ -843,7 +796,6 @@ function fill(secret){
     if (k === "account")   el.textContent = secret.account;
     if (k === "cash")      el.textContent = won(secret.cash);
     if (k === "orderable") el.textContent = won(secret.orderable);
-    if (k === "capital")   el.textContent = "자금 " + won(secret.cash);
   });
 }
 
