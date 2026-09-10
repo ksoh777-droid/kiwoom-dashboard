@@ -46,6 +46,16 @@ h1,h2,h3{margin:0; text-wrap:balance}
   font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
   color:var(--muted); font-family:var(--sans);
 }
+/* 헤더 브랜드 표기. eyebrow 는 옅은 라벨용이라 굵게 하면 어색해 따로 뒀다.
+   한글은 sans, Dashboard 는 강조색으로 눌러 두 덩어리를 구분한다. */
+.brand{
+  font-family:var(--sans); font-weight:700; font-size:18px;
+  letter-spacing:-.01em; color:var(--ink); display:flex; align-items:baseline; gap:7px;
+}
+.brand span{
+  font-weight:600; font-size:15px; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--accent);
+}
 
 /* ---------- 머리말 ---------- */
 .masthead{border-bottom:1px solid var(--line); padding-bottom:22px; margin-bottom:26px}
@@ -276,7 +286,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
 <div class="wrap">
 
   <div class="masthead">
-    <div class="eyebrow">키움 REST API · 실전투자 계좌</div>
+    <div class="brand">AI자동거래시스템 <span>Dashboard</span></div>
     <h1>20일 변곡 자동매매 운용판</h1>
     <p>매일 15:05에 코스피·코스닥 전 종목을 훑어 20일 모멘텀이 상향 돌파하는 종목을 사고, 정해진 조건에 닿으면 판다. 아래는 그 시스템의 현재 상태와, 실제로 돈을 넣기 전에 확인한 검증 결과다.</p>
     <div class="auth">
@@ -288,7 +298,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-10 17:34 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-10 17:36 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -304,7 +314,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-10 17:34</span>
+      <span class="v num">09-10 17:36</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
