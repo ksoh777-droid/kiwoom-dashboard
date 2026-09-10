@@ -161,8 +161,12 @@ td.up{color:var(--up)} td.down{color:var(--down)}
    좁은 화면에서는 100% 로 두어 읽을 수 있게 한다. */
 .chart-wrap.half{max-width:min(100%, 450px)}
 /* 연도별 기대값(c1)은 여기서 20% 더 크게. 450 * 1.2 = 540 */
-/* c1 · c3 둘 다 450 * 1.2 = 540px */
-.chart-wrap.half:has(#c1), .chart-wrap.half:has(#c3){max-width:min(100%, 540px)}
+/* c1 은 450 * 1.2 = 540px */
+.chart-wrap.half:has(#c1){max-width:min(100%, 540px)}
+/* c3 는 거기서 30% 더 — 540 * 1.3 = 702px.
+   viewBox 가 그대로라 그래프와 글자가 같은 비율로 함께 커진다.
+   따라서 #c3 의 font-size 는 손대지 않는다. */
+.chart-wrap.half:has(#c3){max-width:min(100%, 702px)}
 svg{display:block; max-width:100%; height:auto}
 .g-line{stroke:var(--line)} .g-zero{stroke:var(--line-2)}
 .ax{fill:var(--muted); font-family:var(--mono); font-size:12.5px}
@@ -314,7 +318,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-10 18:08 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-10 18:14 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -330,7 +334,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-10 18:08</span>
+      <span class="v num">09-10 18:14</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
@@ -648,17 +652,19 @@ td.up{color:var(--up)} td.down{color:var(--down)}
   (function(){
     var svg = document.getElementById("c3");
     var rows = [
-      {n:"코스피 + 코스닥", v:4308, d:null},
-      {n:"ETF · ETN · 리츠 · ELW", v:2739, d:1569},
-      {n:"관리 · 경고 종목", v:2707, d:32},
-      {n:"임시코드", v:2629, d:78},
-      {n:"우선주", v:2548, d:81},
-      {n:"스팩 · 가격", v:2385, d:163},
+      {n:"코스피 + 코스닥 전체", v:4308, d:null},
+      {n:"ETF · ETN · 리츠 · ELW 제외", v:2739, d:1569},
+      {n:"관리 · 투자경고 제외", v:2707, d:32},
+      {n:"임시코드 제외", v:2629, d:78},
+      {n:"우선주 제외", v:2548, d:81},
+      {n:"스팩 · 가격 제외", v:2385, d:163},
       {n:"종목상태 필터", v:2245, d:140}
     ];
     // R 은 막대 오른쪽 숫자가 들어갈 폭이다. 축 글자를 16.5px 로 키우면서
     // 70 으로는 '4,308' 이 잘린다. 넉넉히 잡아 표가 깨지지 않게 한다.
-    var W=900, H=250, L=150, R=110, T=10, B=10;
+    // L 은 왼쪽 라벨이 들어갈 폭이다. '제외' 를 붙이면서 150 으로는
+    // 'ETF · ETN · 리츠 · ELW 제외' 가 잘린다.
+    var W=900, H=250, L=280, R=110, T=10, B=10;
     var max = 4308, bh = (H - T - B) / rows.length;
     rows.forEach(function(r, i){
       var y = T + bh*i + 3, h = bh - 8;
