@@ -161,15 +161,16 @@ td.up{color:var(--up)} td.down{color:var(--down)}
    좁은 화면에서는 100% 로 두어 읽을 수 있게 한다. */
 .chart-wrap.half{max-width:min(100%, 450px)}
 /* 연도별 기대값(c1)은 여기서 20% 더 크게. 450 * 1.2 = 540 */
-.chart-wrap.half:has(#c1){max-width:min(100%, 540px)}
+/* c1 · c3 둘 다 450 * 1.2 = 540px */
+.chart-wrap.half:has(#c1), .chart-wrap.half:has(#c3){max-width:min(100%, 540px)}
 svg{display:block; max-width:100%; height:auto}
 .g-line{stroke:var(--line)} .g-zero{stroke:var(--line-2)}
 .ax{fill:var(--muted); font-family:var(--mono); font-size:12.5px}
 .axl{fill:var(--ink-2); font-family:var(--sans); font-size:13px; font-weight:500}
 /* 감시 종목 추출(c3)만 글자를 키운다. 차트가 절반 크기로 그려지므로
    SVG 안의 값을 +4 해야 화면에서 +2 로 보인다. c1 은 그대로 둔다. */
-#c3 .ax{font-size:16.5px}
-#c3 .axl{font-size:17px}
+#c3 .ax{font-size:15.8px}
+#c3 .axl{font-size:16.3px}
 /* 연도별 기대값(c1)은 540/900 = 0.6배로 그려진다.
    화면에서 +2 로 보이려면 SVG 값을 +3.3 해야 한다 (2 / 0.6). */
 #c1 .ax{font-size:15.8px}
@@ -208,9 +209,11 @@ tr.worst td{color:var(--muted)}
 
 /* ---------- 퍼널 ---------- */
 .steps{display:flex; flex-direction:column; gap:0}
-.step{display:grid; grid-template-columns:26px 1fr auto; gap:14px; align-items:center; padding:9px 0; border-bottom:1px solid var(--line)}
+/* 첫 열은 '시작' 또는 '-1,569' 가 들어간다. 폰트를 키우면서 26px 로는
+   모자라 '시작' 이 두 줄로 접혔다. 넉넉히 잡고 줄바꿈도 막는다. */
+.step{display:grid; grid-template-columns:64px 1fr auto; gap:14px; align-items:center; padding:9px 0; border-bottom:1px solid var(--line)}
 .step:last-child{border-bottom:none}
-.step .i{font-family:var(--mono); font-size:13px; color:var(--muted); text-align:right}
+.step .i{font-family:var(--mono); font-size:13px; color:var(--muted); text-align:right; white-space:nowrap}
 .step .lbl{font-size:15.5px}
 .step .lbl small{display:block; color:var(--muted); font-size:13.5px; font-family:var(--mono)}
 .step .cnt{font-family:var(--mono); font-size:17px; font-variant-numeric:tabular-nums}
@@ -311,7 +314,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-10 18:04 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-10 18:06 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -327,7 +330,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-10 18:04</span>
+      <span class="v num">09-10 18:06</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
