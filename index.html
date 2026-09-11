@@ -70,9 +70,12 @@ h1,h2,h3{margin:0; text-wrap:balance}
 }
 /* 헤더 브랜드 표기. eyebrow 는 옅은 라벨용이라 굵게 하면 어색해 따로 뒀다.
    한글은 sans, Dashboard 는 강조색으로 눌러 두 덩어리를 구분한다. */
+/* 'AI자동거래시스템 Dashboard' 에서 'Dashboard' 만 남겼다 (2026-09-11).
+   강조색 그라디언트는 span 에 있었는데 span 이 사라져 여기로 올렸다. */
 .brand{
-  font-family:var(--sans); font-weight:700; font-size:18px;
-  letter-spacing:-.01em; color:var(--ink); display:flex; align-items:baseline; gap:7px;
+  font-family:var(--sans); font-weight:700; font-size:18px; letter-spacing:.04em;
+  text-transform:uppercase; display:inline-block;
+  background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
 }
 .brand span{
   font-weight:700; font-size:15px; letter-spacing:.08em; text-transform:uppercase;
@@ -395,7 +398,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
 <div class="wrap">
 
   <div class="masthead">
-    <div class="brand">AI자동거래시스템 <span>Dashboard</span></div>
+    <div class="brand">Dashboard</div>
     <h1>AI 변곡점시스템트레이딩</h1>
     <p>매일 정규장 종료전 코스피/코스닥 전 종목데이터를 수집해 20일 모멘텀이 상향 돌파하는 종목을 자동매수/매도 시스템트레이딩</p>
     <div class="auth">
@@ -407,7 +410,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-11 12:36 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-11 12:38 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -423,7 +426,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-11 12:36</span>
+      <span class="v num">09-11 12:38</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
