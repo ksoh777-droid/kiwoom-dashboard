@@ -410,7 +410,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-11 14:44 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-11 14:57 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -426,7 +426,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-11 14:44</span>
+      <span class="v num">09-11 14:57</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
@@ -903,7 +903,7 @@ function fill(secret){
     if (k === "orderable") el.textContent = won(secret.orderable);
     if (k === "pertrade")  el.textContent = won(secret.per_trade);
   });
-  drawStats(secret && secret.trade_stats);
+  drawStats(secret && secret.trade_stats, secret && secret.trade_stats_html);
   drawPositions(secret && secret.positions_html);
 }
 
@@ -933,9 +933,15 @@ function pct(v){ return (v === undefined || v === null) ? "-" : (v >= 0 ? "+" : 
 function cls(v){ return v > 0 ? "up" : (v < 0 ? "down" : ""); }
 function num(v){ return (v || 0).toLocaleString("ko-KR"); }
 
-function drawStats(st){
+function drawStats(st, html){
   const lock = $("statlock"), box = $("statbox");
   if (!lock || !box) return;                 // 내부용 빌드에는 이 자리가 없다
+  // 서버가 그린 HTML 이 있으면 그것을 쓴다(체결 내역 표까지 포함). 아래 JS 렌더는
+  // 옛 Firestore 문서(trade_stats_html 이 없던 때)를 위한 예비다.
+  if (html){
+    box.innerHTML = html; box.hidden = false; lock.hidden = true;
+    return;
+  }
   if (!st || !st["건수"]){
     lock.hidden = false;
     lock.textContent = st ? "아직 완료된 왕복 거래가 없습니다." : "구글 로그인 후 볼 수 있습니다.";
