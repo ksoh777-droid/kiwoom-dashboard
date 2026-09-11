@@ -410,7 +410,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-11 14:33 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-11 14:44 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -426,7 +426,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-11 14:33</span>
+      <span class="v num">09-11 14:44</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
@@ -635,29 +635,31 @@ td.up{color:var(--up)} td.down{color:var(--down)}
   </section>
 
   <section>
-    <!-- 2026-09-11: 2019~2026 전 구간(403종목) → 최근 2년 → **최근 1년**(2025-09-11 ~
-         2026-09-11, 2,236종목)으로 바꿨다. 사용자 기준 — 시장은 변하므로 최근 확도가 중요하다.
-         재현: python -m scripts.verify_inflection --start 2025-09-11
-               python -m scripts.portfolio_sim --start 2025-08-11  (달력이 21일 뒤부터라 한 달 앞당김)
-         아래 청산 조합 표와 연도별 차트는 여전히 2019~2026 스냅샷이다. -->
-    <div class="sechead"><h2>검증 판정</h2><span class="rule"></span><span class="note">최근 1년 · 2025-09 ~ 2026-09 · 2,236종목 · 8,413건</span></div>
+    <!-- 2026-09-11: 이 판정은 원래 옛 변곡 전략(며칠 보유, +20%/−10% 청산)을 재고
+         있었다. 실매매는 종가 매수 → 익일 시가 매도를 매일 반복하므로 그 복리 누적으로
+         판정해야 맞다(사용자 지적). sim_overnight 로 최근 1년을 다시 쟀다.
+         조합 C = 실매매 조건(돌파강도≥3% · 거래대금 100억↑ · 정배열), 동시 2종목,
+         돌파강도 순, 비용 왕복 0.21%, 슬리피지 0 (실측 체결 괴리 0.000%).
+         재현: python -m scripts.sim_overnight --combo C --max-positions 2 --start 2025-09-11
+         아래 청산 조합 표와 연도별 차트는 옛 전략의 2019~2026 스냅샷이다. -->
+    <div class="sechead"><h2>검증 판정</h2><span class="rule"></span><span class="note">종가 매수 → 익일 시가 매도 · 최근 1년 · 2025-09 ~ 2026-09 · 357건</span></div>
     <div class="verdict">
-      <blockquote>신호에는 우위가 있다. <em>다만 그 우위로 지수를 이기지는 못했다.</em></blockquote>
+      <blockquote>매일 굴리면 지수를 이긴다. <em>낙폭은 지수의 3분의 1이다.</em></blockquote>
       <div class="vgrid">
         <div>
-          <div class="k">신호의 순수 기여분</div>
-          <div class="v num">+0.93%p</div>
-          <div class="s">거래당 +0.82% · 대조군(아무 날) −0.12%</div>
-        </div>
-        <div>
-          <div class="k">포트폴리오 CAGR</div>
-          <div class="v num">13.5%</div>
-          <div class="s">KOSPI 보유 +116%에 크게 뒤짐 · 동시 2종목</div>
+          <div class="k">누적수익률 (복리)</div>
+          <div class="v num">+123.2%</div>
+          <div class="s">KOSPI 매수 후 보유 +109.2% · 무작위 선택 +71.6%</div>
         </div>
         <div>
           <div class="k">최대낙폭</div>
-          <div class="v num" style="color:var(--up)">−51.8%</div>
+          <div class="v num" style="color:var(--up)">−12.2%</div>
           <div class="s">KOSPI 보유는 −38.6%</div>
+        </div>
+        <div>
+          <div class="k">승률 · 거래수</div>
+          <div class="v num">47.3%</div>
+          <div class="s">357건 · 197거래일 · 동시 2종목</div>
         </div>
       </div>
     </div>
@@ -700,8 +702,8 @@ td.up{color:var(--up)} td.down{color:var(--down)}
   </section>
 
   <footer>
-    <p><b style="color:var(--ink-2)">검증 판정</b>은 코스피·코스닥 2,236종목의 최근 1년(2025-09 ~ 2026-09) 일봉으로 계산했다(2026-09-11 갱신). 청산 조합 표와 연도별 차트는 403종목 · 2019-05 ~ 2026-09 스냅샷이다. 거래비용은 매수 0.015% + 매도 0.015% + 거래세 0.18%를 차감했고, 같은 날 손절가와 익절가에 모두 닿은 경우 손절이 먼저 체결된 것으로 보수적으로 잡았다.</p>
-    <p>청산 조합 27개와 신호 변형 6개를 같은 데이터에 모두 돌려 고른 값이므로, 실제 성적은 이보다 낮게 나오는 것이 정상이다.</p>
+    <p><b style="color:var(--ink-2)">검증 판정</b>은 실매매 전략 그대로 — 종가에 사서 다음날 시가에 팔기를 매일 반복 — 를 최근 1년(2025-09-11 ~ 2026-09-07) 일봉으로 복리 누적한 것이다(2026-09-11 갱신). 조건은 돌파강도 3%↑ · 거래대금 100억↑ · 정배열, 동시 2종목, 돌파강도 순. 비용은 왕복 0.21%, 슬리피지는 0으로 뒀다 — 실측 체결가가 종가·시가와 0.000% 차이였다. 상장폐지 종목이 빠져 있어(생존편향) 실제보다 좋게 나온다.</p>
+    <p>청산 조합 표와 연도별 차트는 옛 변곡 전략(며칠 보유, +20%/−10% 청산)의 403종목 · 2019-05 ~ 2026-09 스냅샷이다. 청산 조합 27개와 신호 변형 6개를 같은 데이터에 돌려 고른 값이라 실제 성적은 이보다 낮게 나오는 것이 정상이다.</p>
   </footer>
 </div>
 
