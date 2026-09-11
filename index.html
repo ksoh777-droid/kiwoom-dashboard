@@ -357,6 +357,20 @@ td.up{color:var(--up)} td.down{color:var(--down)}
 .finder input{flex:1; min-width:180px}
 .finder input::placeholder{color:var(--muted)}
 .finder .cnt{font-family:var(--mono); font-size:12px; color:var(--muted); margin-left:auto}
+/* 감시 종목 전체는 기본 접힘. summary 가 카드 안의 유일한 보이는 요소가 된다. */
+.fold > summary{
+  list-style:none; cursor:pointer; display:flex; align-items:baseline; gap:12px;
+  padding:4px 2px; user-select:none;
+}
+.fold > summary::-webkit-details-marker{display:none}
+.fold > summary::before{
+  content:"▸"; color:var(--accent); font-size:14px; transition:transform .15s;
+}
+.fold[open] > summary::before{transform:rotate(90deg)}
+.fold[open] > summary{margin-bottom:14px; border-bottom:1px solid var(--line); padding-bottom:12px}
+.fold-cap{font-weight:600; font-size:15.5px}
+.fold-sub{font-family:var(--mono); font-size:13px; color:var(--muted)}
+.fold > summary:hover .fold-cap{color:var(--accent)}
 #uniTbl td{padding:7px 14px}
 #uniTbl tbody tr:hover td{background:var(--surface-2)}
 .mk{font-size:10.5px; color:var(--muted); border:1px solid var(--line); border-radius:2px; padding:1px 5px; margin-left:6px}
@@ -393,7 +407,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-11 11:24 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-11 12:36 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
   </div>
 
   <div class="strip">
@@ -404,12 +418,12 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">보유</span>
-      <span class="v num">0 / 2 종목</span>
+      <span class="v num">1 / 2 종목</span>
       <span class="s">1종목당 상한 <span class="num" data-secret="pertrade" data-masked="••••••">••••••</span></span>
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-11 11:24</span>
+      <span class="v num">09-11 12:36</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
@@ -498,6 +512,14 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     <div class="sechead"><h2>감시 종목 전체</h2><span class="rule"></span>
       <span class="note">2,232종목 · 오늘 종가 기준</span></div>
     <div class="card">
+      <!-- 기본은 접혀 있다. 이 표는 날마다 바뀌는 것이 적고 숫자가 많아, 펼쳐 두면
+           화면만 길어지고 눈이 가지 않는다 (사용자 요청, 2026-09-11). 검색·정렬·표는
+           모두 details 안에 있어 펼쳐야 보인다. 상태는 브라우저가 기억하지 않는다. -->
+      <details class="fold">
+        <summary>
+          <span class="fold-cap">펼쳐서 보기</span>
+          <span class="fold-sub">2,232종목 · 검색 · 정렬 · 추리기</span>
+        </summary>
       <div class="finder">
         <input id="q" type="search" placeholder="종목명 또는 코드로 검색" aria-label="종목 검색">
         <select id="sort" aria-label="정렬 기준">
@@ -531,6 +553,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
         3%를 넘어도 교차가 아니면 후보가 아니다 — 이미 20일 전부터
         위에 있었다는 뜻이기 때문이다.
       </p>
+      </details>
     </div>
   </section>
 
