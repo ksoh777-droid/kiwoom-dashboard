@@ -419,7 +419,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-12 14:08 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-13 07:52 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
     </div>
     <!-- docs/ai-trading.svg 를 빌드 때 인라인한다. 공개 사이트는 index.html 하나만
          복사하므로 외부 파일로 두면 거기서 깨진다. -->
@@ -512,7 +512,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-12 14:08</span>
+      <span class="v num">09-13 07:52</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
@@ -527,7 +527,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
   <!-- ================= 오늘의 후보 ================= -->
   <section>
     <div class="sechead"><h2>오늘의 후보</h2><span class="rule"></span>
-      <span class="note">2026-09-12 종가 기준</span></div>
+      <span class="note">2026-09-13 종가 기준</span></div>
     <div class="sieve">
       <span class="sv"><b class="num">2,232</b><small>스캔</small></span>
       <span class="sv-ar">&rarr;</span>
@@ -570,6 +570,28 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       야간수익률은 전일 종가에 사서 당일 시가에 팔았을 때의 수익률이다 — 이 전략이 먹는 그 수익이다.
       "이 종목은 원래 밤에 오르는 종목인가" 를 묻는 잣대로, 검증 구간(최근 1년)에서 돌파강도 순보다
       거래당 +0.21%p 앞섰다. <b>채택은 보류 중</b>이고 이 표는 그 판단을 위한 것이다.</div>
+  </section>
+
+  <!-- ================= 정배열 과매도 + onret ================= -->
+  <section>
+    <div class="sechead"><h2>최근 성과 최상 로직 — 정배열 과매도 종가매수</h2><span class="rule"></span>
+      <span class="note">2026-09-13 종가 · 정배열 · RSI(2)&lt;10 · 100억↑ · onret 순 · 참고용</span></div>
+    <div class="tbl-wrap">
+      <table id="mrTbl">
+        <thead><tr>
+          <th style="width:34px">#</th><th>종목</th>
+          <th style="text-align:right">야간수익률 60일</th><th style="text-align:right">RSI(2)</th>
+          <th style="text-align:right">종가</th><th style="text-align:right">등락</th>
+          <th style="text-align:right">거래대금</th><th style="text-align:right">자리 2개면</th>
+        </tr></thead>
+        <tbody><tr class="bought"><td class="n">1</td><td>금호건설 <span class="pos-code">002990</span><span class="mk">거래소</span></td><td class="n st">+1.74%</td><td class="n">1.1</td><td class="n">14,710</td><td class="n down">-2.19%</td><td class="n">254억</td><td class="n"><span class="pill buy">종가매수 후보</span></td></tr><tr class="bought"><td class="n">2</td><td>한올바이오파마 <span class="pos-code">009420</span><span class="mk">거래소</span></td><td class="n st">+0.31%</td><td class="n">2.1</td><td class="n">50,100</td><td class="n down">-4.75%</td><td class="n">140억</td><td class="n"><span class="pill buy">종가매수 후보</span></td></tr><tr><td class="n">3</td><td>LG <span class="pos-code">003550</span><span class="mk">거래소</span></td><td class="n st">+0.16%</td><td class="n">5.1</td><td class="n">112,500</td><td class="n down">-4.66%</td><td class="n">284억</td><td class="n"></td></tr><tr><td class="n">4</td><td>파마리서치 <span class="pos-code">214450</span><span class="mk">코스닥</span></td><td class="n st">+0.02%</td><td class="n">1.1</td><td class="n">342,000</td><td class="n down">-2.15%</td><td class="n">413억</td><td class="n"></td></tr><tr><td class="n">5</td><td>대한항공 <span class="pos-code">003490</span><span class="mk">거래소</span></td><td class="n st">-0.11%</td><td class="n">5.8</td><td class="n">28,950</td><td class="n down">-2.03%</td><td class="n">616억</td><td class="n"></td></tr></tbody>
+      </table>
+    </div>
+    <div class="callout">최근 3개월(약세, KOSPI −17%)과 직전 3개월(강세, +48%)을 나란히 재서 <b>두 분기 모두 살아남은 바깥 로직</b>은
+      이것 하나였다 — 정배열(20&gt;60&gt;120) 종목이 RSI(2)&lt;10 까지 밀린 날 종가에 사서 다음날 시가에 판다.
+      자리 2개·onret 순으로 <b>+28.1% / +26.0%</b>. 위 표는 그 규칙을 오늘 종가에 적용한 것이고, 상위 2개가 "이 로직이었다면 샀을 것" 이다.<br>
+      <b>실매매는 여전히 변곡 돌파 + 돌파강도 순</b>이다. 이 로직은 2019~2025 에는 대부분 마이너스였던 2026년 환경 전용이라,
+      몇 분기 더 지켜본 뒤에 켤지 정한다.</div>
   </section>
 
   <!-- ================= 판정 ================= -->
