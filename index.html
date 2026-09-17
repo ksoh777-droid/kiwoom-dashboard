@@ -421,7 +421,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-17 16:15 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-17 17:05 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
     </div>
     <!-- docs/ai-trading.svg 를 빌드 때 인라인한다. 공개 사이트는 index.html 하나만
          복사하므로 외부 파일로 두면 거기서 깨진다. -->
@@ -514,7 +514,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-17 16:15</span>
+      <span class="v num">09-17 17:05</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
@@ -529,7 +529,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
   <!-- ================= 오늘의 후보 ================= -->
   <section>
     <div class="sechead"><h2>오늘의 후보</h2><span class="rule"></span>
-      <span class="note">판정 기준 <b>2026-09-17 종가</b> · 데이터 추출 2026-09-17 16:15</span></div>
+      <span class="note">판정 기준 <b>2026-09-17 종가</b> · 데이터 추출 2026-09-17 17:05</span></div>
     <div class="callout" style="margin-top:0;margin-bottom:14px"><b>15:00 변곡 스캔</b> (2026-09-17 15:10 · 장중가 기준 · 2026-09-15 부터 참고용, 매수 없음) 후보 <b>11건</b> — 상위: 지어소프트 (판정가 11,870 · 강도 +24.03%) · 센서뷰 (판정가 1,679 · 강도 +16.84%)<br><span style="color:var(--muted)">아래 표는 종가 확정 후 같은 규칙으로 다시 판정한 것이다. 15:00 스캔은 그 시각의 가격으로 판정하므로 종가와 차이가 나면 결과가 달라질 수 있다.</span></div>
     <div class="sieve">
       <span class="sv"><b class="num">2,226</b><small>스캔</small></span>
@@ -575,6 +575,13 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     <div class="callout">테마가 처음 조건에 든 시각에 대장주(등락률 상위 2 중 거래대금 큰 쪽)와 2등주를 포착가에 샀다면 그 뒤 어떻게 됐는지를
       그대로 적는다. 오른쪽 네 칸은 포착가 대비 수익률이고 종가·익일 시가는 다음날 채워진다. 스냅샷 09-17 21회.
       <b>주문은 내지 않는다.</b> 규칙은 5분봉 검증(scripts/verify_theme)과 이 관측이 2주쯤 쌓인 뒤 정한다.</div>
+    <div class="sub" style="margin-top:18px"><b>장중 시각별 조건 테마</b> <span class="note">2026-09-17 · 09:30~14:00 슬롯마다 한 번 · 같은 조건 · 관측만</span></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>시각</th><th>테마 <span class="mk">상승/구성</span></th><th style="text-align:right">테마 등락</th><th>대장 <span class="mk">등락 · 거래대금</span></th><th>2등</th></tr></thead>
+        <tbody><tr><td>10:00</td><td>우주항공 <span class="mk">6/6</span></td><td class="n up">+7.16%</td><td>비츠로테크 <span class="pos-code">042370</span> <span class="mk">+12.05% · 174억</span></td><td>한양디지텍 <span class="pos-code">078350</span> <span class="mk">+17.63% · 161억</span></td></tr><tr style="border-top:0"><td></td><td>조선_해양플랜트 <span class="mk">4/4</span></td><td class="n up">+3.96%</td><td>한화엔진 <span class="pos-code">082740</span> <span class="mk">+6.14% · 396억</span></td><td>HD한국조선해양 <span class="pos-code">009540</span> <span class="mk">+3.91% · 163억</span></td></tr><tr style="border-top:0"><td></td><td>조선_Eco선 <span class="mk">5/5</span></td><td class="n up">+3.58%</td><td>한화엔진 <span class="pos-code">082740</span> <span class="mk">+6.14% · 396억</span></td><td>HD한국조선해양 <span class="pos-code">009540</span> <span class="mk">+3.91% · 163억</span></td></tr><tr style="border-top:0"><td></td><td>보험_손해보험 <span class="mk">7/7</span></td><td class="n up">+3.07%</td><td>DB손해보험 <span class="pos-code">005830</span> <span class="mk">+4.49% · 92억</span></td><td>한화손해보험 <span class="pos-code">000370</span> <span class="mk">+5.20% · 29억</span></td></tr></tbody>
+      </table>
+    </div>
   </section>
 
   <!-- ================= 판정 ================= -->
