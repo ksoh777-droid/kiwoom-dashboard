@@ -421,7 +421,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-17 10:50 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-17 10:57 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
     </div>
     <!-- docs/ai-trading.svg 를 빌드 때 인라인한다. 공개 사이트는 index.html 하나만
          복사하므로 외부 파일로 두면 거기서 깨진다. -->
@@ -514,7 +514,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-17 10:50</span>
+      <span class="v num">09-17 10:57</span>
       <span class="s"><span class="dot live"></span>KiwoomAutoTrade · 평일 15:05</span>
     </div>
   </div>
@@ -529,7 +529,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
   <!-- ================= 오늘의 후보 ================= -->
   <section>
     <div class="sechead"><h2>오늘의 후보</h2><span class="rule"></span>
-      <span class="note">판정 기준 <b>2026-09-17 종가</b> · 데이터 추출 2026-09-17 10:50</span></div>
+      <span class="note">판정 기준 <b>2026-09-17 종가</b> · 데이터 추출 2026-09-17 10:57</span></div>
     
     <div class="sieve">
       <span class="sv"><b class="num">2,226</b><small>스캔</small></span>
@@ -1114,8 +1114,9 @@ function drawStats(st, html){
     chip("실현 거래", st["건수"] + "건", "승 " + (st["승"] || 0) + " · 패 " + (st["패"] || 0)) +
     chip("승률", (st["승률"] || 0).toFixed(0) + "%", "손익비 " + (st["손익비"] != null ? st["손익비"] : "-")) +
     chip("누적손익", num(pnl) + "원", "수수료·거래세 반영", cls(pnl)) +
-    chip("누적 수익률", pct(st["누적수익률"]),
-         "일별 복리 · 매매 " + (st["매매일수"] || 0) + "일", cls(st["누적수익률"])) +
+    chip("누적 수익률", pct(st["원금대비수익률"] != null ? st["원금대비수익률"] : st["누적수익률"]),
+         (st["원금"] ? "원금 " + num(st["원금"]) + "원 대비" : "일별 복리") + " · 매매 " + (st["매매일수"] || 0) + "일",
+         cls(st["원금대비수익률"] != null ? st["원금대비수익률"] : st["누적수익률"])) +
     chip("평균 수익률", pct(st["평균수익률"]), "중앙 " + pct(st["중앙수익률"]), cls(avg)) +
     chip("이익 / 손실", pct(st["평균이익"]) + " / " + pct(st["평균손실"]),
          "최고 " + pct(st["최고"]) + " · 최저 " + pct(st["최저"])) +
