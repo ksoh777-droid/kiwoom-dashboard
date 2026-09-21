@@ -421,7 +421,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-21 16:15 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-21 19:50 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
     </div>
     <!-- docs/ai-trading.svg 를 빌드 때 인라인한다. 공개 사이트는 index.html 하나만
          복사하므로 외부 파일로 두면 거기서 깨진다. -->
@@ -514,7 +514,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-21 16:15</span>
+      <span class="v num">09-21 19:50</span>
       <span class="s"><span class="dot live"></span>변곡 돌파 · 15:00 스캔 → 15:29 매수</span>
     </div>
   </div>
@@ -529,7 +529,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
   <!-- ================= 오늘의 후보 ================= -->
   <section>
     <div class="sechead"><h2>오늘의 후보</h2><span class="rule"></span>
-      <span class="note">판정 기준 <b>2026-09-21 종가</b> · 데이터 추출 2026-09-21 16:15</span></div>
+      <span class="note">판정 기준 <b>2026-09-21 종가</b> · 데이터 추출 2026-09-21 19:50</span></div>
     <div class="callout" style="margin-top:0;margin-bottom:14px"><b>15:00 변곡 스캔</b> (2026-09-21 15:09 · 장중가 기준 · 2026-09-15 부터 참고용, 매수 없음) 후보 <b>7건</b> — 상위: 예스티 (판정가 32,700 · 강도 +14.94%) · 루닛 (판정가 10,480 · 강도 +13.17%)<br><span style="color:var(--muted)">아래 표는 종가 확정 후 같은 규칙으로 다시 판정한 것이다. 15:00 스캔은 그 시각의 가격으로 판정하므로 종가와 차이가 나면 결과가 달라질 수 있다.</span></div>
     <div class="sieve">
       <span class="sv"><b class="num">2,230</b><small>스캔</small></span>
@@ -569,7 +569,9 @@ td.up{color:var(--up)} td.down{color:var(--down)}
         <tbody><tr><td>09:30</td><td>반도체_후공정 <span class="mk">5/5</span></td><td class="n up">+10.05%</td><td>SFA반도체 <span class="pos-code">036540</span> <span class="mk">+14.41% · 590억</span></td><td>시그네틱스 <span class="pos-code">033170</span> <span class="mk">+19.53% · 9억</span></td></tr><tr><td>09:30</td><td>반도체_시스템반도체 <span class="mk">7/8</span></td><td class="n up">+6.04%</td><td>SFA반도체 <span class="pos-code">036540</span> <span class="mk">+14.30% · 589억</span></td><td>시그네틱스 <span class="pos-code">033170</span> <span class="mk">+20.00% · 9억</span></td></tr><tr><td>10:03</td><td>반도체_전공정장비 <span class="mk">7/7</span></td><td class="n up">+3.14%</td><td>피에스케이홀딩스 <span class="pos-code">031980</span> <span class="mk">+5.88% · 73억</span></td><td>케이씨 <span class="pos-code">029460</span> <span class="mk">+5.08% · 12억</span></td></tr></tbody>
       </table>
     </div>
-    <div class="sub" style="margin-top:14px"><b>첫 충족 뒤 경로 (10:00 정산)</b> <span class="note">포착가 대비 +5분·+30분·10:00·고가, 종가·익일 시가는 다음날</span></div>
+    <details class="fold" style="margin-top:14px">
+      <summary><span class="fold-cap">첫 충족 뒤 경로 (10:00 정산)</span>
+        <span class="fold-sub">포착가 대비 +5분·+30분·10:00·고가 · 16행 · 최근 2일</span></summary>
     <div class="tbl-wrap">
       <table>
         <thead><tr><th>날짜</th><th>첫 충족</th><th>테마 <span class="mk">상승/구성</span></th><th style="text-align:right">테마</th>
@@ -582,6 +584,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     <div class="callout">테마가 처음 조건에 든 시각에 대장주(등락률 상위 2 중 거래대금 큰 쪽)와 2등주를 포착가에 샀다면 그 뒤 어떻게 됐는지를
       그대로 적는다. 오른쪽 네 칸은 포착가 대비 수익률이고 종가·익일 시가는 다음날 채워진다. 스냅샷 09-17 21회, 09-18 17회.
       <b>주문은 내지 않는다.</b> 규칙은 5분봉 검증(scripts/verify_theme)과 이 관측이 2주쯤 쌓인 뒤 정한다.</div>
+    </details>
     <div class="sub" style="margin-top:18px"><b>장중 시각별 조건 테마</b> <span class="note">2026-09-21 · 09:30~14:00 슬롯마다 한 번 · 같은 조건 · 관측만</span></div>
     <div class="tbl-wrap">
       <table>
