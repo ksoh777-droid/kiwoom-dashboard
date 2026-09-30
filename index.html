@@ -403,6 +403,20 @@ td.up{color:var(--up)} td.down{color:var(--down)}
 .who b{color:var(--accent); font-weight:500}
 .lock{color:var(--muted); font-family:var(--mono); letter-spacing:.06em}
 .authmsg{font-size:12.5px; color:var(--up)}
+
+/* 탭. 머리말 아래 붙어 스크롤해도 따라온다. 좁은 화면에서는 가로 스크롤. */
+.tabs{position:sticky; top:0; z-index:5; display:flex; gap:6px; margin:0 -8px 26px; padding:10px 8px;
+  overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch;
+  background:linear-gradient(180deg, rgba(7,9,15,.96) 70%, rgba(7,9,15,0)); backdrop-filter:blur(8px)}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto; appearance:none; border:1px solid var(--line); background:var(--surface); color:var(--ink-2);
+  font:inherit; font-size:15px; font-weight:500; padding:8px 16px; border-radius:999px; cursor:pointer;
+  transition:color .15s, border-color .15s, background .15s}
+.tab:hover{color:var(--ink); border-color:var(--line-2)}
+.tab[aria-selected="true"]{color:#fff; background:var(--accent-soft); border-color:var(--accent); box-shadow:var(--glow)}
+.tab .n{font-family:var(--mono); font-size:12.5px; color:var(--muted); margin-left:6px}
+.tab[aria-selected="true"] .n{color:var(--accent-2)}
+.tab-panel[hidden]{display:none}
 </style>
 
 <div class="wrap">
@@ -421,7 +435,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-09-30 16:15 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-09-30 17:33 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
     </div>
     <!-- docs/ai-trading.svg 를 빌드 때 인라인한다. 공개 사이트는 index.html 하나만
          복사하므로 외부 파일로 두면 거기서 깨진다. -->
@@ -514,22 +528,27 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     </div>
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">09-30 16:15</span>
+      <span class="v num">09-30 17:33</span>
       <span class="s"><span class="dot live"></span>변곡 돌파 · 15:34 종가 판정 → 16:00 애프터마켓 매수</span>
     </div>
   </div>
 
   <!-- ================= 보유 포지션 ================= -->
-  <section>
+  <nav class="tabs" role="tablist" aria-label="대시보드 탭">
+<button class="tab" role="tab" data-tab="today" aria-selected="false" aria-controls="tab-today">오늘<span class="n">3</span></button>
+<button class="tab" role="tab" data-tab="close" aria-selected="false" aria-controls="tab-close">종가배팅 참고<span class="n">3</span></button>
+<button class="tab" role="tab" data-tab="perf" aria-selected="false" aria-controls="tab-perf">매매 성적<span class="n">1</span></button>
+<button class="tab" role="tab" data-tab="verify" aria-selected="false" aria-controls="tab-verify">검증<span class="n">3</span></button>
+<button class="tab" role="tab" data-tab="system" aria-selected="false" aria-controls="tab-system">감시·시스템<span class="n">3</span></button>
+</nav>
+<div class="tab-panel" id="tab-today" role="tabpanel" hidden>
+<section>
     <div class="sechead"><h2>보유 포지션</h2><span class="rule"></span><span class="note">2026-09-08 매수</span></div>
     <div class="blank" id="poslock">구글 로그인 후 볼 수 있습니다.</div><div id="posbox" hidden></div>
   </section>
-
-
-  <!-- ================= 오늘의 후보 ================= -->
-  <section>
+<section>
     <div class="sechead"><h2>오늘의 후보</h2><span class="rule"></span>
-      <span class="note">판정 기준 <b>2026-09-30 종가</b> · 데이터 추출 2026-09-30 16:15</span></div>
+      <span class="note">판정 기준 <b>2026-09-30 종가</b> · 데이터 추출 2026-09-30 17:33</span></div>
     <div class="callout" style="margin-top:0;margin-bottom:14px"><b>15:34 종가 변곡 판정 — 실매매</b> (2026-09-30 15:43 · 종가 기준 · 2026-09-23 부터 16:00 애프터마켓 매수) 후보 <b>7건</b> — 상위: TCC스틸 (판정가 14,020 · 강도 +22.77%) · 휴스틸 (판정가 4,200 · 강도 +12.00%)<br><span style="color:var(--muted)">아래 표는 종가 확정 후 같은 규칙으로 다시 판정한 것이다. 15:00 스캔은 그 시각의 가격으로 판정하므로 종가와 차이가 나면 결과가 달라질 수 있다.</span></div>
     <div class="sieve">
       <span class="sv"><b class="num">2,226</b><small>스캔</small></span>
@@ -557,9 +576,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
     <details class="fold" style="margin-top:14px"><summary><span class="fold-cap">돌파했지만 탈락한 종목 · 8</span><span class="fold-sub">한 조건만 걸린 종목부터 · 강도 큰 순</span></summary><div class="tbl-wrap"><table><thead><tr><th>종목</th><th style="text-align:right">종가</th><th style="text-align:right">등락</th><th style="text-align:right">돌파강도</th><th style="text-align:right">당일 거래대금</th><th style="text-align:right">정배열</th><th>탈락 사유</th></tr></thead><tbody><tr><td>대주전자재료 <span class="pos-code">078600</span></td><td class="n">94,900</td><td class="n">+5.68%</td><td class="n">+2.93%</td><td class="n">133억</td><td class="n">✗</td><td>돌파강도 +2.93% &lt; 3%</td></tr><tr><td>한화시스템 <span class="pos-code">272210</span></td><td class="n">75,300</td><td class="n">+4.73%</td><td class="n">+2.87%</td><td class="n">463억</td><td class="n">✗</td><td>돌파강도 +2.87% &lt; 3%</td></tr><tr><td>삼성E&amp;A <span class="pos-code">028050</span></td><td class="n">47,800</td><td class="n">+1.38%</td><td class="n">+1.49%</td><td class="n">378억</td><td class="n">✗</td><td>돌파강도 +1.49% &lt; 3%</td></tr><tr><td>대한전선 <span class="pos-code">001440</span></td><td class="n">29,800</td><td class="n">+1.02%</td><td class="n">+1.36%</td><td class="n">603억</td><td class="n">✗</td><td>돌파강도 +1.36% &lt; 3%</td></tr><tr><td>두산퓨얼셀 <span class="pos-code">336260</span></td><td class="n">45,750</td><td class="n">+4.45%</td><td class="n">+1.33%</td><td class="n">298억</td><td class="n">✗</td><td>돌파강도 +1.33% &lt; 3%</td></tr><tr><td>한화솔루션 <span class="pos-code">009830</span></td><td class="n">34,200</td><td class="n">+5.23%</td><td class="n">+1.03%</td><td class="n">1,819억</td><td class="n">✗</td><td>돌파강도 +1.03% &lt; 3%</td></tr><tr><td>엘앤씨바이오 <span class="pos-code">290650</span></td><td class="n">51,900</td><td class="n">+9.73%</td><td class="n">+0.92%</td><td class="n">177억</td><td class="n">✗</td><td>돌파강도 +0.92% &lt; 3%</td></tr><tr><td>삼성증권 <span class="pos-code">016360</span></td><td class="n">88,700</td><td class="n">+0.23%</td><td class="n">+0.80%</td><td class="n">244억</td><td class="n">✗</td><td>돌파강도 +0.80% &lt; 3%</td></tr></tbody></table></div></details>
     <div class="callout">자리가 <b>2개</b>뿐이라 자격을 통과한 <b>8개</b> 중 6개는 사지 않는다. 같은 날 후보가 여럿이면 <b>돌파강도 큰 순</b>으로 산다.<br>종가위치·수급 등 다른 기준도 재봤지만 학습에서 보지 못한 구간에서는 돌파강도와 구별되지 않았다 — <b>순위보다 진입 자격이 성적을 만든다.</b></div>
   </section>
-
-  <!-- ================= 테마 대장주 관측 ================= -->
-  <section>
+<section>
     <div class="sechead"><h2>테마 동반상승 · 대장주 관측</h2><span class="rule"></span>
       <span class="note">09:05~10:00 5분마다 · 구성 4↑ · 상승 80%↑ · 평균 +3%↑ · 최근 5일 · 관측만</span></div>
     <div class="sub"><b>오늘 첫 충족 테마 · 실시간</b> <span class="note">2026-09-30 · 마지막 스냅샷 15:44 · 09:05~10:00 5분마다, 그 뒤 슬롯마다 · 카카오 알림과 같은 내용</span></div>
@@ -593,17 +610,9 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       </table>
     </div>
   </section>
-
-  <!-- ================= 판정 ================= -->
-
-
-
-  <!-- ================= 청산 조합 ================= -->
-
-
-
-  <!-- ================= 종가배팅 ================= -->
-  <section>
+</div>
+<div class="tab-panel" id="tab-close" role="tabpanel" hidden>
+<section>
     <div class="sechead"><h2>종가배팅 점수표</h2><span class="rule"></span>
       <span class="note">A+/A/B 등급 57종목</span></div>
 
@@ -659,9 +668,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       A 이상이 나오지 않는다. <b>이 목록은 참고용이고 자동매매는 하지 않는다.</b>
     </div>
   </section>
-
-  <!-- ================= 종가매수 (정배열 과매도 + onret) — 실매매 ================= -->
-  <section>
+<section>
     <div class="sechead"><h2>종가매수 — 정배열 과매도</h2><span class="rule"></span>
       <span class="note">정배열(20&gt;60&gt;120) · RSI(2)&lt;10 · 100억↑ · onret 순 · 자리 2</span></div>
     <div class="sub"><b>15:34 종가 판정 — 실매매</b> <span class="note">2026-09-30 · 추출 15:43 · 2,239종목</span></div><div class="tbl-wrap">
@@ -770,9 +777,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       장중 판정(09:30~14:00)은 그 시각 가격을 종가로 가정한 것이다. 장중에 과매도까지 밀렸다가 강세로 도는 종목을
       미리 보기 위한 참고 표이고 주문은 내지 않는다.</div>
   </section>
-
-  <!-- ================= onret 순 ================= -->
-  <section>
+<section>
     <div class="sechead"><h2>같은 후보, 야간수익률 순</h2><span class="rule"></span>
       <span class="note">onret · 어제까지 60일 평균 · 참고용, 실매매는 돌파강도 순</span></div>
     <details class="fold">
@@ -795,9 +800,87 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       거래당 +0.21%p 앞섰다. <b>채택은 보류 중</b>이고 이 표는 그 판단을 위한 것이다.</div>
     </details>
   </section>
-
-  <!-- ================= 감시 종목 목록 ================= -->
-  <section>
+</div>
+<div class="tab-panel" id="tab-perf" role="tabpanel" hidden>
+<section>
+    <div class="sechead"><h2>매매 성적</h2><span class="rule"></span><span class="note">실현된 왕복 거래 · 수수료·세금 반영</span></div>
+    <div class="blank" id="statlock">구글 로그인 후 볼 수 있습니다.</div><div id="statbox" hidden></div>
+  </section>
+</div>
+<div class="tab-panel" id="tab-verify" role="tabpanel" hidden>
+<section>
+    <!-- 2026-09-11: 이 판정은 원래 옛 변곡 전략(며칠 보유, +20%/−10% 청산)을 재고
+         있었다. 실매매는 종가 매수 → 익일 시가 매도를 매일 반복하므로 그 복리 누적으로
+         판정해야 맞다(사용자 지적). sim_overnight 로 최근 1년을 다시 쟀다.
+         조합 C = 실매매 조건(돌파강도≥3% · 거래대금 100억↑ · 정배열), 동시 2종목,
+         돌파강도 순, 비용 왕복 0.21%, 슬리피지 0 (실측 체결 괴리 0.000%).
+         재현: python -m scripts.sim_overnight --combo C --max-positions 2 --start 2025-09-11
+         아래 청산 조합 표와 연도별 차트는 옛 전략의 2019~2026 스냅샷이다. -->
+    <div class="sechead"><h2>검증 판정</h2><span class="rule"></span><span class="note">종가 매수 → 익일 시가 매도 · 최근 1년 · 2025-09 ~ 2026-09 · 357건</span></div>
+    <div class="verdict">
+      <blockquote>매일 굴리면 지수를 이긴다. <em>낙폭은 지수의 3분의 1이다.</em></blockquote>
+      <div class="vgrid">
+        <div>
+          <div class="k">누적수익률 (복리)</div>
+          <div class="v num">+123.2%</div>
+          <div class="s">KOSPI 매수 후 보유 +109.2% · 무작위 선택 +71.6%</div>
+        </div>
+        <div>
+          <div class="k">최대낙폭</div>
+          <div class="v num" style="color:var(--up)">−12.2%</div>
+          <div class="s">KOSPI 보유는 −38.6%</div>
+        </div>
+        <div>
+          <div class="k">승률 · 거래수</div>
+          <div class="v num">47.3%</div>
+          <div class="s">357건 · 197거래일 · 동시 2종목</div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section>
+    <div class="sechead"><h2>청산 규칙 27개 조합</h2><span class="rule"></span><span class="note">상위 3 · 하위 1</span></div>
+    <!-- 기본 접힘 (사용자 요청, 2026-09-11). 2019~2026 스냅샷이라 바뀌지 않는다. -->
+    <details class="fold">
+      <summary>
+        <span class="fold-cap">펼쳐서 보기</span>
+        <span class="fold-sub">1위 +20% / −10% · 꼴찌 20일선 / +10% / −5% · 2019~2026 스냅샷</span>
+      </summary>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>이탈선</th><th>익절</th><th>손절</th><th style="text-align:right">거래수</th><th style="text-align:right">승률</th><th style="text-align:right">기대값</th></tr></thead>
+        <tbody>
+          <tr class="best"><td>미사용</td><td class="n">+20%</td><td class="n">−10%</td><td class="n">1,325</td><td class="n">43.8%</td><td class="n">+0.933%</td></tr>
+          <tr><td>40일선</td><td class="n">+20%</td><td class="n">−10%</td><td class="n">1,327</td><td class="n">34.4%</td><td class="n">+0.887%</td></tr>
+          <tr><td>미사용</td><td class="n">+15%</td><td class="n">−10%</td><td class="n">1,325</td><td class="n">46.9%</td><td class="n">+0.773%</td></tr>
+          <tr class="worst"><td>20일선</td><td class="n">+10%</td><td class="n">−5%</td><td class="n">1,328</td><td class="n">30.9%</td><td class="n">−0.107%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin:12px 2px 0; font-size:13px; color:var(--muted)">처음에 임시로 정했던 <span class="num">20일선 / +10% / −5%</span>가 27개 중 꼴찌였다. 매수 타점이 20일선에 붙어 있어, 이탈 청산을 걸면 조금만 흔들려도 잘려나간다. 실제로 20일선 이탈 청산(223건)이 익절(154건)보다 많았다.</p>
+    </details>
+  </section>
+<section>
+    <div class="sechead"><h2>연도별 거래당 기대값</h2><span class="rule"></span><span class="note">거래비용 차감 후</span></div>
+    <div class="card">
+      <!-- 기본 접힘 (사용자 요청, 2026-09-11). 옛 변곡 전략의 2019~2026 스냅샷이라 바뀌지 않는다. -->
+      <details class="fold">
+        <summary>
+          <span class="fold-cap">펼쳐서 보기</span>
+          <span class="fold-sub">8년 중 5년 대조군 우위 · 2022 하락장 +2.26% · 2019~2026 스냅샷</span>
+        </summary>
+      <div class="legend">
+        <span><i class="sw-a"></i>변곡 신호 (돌파강도 3%↑)</span>
+        <span><i class="sw-b"></i>대조군 — 아무 날에나 매수</span>
+      </div>
+      <div class="chart-wrap half"><svg id="c1" viewBox="0 0 900 300" role="img" aria-label="2019년부터 2026년까지 변곡 신호와 대조군의 거래당 기대값 비교 막대그래프"></svg></div>
+      <p style="margin:12px 0 0; font-size:13px; color:var(--muted)">8년 중 5년이 대조군을 앞선다. 246 이평선 매매법이 −2.59%로 무너졌던 <b style="color:var(--ink-2)">2022년 하락장에서 +2.26%</b>로 대조군을 2.62%p 앞선 것이 두 룰의 결정적 차이다.</p>
+      </details>
+    </div>
+  </section>
+</div>
+<div class="tab-panel" id="tab-system" role="tabpanel" hidden>
+<section>
     <div class="sechead"><h2>감시 종목 전체</h2><span class="rule"></span>
       <span class="note">2,226종목 · 오늘 종가 기준</span></div>
     <div class="card">
@@ -845,10 +928,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       </details>
     </div>
   </section>
-
-  <!-- ================= 운영 ================= -->
-  <!-- ================= 퍼널 ================= -->
-  <section>
+<section>
     <div class="sechead"><h2>감시 종목 추출</h2><span class="rule"></span><span class="note">매 실행마다 재계산 · 약 10분</span></div>
     <div class="card">
       <!-- 기본 접힘. 유니버스 필터 단계는 거의 바뀌지 않는 설명이라 매일 펼쳐 볼 것이
@@ -872,7 +952,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       </details>
     </div>
   </section>
-  <section>
+<section>
     <div class="sechead"><h2>AI Control</h2><span class="rule"></span><span class="note">중지 방법 · 위에서부터 강한 순</span></div>
     <div class="ops">
       <div class="op stop">
@@ -892,86 +972,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       </div>
     </div>
   </section>
-
-  <!-- ================= 매매 성적 ================= -->
-  <section>
-    <div class="sechead"><h2>매매 성적</h2><span class="rule"></span><span class="note">실현된 왕복 거래 · 수수료·세금 반영</span></div>
-    <div class="blank" id="statlock">구글 로그인 후 볼 수 있습니다.</div><div id="statbox" hidden></div>
-  </section>
-
-  <section>
-    <!-- 2026-09-11: 이 판정은 원래 옛 변곡 전략(며칠 보유, +20%/−10% 청산)을 재고
-         있었다. 실매매는 종가 매수 → 익일 시가 매도를 매일 반복하므로 그 복리 누적으로
-         판정해야 맞다(사용자 지적). sim_overnight 로 최근 1년을 다시 쟀다.
-         조합 C = 실매매 조건(돌파강도≥3% · 거래대금 100억↑ · 정배열), 동시 2종목,
-         돌파강도 순, 비용 왕복 0.21%, 슬리피지 0 (실측 체결 괴리 0.000%).
-         재현: python -m scripts.sim_overnight --combo C --max-positions 2 --start 2025-09-11
-         아래 청산 조합 표와 연도별 차트는 옛 전략의 2019~2026 스냅샷이다. -->
-    <div class="sechead"><h2>검증 판정</h2><span class="rule"></span><span class="note">종가 매수 → 익일 시가 매도 · 최근 1년 · 2025-09 ~ 2026-09 · 357건</span></div>
-    <div class="verdict">
-      <blockquote>매일 굴리면 지수를 이긴다. <em>낙폭은 지수의 3분의 1이다.</em></blockquote>
-      <div class="vgrid">
-        <div>
-          <div class="k">누적수익률 (복리)</div>
-          <div class="v num">+123.2%</div>
-          <div class="s">KOSPI 매수 후 보유 +109.2% · 무작위 선택 +71.6%</div>
-        </div>
-        <div>
-          <div class="k">최대낙폭</div>
-          <div class="v num" style="color:var(--up)">−12.2%</div>
-          <div class="s">KOSPI 보유는 −38.6%</div>
-        </div>
-        <div>
-          <div class="k">승률 · 거래수</div>
-          <div class="v num">47.3%</div>
-          <div class="s">357건 · 197거래일 · 동시 2종목</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="sechead"><h2>청산 규칙 27개 조합</h2><span class="rule"></span><span class="note">상위 3 · 하위 1</span></div>
-    <!-- 기본 접힘 (사용자 요청, 2026-09-11). 2019~2026 스냅샷이라 바뀌지 않는다. -->
-    <details class="fold">
-      <summary>
-        <span class="fold-cap">펼쳐서 보기</span>
-        <span class="fold-sub">1위 +20% / −10% · 꼴찌 20일선 / +10% / −5% · 2019~2026 스냅샷</span>
-      </summary>
-    <div class="tbl-wrap">
-      <table>
-        <thead><tr><th>이탈선</th><th>익절</th><th>손절</th><th style="text-align:right">거래수</th><th style="text-align:right">승률</th><th style="text-align:right">기대값</th></tr></thead>
-        <tbody>
-          <tr class="best"><td>미사용</td><td class="n">+20%</td><td class="n">−10%</td><td class="n">1,325</td><td class="n">43.8%</td><td class="n">+0.933%</td></tr>
-          <tr><td>40일선</td><td class="n">+20%</td><td class="n">−10%</td><td class="n">1,327</td><td class="n">34.4%</td><td class="n">+0.887%</td></tr>
-          <tr><td>미사용</td><td class="n">+15%</td><td class="n">−10%</td><td class="n">1,325</td><td class="n">46.9%</td><td class="n">+0.773%</td></tr>
-          <tr class="worst"><td>20일선</td><td class="n">+10%</td><td class="n">−5%</td><td class="n">1,328</td><td class="n">30.9%</td><td class="n">−0.107%</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="margin:12px 2px 0; font-size:13px; color:var(--muted)">처음에 임시로 정했던 <span class="num">20일선 / +10% / −5%</span>가 27개 중 꼴찌였다. 매수 타점이 20일선에 붙어 있어, 이탈 청산을 걸면 조금만 흔들려도 잘려나간다. 실제로 20일선 이탈 청산(223건)이 익절(154건)보다 많았다.</p>
-    </details>
-  </section>
-
-  <!-- ================= 차트 1 ================= -->
-  <section>
-    <div class="sechead"><h2>연도별 거래당 기대값</h2><span class="rule"></span><span class="note">거래비용 차감 후</span></div>
-    <div class="card">
-      <!-- 기본 접힘 (사용자 요청, 2026-09-11). 옛 변곡 전략의 2019~2026 스냅샷이라 바뀌지 않는다. -->
-      <details class="fold">
-        <summary>
-          <span class="fold-cap">펼쳐서 보기</span>
-          <span class="fold-sub">8년 중 5년 대조군 우위 · 2022 하락장 +2.26% · 2019~2026 스냅샷</span>
-        </summary>
-      <div class="legend">
-        <span><i class="sw-a"></i>변곡 신호 (돌파강도 3%↑)</span>
-        <span><i class="sw-b"></i>대조군 — 아무 날에나 매수</span>
-      </div>
-      <div class="chart-wrap half"><svg id="c1" viewBox="0 0 900 300" role="img" aria-label="2019년부터 2026년까지 변곡 신호와 대조군의 거래당 기대값 비교 막대그래프"></svg></div>
-      <p style="margin:12px 0 0; font-size:13px; color:var(--muted)">8년 중 5년이 대조군을 앞선다. 246 이평선 매매법이 −2.59%로 무너졌던 <b style="color:var(--ink-2)">2022년 하락장에서 +2.26%</b>로 대조군을 2.62%p 앞선 것이 두 룰의 결정적 차이다.</p>
-      </details>
-    </div>
-  </section>
+</div>
 
   <footer>
     <p><b style="color:var(--ink-2)">검증 판정</b>은 실매매 전략 그대로 — 종가에 사서 다음날 시가에 팔기를 매일 반복 — 를 최근 1년(2025-09-11 ~ 2026-09-07) 일봉으로 복리 누적한 것이다(2026-09-11 갱신). 조건은 돌파강도 3%↑ · 거래대금 100억↑ · 정배열, 동시 2종목, 돌파강도 순. 비용은 왕복 0.21%, 슬리피지는 0으로 뒀다 — 실측 체결가가 종가·시가와 0.000% 차이였다. 상장폐지 종목이 빠져 있어(생존편향) 실제보다 좋게 나온다.</p>
@@ -1298,4 +1299,27 @@ onAuthStateChanged(auth, async function(user){
     fill(null);
   }
 });
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  var panels = Array.prototype.slice.call(document.querySelectorAll(".tab-panel"));
+  if (!tabs.length) return;
+  function pick(id, push){
+    var ok = panels.some(function(p){ return p.id === "tab-" + id; });
+    if (!ok) id = tabs[0].getAttribute("data-tab");
+    tabs.forEach(function(t){ t.setAttribute("aria-selected", t.getAttribute("data-tab") === id ? "true" : "false"); });
+    panels.forEach(function(p){ p.hidden = p.id !== "tab-" + id; });
+    try { localStorage.setItem("dash.tab", id); } catch (e) {}
+    if (push) { try { history.replaceState(null, "", "#tab-" + id); } catch (e) {} }
+  }
+  tabs.forEach(function(t){ t.addEventListener("click", function(){ pick(t.getAttribute("data-tab"), true); window.scrollTo({top:0}); }); });
+  var init = (location.hash || "").replace("#tab-", "");
+  if (!init) { try { init = localStorage.getItem("dash.tab") || ""; } catch (e) {} }
+  pick(init, false);
+  // 같은 페이지 안 앵커 링크(#tab-xxx)로 탭을 열 수 있게
+  window.addEventListener("hashchange", function(){ var h = (location.hash || "").replace("#tab-", ""); if (h) pick(h, false); });
+})();
 </script>
