@@ -419,7 +419,65 @@ td.up{color:var(--up)} td.down{color:var(--down)}
 .tab-panel[hidden]{display:none}
 .strip-1{grid-template-columns:1fr}
 .strip-2{grid-template-columns:repeat(2,1fr)}
-@media (max-width:720px){ .strip-2{grid-template-columns:1fr} }
+/* ---------- 휴대폰 (사용자 요청 2026-09-30 "전체를 반응형으로") ----------
+   원칙: 가로 스크롤은 표(.tbl-wrap) 안에서만. 나머지는 한 열로 쌓거나 2열 격자로.
+   글자는 한 단계씩만 줄인다 — 계기판 느낌은 유지. */
+html{-webkit-text-size-adjust:100%}
+@media (max-width:720px){
+  body{font-size:15.5px}
+  .masthead{gap:16px; padding-bottom:16px; margin-bottom:18px}
+  .masthead p{font-size:14.5px}
+  .stamp{display:block; font-size:12px; line-height:1.7}   /* inline-flex 는 좁으면 '계/좌' 처럼 글자를 세로로 찢는다 */
+  .stamp b{white-space:nowrap}
+  .strip{grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:22px}
+  .strip-1{grid-template-columns:1fr}
+  .chip{padding:12px 13px}
+  .chip .k{font-size:11.5px} .chip .v{font-size:18px} .chip .s{font-size:12.5px}
+  .tabs{margin:0 -16px 20px; padding:8px 16px; gap:6px}
+  .tab{font-size:14px; padding:7px 13px} .tab .n{font-size:11.5px}
+  section{margin-bottom:26px}
+  .sechead{flex-wrap:wrap; gap:4px 10px}
+  .sechead .rule{display:none}
+  .sechead h2{font-size:17px}
+  .sechead .note{font-size:12.5px; width:100%}
+  .card{padding:16px}
+  .pos-name{font-size:19px}
+  .pos-grid{grid-template-columns:repeat(2,1fr); gap:12px 14px; margin:14px 0 18px}
+  .cell .v{font-size:17px}
+  .ladder-foot{flex-direction:column; align-items:flex-start; gap:4px}
+  .verdict{padding:16px}
+  .vgrid{grid-template-columns:repeat(2,1fr)} .vgrid .v{font-size:19px}
+  table{min-width:420px; font-size:13.5px}
+  th,td{padding:7px 9px}
+  th{font-size:11.5px; letter-spacing:.03em}
+  #uniTbl td, #cbTbl td, #cbTblLow td{padding:6px 8px}
+  td.why{min-width:180px; font-size:11px}
+  .fold > summary{flex-wrap:wrap; gap:4px 10px}
+  .fold-cap{font-size:14.5px}
+  .fold-sub{font-size:12px; width:100%; padding-left:18px}
+  .sieve{gap:6px}
+  .sv{padding:7px 10px; min-width:62px} .sv b{font-size:16px} .sv small{font-size:10px}
+  .sv-ar{font-size:13px}
+  .sub{font-size:13px} .sub .note{display:block; margin:2px 0 0}
+  .callout{font-size:13px; padding:12px 13px}
+  .blank{padding:22px 14px}
+  .legend{gap:8px 14px; font-size:13px}
+  .chart-wrap.half, .chart-wrap.half:has(#c1), .chart-wrap.half:has(#c3){max-width:100%}
+  .ops{grid-template-columns:minmax(0,1fr)}
+  .op{min-width:0}
+  .op code{white-space:normal; word-break:break-all}
+  /* 판정 머리글은 데스크톱에서 한 줄 고정(text-wrap:nowrap)인데 좁은 화면에선 넘친다 */
+  .verdict blockquote{text-wrap:wrap; white-space:normal; font-size:17px}
+  .step{grid-template-columns:52px 1fr auto; gap:10px}
+  .finder input{min-width:0; flex:1 1 100%}
+  footer p{font-size:13px}
+}
+@media (max-width:420px){
+  .wrap{padding:20px 14px 56px}
+  .tabs{margin:0 -14px 18px; padding:8px 14px}
+  .strip-2{grid-template-columns:1fr}
+  .chip .v{font-size:17px}
+}
 </style>
 
 <div class="wrap">
@@ -438,7 +496,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-10-01 10:03 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-10-01 10:28 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
     </div>
     <!-- docs/ai-trading.svg 를 빌드 때 인라인한다. 공개 사이트는 index.html 하나만
          복사하므로 외부 파일로 두면 거기서 깨진다. -->
@@ -521,7 +579,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
   <div class="strip strip-1">
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">10-01 10:03</span>
+      <span class="v num">10-01 10:28</span>
       <span class="s"><span class="dot live"></span>변곡 돌파 · 15:34 종가 판정 → 16:00 애프터마켓 매수</span>
     </div>
   </div>
@@ -543,7 +601,7 @@ td.up{color:var(--up)} td.down{color:var(--down)}
   </section>
 <section>
     <div class="sechead"><h2>오늘의 후보</h2><span class="rule"></span>
-      <span class="note">판정 기준 <b>2026-10-01 종가</b> · 데이터 추출 2026-10-01 10:03</span></div>
+      <span class="note">판정 기준 <b>2026-10-01 종가</b> · 데이터 추출 2026-10-01 10:28</span></div>
     
     <div class="sieve">
       <span class="sv"><b class="num">2,228</b><small>스캔</small></span>
