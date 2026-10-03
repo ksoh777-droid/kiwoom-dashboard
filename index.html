@@ -551,7 +551,7 @@ html{-webkit-text-size-adjust:100%}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-10-04 01:34 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-10-04 01:49 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
     </div>
     <!-- docs/ai-trading.svg 를 빌드 때 인라인한다. 공개 사이트는 index.html 하나만
          복사하므로 외부 파일로 두면 거기서 깨진다. -->
@@ -634,7 +634,7 @@ html{-webkit-text-size-adjust:100%}
   <div class="strip strip-1">
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">10-04 01:34</span>
+      <span class="v num">10-04 01:49</span>
       <span class="s"><span class="dot live"></span>변곡 돌파 · 15:34 종가 판정 → 16:00 애프터마켓 매수</span>
     </div>
   </div>
@@ -653,7 +653,7 @@ html{-webkit-text-size-adjust:100%}
 <div class="tab-panel" id="tab-today" role="tabpanel" hidden>
 <section>
     <div class="sechead"><h2>오늘의 후보</h2><span class="rule"></span>
-      <span class="note">판정 기준 <b>2026-10-02 종가</b> · 데이터 추출 2026-10-04 01:34</span></div>
+      <span class="note">판정 기준 <b>2026-10-02 종가</b> · 데이터 추출 2026-10-04 01:49</span></div>
     <div class="callout" style="margin-top:0;margin-bottom:14px"><b>15:34 종가 변곡 판정 — 실매매</b> (2026-10-02 15:48 · 종가 기준 · 2026-09-23 부터 16:00 애프터마켓 매수) 후보 <b>14건</b> — 상위: LK삼양 (판정가 5,010 · 강도 +22.05%) · 한국파마 (판정가 8,720 · 강도 +10.80%)<br><span style="color:var(--muted)">아래 표는 종가 확정 후 같은 규칙으로 다시 판정한 것이다. 15:00 스캔은 그 시각의 가격으로 판정하므로 종가와 차이가 나면 결과가 달라질 수 있다.</span></div>
     <div class="sieve">
       <span class="sv"><b class="num">2,227</b><small>스캔</small></span>
@@ -1096,20 +1096,39 @@ html{-webkit-text-size-adjust:100%}
 <div class="tab-panel" id="tab-minervini" role="tabpanel" hidden>
 <section>
     <div class="sechead"><h2>마크 미너비니 VCP</h2><span class="rule"></span>
-      <span class="note">2026-10-02 종가 · 추세 템플릿 통과 291종목 · 오늘 돌파 0 · 돌파 임박 2 · 참고용, 주문 없음</span></div>
+      <span class="note">2026-10-02 종가 · 추세 템플릿 통과 291종목 · 오늘 돌파 0 · 돌파 임박 2 · 확장 0 · 참고용, 주문 없음</span></div>
     <div class="callout" style="margin-top:0;margin-bottom:14px">
       <b>추세</b> 종가 &gt; 150일선 &gt; 200일선, 200일선 상승 · <b>유동성</b> 20일 평균 거래대금 30억↑ ·
       <b>VCP</b> 최근 130일 고점 이후 수축 2회↑, 첫 수축 8~50%, 점점 작아져 마지막 15% 이하, 오른쪽 고점이 베이스 고점의 85%↑ ·
       <b>돌파</b> 종가 &gt; 피벗(마지막 수축의 고점) · 양봉 · 종가위치 0.5↑ · 거래량 50일 평균의 1.4배↑.<br>
-      <b>손절</b> 마지막 수축 저점 · <b>1차 익절</b> 손익비 1:2 에서 절반, 손절을 본전으로 · <b>2차</b> 종가가 20일선 아래로 마감하면 정리.
+      <b>운용</b> 아래 표의 표준(1:2 절반 + 20일선) 또는 단기(1:2 전량 + 10거래일) 중 선택.
       별점 = 수축 3회↑ · 마지막 수축 8%↓ · 거래량 마름 · 첫 수축 30%↓ · 거래량 2배↑(돌파)/피벗 2% 이내(임박).</div>
+    
+    <div class="tbl-wrap" style="margin:4px 0 14px"><table><thead><tr><th>운용</th><th>청산 규칙</th><th style="text-align:right">거래당</th>
+      <th style="text-align:right">평균 보유</th><th style="text-align:right">하루당</th><th style="text-align:right">승률</th></tr></thead><tbody>
+      <tr><td><b>표준</b></td><td>손절 마지막 수축 저점 · 익절가(1:2)에서 절반, 손절을 본전으로 · 나머지는 종가 20일선 이탈</td>
+        <td class="n"><span class="up">+2.06%</span></td><td class="n">14.3일</td><td class="n"><span class="up">+0.14%</span></td><td class="n">38%</td></tr>
+      <tr><td><b>단기</b></td><td>손절 마지막 수축 저점 · 익절가(1:2)에서 전량 · 10거래일 지나면 종가 청산</td>
+        <td class="n"><span class="up">+0.94%</span></td><td class="n">7.4일</td><td class="n"><span class="up">+0.13%</span></td><td class="n">46%</td></tr>
+    </tbody></table></div>
+    <div class="mv-note" style="margin:-8px 0 14px">최근 3년 정통 목록 기준(극단 제외 평균, 비용 0.21%). 단기는 보유가 절반으로 줄고 승률이 오르지만 하루당 수익은 표준의 89%.
+      10일선 청산·1R 절반 익절은 둘 다 표준·단기보다 나빴다 (scripts/research_vcp.py).</div>
     <div class="sub"><b>B군 · 오늘 돌파</b> <span class="note">전고점 돌파 + 거래량 증가 + 양봉</span></div>
     <div class="blank">오늘 VCP 를 거래량과 함께 돌파한 종목은 없습니다.</div>
     <div class="sub" style="margin-top:16px"><b>A군 · 돌파 임박</b> <span class="note">VCP 완성 · 피벗 아래 5% 이내 · 피벗 돌파 때 진입 기준</span></div>
     <div class="tbl-wrap"><table><thead><tr><th>별점</th><th>종목</th><th style="text-align:right">종가</th>
           <th style="text-align:right">등락</th><th style="text-align:right">피벗(돌파 가격)</th><th style="text-align:right">피벗까지</th>
           <th style="text-align:right">수축</th><th style="text-align:right">거래량 마름</th><th style="text-align:right">손절</th>
-          <th style="text-align:right">1차 익절(1:2)</th></tr></thead><tbody><tr><td><span class="mv-star">★★★★<span class="muted">★</span></span></td><td>iM금융지주 <span class="pos-code">139130</span></td><td class="n">18,640</td><td class="n"><span class="up">+1.41%</span></td><td class="n">18,920</td><td class="n">+1.5%</td><td class="n mv-depth">23→9.6→4.6%</td><td class="n">0.76</td><td class="n">18,050 <span class="note">−4.6%</span></td><td class="n">20,660</td></tr><tr><td><span class="mv-star">★★★★<span class="muted">★</span></span></td><td>KT&amp;G <span class="pos-code">033780</span></td><td class="n">176,900</td><td class="n"><span class="up">+1.26%</span></td><td class="n">179,700</td><td class="n">+1.6%</td><td class="n mv-depth">14.8→12.7→3.2%</td><td class="n">0.74</td><td class="n">174,000 <span class="note">−3.2%</span></td><td class="n">191,100</td></tr></tbody></table></div>
+          <th style="text-align:right">익절(1:2)</th></tr></thead><tbody><tr><td><span class="mv-star">★★★★<span class="muted">★</span></span></td><td>iM금융지주 <span class="pos-code">139130</span></td><td class="n">18,640</td><td class="n"><span class="up">+1.41%</span></td><td class="n">18,920</td><td class="n">+1.5%</td><td class="n mv-depth">23→9.6→4.6%</td><td class="n">0.76</td><td class="n">18,050 <span class="note">−4.6%</span></td><td class="n">20,660</td></tr><tr><td><span class="mv-star">★★★★<span class="muted">★</span></span></td><td>KT&amp;G <span class="pos-code">033780</span></td><td class="n">176,900</td><td class="n"><span class="up">+1.26%</span></td><td class="n">179,700</td><td class="n">+1.6%</td><td class="n mv-depth">14.8→12.7→3.2%</td><td class="n">0.74</td><td class="n">174,000 <span class="note">−3.2%</span></td><td class="n">191,100</td></tr></tbody></table></div>
+    
+    <details class="fold" style="margin-top:16px">
+      <summary><span class="fold-cap">확장 목록 · 20일 평균 거래대금 10~30억</span>
+        <span class="fold-sub">돌파 0 · 임박 0 · 정통 목록보다 근거가 약함</span></summary>
+      <div class="mv-note" style="margin:0 0 8px">대상을 늘리려고 유동성 기준만 30억 → 10억으로 낮춘 목록. 최근 3년 검증에서 신호는 41% 늘지만,
+        새로 들어오는 종목은 최근 1년 단순 돌파 대조군보다 +0.27%p(표준)·+0.05%p(단기) 앞서는 데 그쳤다. 비중을 줄여 참고로만.</div>
+      <div class="sub"><b>오늘 돌파</b></div><div class="blank">확장 목록에서 오늘 돌파한 종목은 없습니다.</div>
+      <div class="sub" style="margin-top:10px"><b>돌파 임박</b></div><div class="blank">확장 목록에서 돌파 임박 종목은 없습니다.</div>
+    </details>
     
     <details class="fold" style="margin-top:14px">
       <summary><span class="fold-cap">검증 (최근 3년 · B군 돌파 매매)</span>
