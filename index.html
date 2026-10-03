@@ -330,6 +330,19 @@ footer p{margin:0 0 5px}
 .sv.on b{color:var(--accent)}
 .sv-ar{color:var(--line-2); font-size:15px}
 td .st{color:var(--up); font-weight:500}
+/* 오늘의 유망 테마 (2026-10-03) */
+.tb-list{display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:12px}
+.tb-card{background:var(--surface); border:1px solid var(--line); border-radius:3px; padding:14px 16px}
+.tb-head{display:flex; align-items:center; flex-wrap:wrap; gap:8px; font-size:15.5px; margin-bottom:4px}
+.tb-flu{margin-left:auto; font-family:var(--mono); font-size:15px}
+.tb-up{color:var(--up); font-size:12px; font-weight:600} .tb-dn{color:var(--down); font-size:12px; font-weight:600}
+.tb-card .tbl-wrap{overflow-x:visible}
+.tb-tbl{min-width:0 !important; width:100%}
+.tb-tbl td,.tb-tbl th{padding:6px 6px; font-size:13px; white-space:nowrap}
+.tb-tbl td:first-child{white-space:normal}
+.tb-note{font-size:12px; color:var(--muted); line-height:1.6}
+.tb-card .note{font-size:12px; color:var(--muted); margin:0}
+@media (max-width:420px){.tb-list{grid-template-columns:1fr}}
 /* 후보 자동 분석 (2026-10-03) */
 .pill.vgood{background:rgba(34,197,94,.16); color:#4ADE80; border:1px solid rgba(34,197,94,.5); margin-left:6px}
 .pill.vmid{background:var(--surface-2); color:var(--ink-2); border:1px solid var(--line); margin-left:6px}
@@ -520,7 +533,7 @@ html{-webkit-text-size-adjust:100%}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-10-03 18:04 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-10-03 18:15 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
     </div>
     <!-- docs/ai-trading.svg 를 빌드 때 인라인한다. 공개 사이트는 index.html 하나만
          복사하므로 외부 파일로 두면 거기서 깨진다. -->
@@ -603,7 +616,7 @@ html{-webkit-text-size-adjust:100%}
   <div class="strip strip-1">
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">10-03 18:04</span>
+      <span class="v num">10-03 18:15</span>
       <span class="s"><span class="dot live"></span>변곡 돌파 · 15:34 종가 판정 → 16:00 애프터마켓 매수</span>
     </div>
   </div>
@@ -621,7 +634,7 @@ html{-webkit-text-size-adjust:100%}
 <div class="tab-panel" id="tab-today" role="tabpanel" hidden>
 <section>
     <div class="sechead"><h2>오늘의 후보</h2><span class="rule"></span>
-      <span class="note">판정 기준 <b>2026-10-02 종가</b> · 데이터 추출 2026-10-03 18:04</span></div>
+      <span class="note">판정 기준 <b>2026-10-02 종가</b> · 데이터 추출 2026-10-03 18:15</span></div>
     <div class="callout" style="margin-top:0;margin-bottom:14px"><b>15:34 종가 변곡 판정 — 실매매</b> (2026-10-02 15:48 · 종가 기준 · 2026-09-23 부터 16:00 애프터마켓 매수) 후보 <b>14건</b> — 상위: LK삼양 (판정가 5,010 · 강도 +22.05%) · 한국파마 (판정가 8,720 · 강도 +10.80%)<br><span style="color:var(--muted)">아래 표는 종가 확정 후 같은 규칙으로 다시 판정한 것이다. 15:00 스캔은 그 시각의 가격으로 판정하므로 종가와 차이가 나면 결과가 달라질 수 있다.</span></div>
     <div class="sieve">
       <span class="sv"><b class="num">2,227</b><small>스캔</small></span>
