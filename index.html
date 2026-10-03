@@ -542,7 +542,7 @@ html{-webkit-text-size-adjust:100%}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-10-03 22:40 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-10-03 22:53 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
     </div>
     <!-- docs/ai-trading.svg 를 빌드 때 인라인한다. 공개 사이트는 index.html 하나만
          복사하므로 외부 파일로 두면 거기서 깨진다. -->
@@ -625,7 +625,7 @@ html{-webkit-text-size-adjust:100%}
   <div class="strip strip-1">
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">10-03 22:40</span>
+      <span class="v num">10-03 22:53</span>
       <span class="s"><span class="dot live"></span>변곡 돌파 · 15:34 종가 판정 → 16:00 애프터마켓 매수</span>
     </div>
   </div>
@@ -639,13 +639,12 @@ html{-webkit-text-size-adjust:100%}
 <button class="tab" role="tab" data-tab="minervini" aria-selected="false" aria-controls="tab-minervini">마크미너비니<span class="n">1</span></button>
 <button class="tab" role="tab" data-tab="edward" aria-selected="false" aria-controls="tab-edward">에드워드 지표<span class="n">1</span></button>
 <button class="tab" role="tab" data-tab="perf" aria-selected="false" aria-controls="tab-perf">매매현황<span class="n">2</span></button>
-<button class="tab" role="tab" data-tab="verify" aria-selected="false" aria-controls="tab-verify">검증<span class="n">3</span></button>
-<button class="tab" role="tab" data-tab="system" aria-selected="false" aria-controls="tab-system">감시·시스템<span class="n">3</span></button>
+<button class="tab" role="tab" data-tab="system" aria-selected="false" aria-controls="tab-system">감시·시스템<span class="n">6</span></button>
 </nav>
 <div class="tab-panel" id="tab-today" role="tabpanel" hidden>
 <section>
     <div class="sechead"><h2>오늘의 후보</h2><span class="rule"></span>
-      <span class="note">판정 기준 <b>2026-10-02 종가</b> · 데이터 추출 2026-10-03 22:40</span></div>
+      <span class="note">판정 기준 <b>2026-10-02 종가</b> · 데이터 추출 2026-10-03 22:53</span></div>
     <div class="callout" style="margin-top:0;margin-bottom:14px"><b>15:34 종가 변곡 판정 — 실매매</b> (2026-10-02 15:48 · 종가 기준 · 2026-09-23 부터 16:00 애프터마켓 매수) 후보 <b>14건</b> — 상위: LK삼양 (판정가 5,010 · 강도 +22.05%) · 한국파마 (판정가 8,720 · 강도 +10.80%)<br><span style="color:var(--muted)">아래 표는 종가 확정 후 같은 규칙으로 다시 판정한 것이다. 15:00 스캔은 그 시각의 가격으로 판정하므로 종가와 차이가 나면 결과가 달라질 수 있다.</span></div>
     <div class="sieve">
       <span class="sv"><b class="num">2,227</b><small>스캔</small></span>
@@ -1165,78 +1164,6 @@ html{-webkit-text-size-adjust:100%}
   </div><div class="blank" id="statlock">구글 로그인 후 볼 수 있습니다.</div><div id="statbox" hidden></div>
   </section>
 </div>
-<div class="tab-panel" id="tab-verify" role="tabpanel" hidden>
-<section>
-    <!-- 2026-09-11: 이 판정은 원래 옛 변곡 전략(며칠 보유, +20%/−10% 청산)을 재고
-         있었다. 실매매는 종가 매수 → 익일 시가 매도를 매일 반복하므로 그 복리 누적으로
-         판정해야 맞다(사용자 지적). sim_overnight 로 최근 1년을 다시 쟀다.
-         조합 C = 실매매 조건(돌파강도≥3% · 거래대금 100억↑ · 정배열), 동시 2종목,
-         돌파강도 순, 비용 왕복 0.21%, 슬리피지 0 (실측 체결 괴리 0.000%).
-         재현: python -m scripts.sim_overnight --combo C --max-positions 2 --start 2025-09-11
-         아래 청산 조합 표와 연도별 차트는 옛 전략의 2019~2026 스냅샷이다. -->
-    <div class="sechead"><h2>검증 판정</h2><span class="rule"></span><span class="note">종가 매수 → 익일 시가 매도 · 최근 1년 · 2025-09 ~ 2026-09 · 357건</span></div>
-    <div class="verdict">
-      <blockquote>매일 굴리면 지수를 이긴다. <em>낙폭은 지수의 3분의 1이다.</em></blockquote>
-      <div class="vgrid">
-        <div>
-          <div class="k">누적수익률 (복리)</div>
-          <div class="v num">+123.2%</div>
-          <div class="s">KOSPI 매수 후 보유 +109.2% · 무작위 선택 +71.6%</div>
-        </div>
-        <div>
-          <div class="k">최대낙폭</div>
-          <div class="v num" style="color:var(--up)">−12.2%</div>
-          <div class="s">KOSPI 보유는 −38.6%</div>
-        </div>
-        <div>
-          <div class="k">승률 · 거래수</div>
-          <div class="v num">47.3%</div>
-          <div class="s">357건 · 197거래일 · 동시 2종목</div>
-        </div>
-      </div>
-    </div>
-  </section>
-<section>
-    <div class="sechead"><h2>청산 규칙 27개 조합</h2><span class="rule"></span><span class="note">상위 3 · 하위 1</span></div>
-    <!-- 기본 접힘 (사용자 요청, 2026-09-11). 2019~2026 스냅샷이라 바뀌지 않는다. -->
-    <details class="fold">
-      <summary>
-        <span class="fold-cap">펼쳐서 보기</span>
-        <span class="fold-sub">1위 +20% / −10% · 꼴찌 20일선 / +10% / −5% · 2019~2026 스냅샷</span>
-      </summary>
-    <div class="tbl-wrap">
-      <table>
-        <thead><tr><th>이탈선</th><th>익절</th><th>손절</th><th style="text-align:right">거래수</th><th style="text-align:right">승률</th><th style="text-align:right">기대값</th></tr></thead>
-        <tbody>
-          <tr class="best"><td>미사용</td><td class="n">+20%</td><td class="n">−10%</td><td class="n">1,325</td><td class="n">43.8%</td><td class="n">+0.933%</td></tr>
-          <tr><td>40일선</td><td class="n">+20%</td><td class="n">−10%</td><td class="n">1,327</td><td class="n">34.4%</td><td class="n">+0.887%</td></tr>
-          <tr><td>미사용</td><td class="n">+15%</td><td class="n">−10%</td><td class="n">1,325</td><td class="n">46.9%</td><td class="n">+0.773%</td></tr>
-          <tr class="worst"><td>20일선</td><td class="n">+10%</td><td class="n">−5%</td><td class="n">1,328</td><td class="n">30.9%</td><td class="n">−0.107%</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="margin:12px 2px 0; font-size:13px; color:var(--muted)">처음에 임시로 정했던 <span class="num">20일선 / +10% / −5%</span>가 27개 중 꼴찌였다. 매수 타점이 20일선에 붙어 있어, 이탈 청산을 걸면 조금만 흔들려도 잘려나간다. 실제로 20일선 이탈 청산(223건)이 익절(154건)보다 많았다.</p>
-    </details>
-  </section>
-<section>
-    <div class="sechead"><h2>연도별 거래당 기대값</h2><span class="rule"></span><span class="note">거래비용 차감 후</span></div>
-    <div class="card">
-      <!-- 기본 접힘 (사용자 요청, 2026-09-11). 옛 변곡 전략의 2019~2026 스냅샷이라 바뀌지 않는다. -->
-      <details class="fold">
-        <summary>
-          <span class="fold-cap">펼쳐서 보기</span>
-          <span class="fold-sub">8년 중 5년 대조군 우위 · 2022 하락장 +2.26% · 2019~2026 스냅샷</span>
-        </summary>
-      <div class="legend">
-        <span><i class="sw-a"></i>변곡 신호 (돌파강도 3%↑)</span>
-        <span><i class="sw-b"></i>대조군 — 아무 날에나 매수</span>
-      </div>
-      <div class="chart-wrap half"><svg id="c1" viewBox="0 0 900 300" role="img" aria-label="2019년부터 2026년까지 변곡 신호와 대조군의 거래당 기대값 비교 막대그래프"></svg></div>
-      <p style="margin:12px 0 0; font-size:13px; color:var(--muted)">8년 중 5년이 대조군을 앞선다. 246 이평선 매매법이 −2.59%로 무너졌던 <b style="color:var(--ink-2)">2022년 하락장에서 +2.26%</b>로 대조군을 2.62%p 앞선 것이 두 룰의 결정적 차이다.</p>
-      </details>
-    </div>
-  </section>
-</div>
 <div class="tab-panel" id="tab-system" role="tabpanel" hidden>
 <section>
     <div class="sechead"><h2>감시 종목 전체</h2><span class="rule"></span>
@@ -1328,6 +1255,76 @@ html{-webkit-text-size-adjust:100%}
         <p>신호는 그대로 기록하되 주문은 내지 않는다.</p>
         <code>config.yaml → dry_run: true</code>
       </div>
+    </div>
+  </section>
+<section>
+    <!-- 2026-09-11: 이 판정은 원래 옛 변곡 전략(며칠 보유, +20%/−10% 청산)을 재고
+         있었다. 실매매는 종가 매수 → 익일 시가 매도를 매일 반복하므로 그 복리 누적으로
+         판정해야 맞다(사용자 지적). sim_overnight 로 최근 1년을 다시 쟀다.
+         조합 C = 실매매 조건(돌파강도≥3% · 거래대금 100억↑ · 정배열), 동시 2종목,
+         돌파강도 순, 비용 왕복 0.21%, 슬리피지 0 (실측 체결 괴리 0.000%).
+         재현: python -m scripts.sim_overnight --combo C --max-positions 2 --start 2025-09-11
+         아래 청산 조합 표와 연도별 차트는 옛 전략의 2019~2026 스냅샷이다. -->
+    <div class="sechead"><h2>검증 판정</h2><span class="rule"></span><span class="note">종가 매수 → 익일 시가 매도 · 최근 1년 · 2025-09 ~ 2026-09 · 357건</span></div>
+    <div class="verdict">
+      <blockquote>매일 굴리면 지수를 이긴다. <em>낙폭은 지수의 3분의 1이다.</em></blockquote>
+      <div class="vgrid">
+        <div>
+          <div class="k">누적수익률 (복리)</div>
+          <div class="v num">+123.2%</div>
+          <div class="s">KOSPI 매수 후 보유 +109.2% · 무작위 선택 +71.6%</div>
+        </div>
+        <div>
+          <div class="k">최대낙폭</div>
+          <div class="v num" style="color:var(--up)">−12.2%</div>
+          <div class="s">KOSPI 보유는 −38.6%</div>
+        </div>
+        <div>
+          <div class="k">승률 · 거래수</div>
+          <div class="v num">47.3%</div>
+          <div class="s">357건 · 197거래일 · 동시 2종목</div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section>
+    <div class="sechead"><h2>청산 규칙 27개 조합</h2><span class="rule"></span><span class="note">상위 3 · 하위 1</span></div>
+    <!-- 기본 접힘 (사용자 요청, 2026-09-11). 2019~2026 스냅샷이라 바뀌지 않는다. -->
+    <details class="fold">
+      <summary>
+        <span class="fold-cap">펼쳐서 보기</span>
+        <span class="fold-sub">1위 +20% / −10% · 꼴찌 20일선 / +10% / −5% · 2019~2026 스냅샷</span>
+      </summary>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>이탈선</th><th>익절</th><th>손절</th><th style="text-align:right">거래수</th><th style="text-align:right">승률</th><th style="text-align:right">기대값</th></tr></thead>
+        <tbody>
+          <tr class="best"><td>미사용</td><td class="n">+20%</td><td class="n">−10%</td><td class="n">1,325</td><td class="n">43.8%</td><td class="n">+0.933%</td></tr>
+          <tr><td>40일선</td><td class="n">+20%</td><td class="n">−10%</td><td class="n">1,327</td><td class="n">34.4%</td><td class="n">+0.887%</td></tr>
+          <tr><td>미사용</td><td class="n">+15%</td><td class="n">−10%</td><td class="n">1,325</td><td class="n">46.9%</td><td class="n">+0.773%</td></tr>
+          <tr class="worst"><td>20일선</td><td class="n">+10%</td><td class="n">−5%</td><td class="n">1,328</td><td class="n">30.9%</td><td class="n">−0.107%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin:12px 2px 0; font-size:13px; color:var(--muted)">처음에 임시로 정했던 <span class="num">20일선 / +10% / −5%</span>가 27개 중 꼴찌였다. 매수 타점이 20일선에 붙어 있어, 이탈 청산을 걸면 조금만 흔들려도 잘려나간다. 실제로 20일선 이탈 청산(223건)이 익절(154건)보다 많았다.</p>
+    </details>
+  </section>
+<section>
+    <div class="sechead"><h2>연도별 거래당 기대값</h2><span class="rule"></span><span class="note">거래비용 차감 후</span></div>
+    <div class="card">
+      <!-- 기본 접힘 (사용자 요청, 2026-09-11). 옛 변곡 전략의 2019~2026 스냅샷이라 바뀌지 않는다. -->
+      <details class="fold">
+        <summary>
+          <span class="fold-cap">펼쳐서 보기</span>
+          <span class="fold-sub">8년 중 5년 대조군 우위 · 2022 하락장 +2.26% · 2019~2026 스냅샷</span>
+        </summary>
+      <div class="legend">
+        <span><i class="sw-a"></i>변곡 신호 (돌파강도 3%↑)</span>
+        <span><i class="sw-b"></i>대조군 — 아무 날에나 매수</span>
+      </div>
+      <div class="chart-wrap half"><svg id="c1" viewBox="0 0 900 300" role="img" aria-label="2019년부터 2026년까지 변곡 신호와 대조군의 거래당 기대값 비교 막대그래프"></svg></div>
+      <p style="margin:12px 0 0; font-size:13px; color:var(--muted)">8년 중 5년이 대조군을 앞선다. 246 이평선 매매법이 −2.59%로 무너졌던 <b style="color:var(--ink-2)">2022년 하락장에서 +2.26%</b>로 대조군을 2.62%p 앞선 것이 두 룰의 결정적 차이다.</p>
+      </details>
     </div>
   </section>
 </div>
