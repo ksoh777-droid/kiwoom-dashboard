@@ -548,7 +548,7 @@ html{-webkit-text-size-adjust:100%}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-10-05 23:07 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-10-05 23:29 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
     </div>
     <!-- docs/ai-trading.svg 를 빌드 때 인라인한다. 공개 사이트는 index.html 하나만
          복사하므로 외부 파일로 두면 거기서 깨진다. -->
@@ -631,7 +631,7 @@ html{-webkit-text-size-adjust:100%}
   <div class="strip strip-1">
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">10-05 23:07</span>
+      <span class="v num">10-05 23:29</span>
       <span class="s"><span class="dot live"></span>변곡 돌파 · 15:34 종가 판정 → 16:00 애프터마켓 매수</span>
     </div>
   </div>
@@ -644,13 +644,14 @@ html{-webkit-text-size-adjust:100%}
 <button class="tab" role="tab" data-tab="minervini" aria-selected="false" aria-controls="tab-minervini">마크미너비니<span class="n">1</span></button>
 <button class="tab" role="tab" data-tab="volbreak" aria-selected="false" aria-controls="tab-volbreak">변동성돌파<span class="n">1</span></button>
 <button class="tab" role="tab" data-tab="mr" aria-selected="false" aria-controls="tab-mr">과매도<span class="n">1</span></button>
+<button class="tab" role="tab" data-tab="bottomvol" aria-selected="false" aria-controls="tab-bottomvol">바닥거래량<span class="n">1</span></button>
 <button class="tab" role="tab" data-tab="system" aria-selected="false" aria-controls="tab-system">감시·시스템<span class="n">7</span></button>
 <button class="tab" role="tab" data-tab="perf" aria-selected="false" aria-controls="tab-perf">매매현황<span class="n">2</span></button>
 </nav>
 <div class="tab-panel" id="tab-today" role="tabpanel" hidden>
 <section>
     <div class="sechead"><h2>오늘의 후보</h2><span class="rule"></span>
-      <span class="note">판정 기준 <b>2026-10-05 종가</b> · 데이터 추출 2026-10-05 23:07</span></div>
+      <span class="note">판정 기준 <b>2026-10-05 종가</b> · 데이터 추출 2026-10-05 23:29</span></div>
     
     <div class="sieve">
       <span class="sv"><b class="num">2,227</b><small>스캔</small></span>
@@ -1193,6 +1194,26 @@ html{-webkit-text-size-adjust:100%}
       (자리 2 · 익일 시가 · +28.1% / +26.0%). 2019~2025 는 대부분 마이너스였던 2026년 환경 전용이다.<br>
       장중 판정(09:30~14:00)은 그 시각 가격을 종가로 가정한 것이다. 장중에 과매도까지 밀렸다가 강세로 도는 종목을
       미리 보기 위한 참고 표이고 주문은 내지 않는다.</div>
+  </section>
+</div>
+<div class="tab-panel" id="tab-bottomvol" role="tabpanel" hidden>
+<section>
+    <div class="sechead"><h2>급락 뒤 거래량 바닥</h2><span class="rule"></span>
+      <span class="note"> 종가 · 오늘 0건 · 기록 11건 · 참고용, 주문 없음 — 매수는 직접 판단</span></div>
+    <div class="callout" style="margin-top:0;margin-bottom:12px">
+      <b>조건</b> 직전 20일 수익률 ≤ -15% (급락 뒤) · 거래량 ≥ 20일 평균 × 1.5 · 일중폭 ≤ 20일 평균 × 0.7
+      · |등락| &lt; 2% · 거래대금 50억↑ — 도마이어 '거래량으로 투자하라' 의 "팔 사람이 다 팔린 바닥: 주가는 안 움직이는데 거래량이 는다".<br>
+      <b>검증 (일봉 3년, 2026-10-05)</b> 종가 매수 → 5일 뒤 +3.53 / +3.18% (앞 2년 / 최근 1년, 승률 77 / 60%) · 10일 +2.25 / +7.35% · 같은 급락 종목 전체 5일 +0.24 / −0.63% (급락 종목 전체).
+      표본 n=30 / 30 로 작아 여기서 건을 모아 다시 본다. 매일 종가 판정 뒤 검색하고 해당 건이 있으면 카톡으로 알린다.</div>
+    <div class="sub"><b>오늘 해당</b></div>
+    <div class="blank"> 종가 기준 해당 종목이 없습니다.</div>
+    <details class="fold" style="margin-top:14px" open>
+      <summary><span class="fold-cap">기록 · 결과</span><span class="fold-sub">1일 11건 <span class="up">+0.52%</span> (중앙 <span class="up">+1.24%</span>, 승 54%) · 5일 10건 <span class="up">+4.64%</span> (중앙 <span class="down">-1.90%</span>, 승 40%) · 10일 9건 <span class="down">-3.43%</span> (중앙 <span class="down">-3.84%</span>, 승 22%) · 비용 0.21% 차감, 종가 기준</span></summary>
+      <div class="tbl-wrap"><table><thead><tr><th>해당일</th><th>종목</th><th style="text-align:right">종가</th><th style="text-align:right">등락</th>
+      <th style="text-align:right">직전 20일</th><th style="text-align:right">거래량/20일</th><th style="text-align:right">일중폭/20일</th>
+      <th style="text-align:right">거래대금</th><th style="text-align:right">시총</th><th style="text-align:right">1일</th>
+      <th style="text-align:right">5일</th><th style="text-align:right">10일</th><th style="text-align:right">5일 최고</th><th style="text-align:right">5일 최저</th></tr></thead><tbody><tr><td>2026-10-01</td><td>효성티앤씨 <span class="pos-code">298020</span></td><td class="n">274,500</td><td class="n"><span class="down">-1.61%</span></td><td class="n"><span class="down">-21.5%</span></td><td class="n">1.8배</td><td class="n">0.67배</td><td class="n">68억</td><td class="n">11,879억</td><td class="n"><span class="down">-0.57%</span></td><td class="n"><span class="muted">—</span></td><td class="n"><span class="muted">—</span></td><td class="n"><span class="muted">—</span></td><td class="n"><span class="muted">—</span></td></tr><tr><td>2026-09-18</td><td>코리아써키트 <span class="pos-code">007810</span></td><td class="n">52,500</td><td class="n"><span class="up">+1.16%</span></td><td class="n"><span class="down">-15.7%</span></td><td class="n">2.1배</td><td class="n">0.59배</td><td class="n">254억</td><td class="n">12,591억</td><td class="n"><span class="down">-0.59%</span></td><td class="n"><span class="up">+40.93%</span></td><td class="n"><span class="muted">—</span></td><td class="n"><span class="up">+42.29%</span></td><td class="n"><span class="down">-2.29%</span></td></tr><tr><td>2026-09-10</td><td>NC <span class="pos-code">036570</span></td><td class="n">209,500</td><td class="n"><span class="down">-0.48%</span></td><td class="n"><span class="down">-17.6%</span></td><td class="n">2.7배</td><td class="n">0.64배</td><td class="n">422억</td><td class="n">45,135억</td><td class="n"><span class="down">-2.12%</span></td><td class="n"><span class="down">-2.60%</span></td><td class="n"><span class="up">+2.89%</span></td><td class="n"><span class="up">+0.48%</span></td><td class="n"><span class="down">-4.58%</span></td></tr><tr><td>2026-08-27</td><td>클래시스 <span class="pos-code">214150</span></td><td class="n">32,300</td><td class="n"><span class="up">+1.41%</span></td><td class="n"><span class="down">-26.3%</span></td><td class="n">1.8배</td><td class="n">0.47배</td><td class="n">206억</td><td class="n">21,071억</td><td class="n"><span class="up">+2.73%</span></td><td class="n"><span class="down">-2.07%</span></td><td class="n"><span class="down">-4.23%</span></td><td class="n"><span class="up">+6.66%</span></td><td class="n"><span class="down">-2.48%</span></td></tr><tr><td>2026-08-20</td><td>클래시스 <span class="pos-code">214150</span></td><td class="n">33,600</td><td class="n"><span class="up">+0.60%</span></td><td class="n"><span class="down">-23.7%</span></td><td class="n">1.6배</td><td class="n">0.44배</td><td class="n">175억</td><td class="n">21,919억</td><td class="n"><span class="down">-4.53%</span></td><td class="n"><span class="down">-4.08%</span></td><td class="n"><span class="down">-5.86%</span></td><td class="n"><span class="up">+0.89%</span></td><td class="n"><span class="down">-6.10%</span></td></tr><tr><td>2026-08-13</td><td>현대백화점 <span class="pos-code">069960</span></td><td class="n">99,700</td><td class="n"><span class="up">+1.94%</span></td><td class="n"><span class="down">-36.4%</span></td><td class="n">1.7배</td><td class="n">0.51배</td><td class="n">315억</td><td class="n">21,500억</td><td class="n"><span class="up">+2.30%</span></td><td class="n"><span class="down">-6.53%</span></td><td class="n"><span class="down">-6.53%</span></td><td class="n"><span class="up">+4.91%</span></td><td class="n"><span class="down">-8.43%</span></td></tr><tr><td>2026-08-11</td><td>대동기어 <span class="pos-code">008830</span></td><td class="n">6,310</td><td class="n"><span class="up">+0.16%</span></td><td class="n"><span class="down">-21.2%</span></td><td class="n">2.1배</td><td class="n">0.64배</td><td class="n">57억</td><td class="n">1,210억</td><td class="n"><span class="up">+1.37%</span></td><td class="n"><span class="down">-4.81%</span></td><td class="n"><span class="down">-3.22%</span></td><td class="n"><span class="up">+13.31%</span></td><td class="n"><span class="down">-5.39%</span></td></tr><tr><td>2026-08-06</td><td>현대지에프홀딩스 <span class="pos-code">005440</span></td><td class="n">11,830</td><td class="n"><span class="down">-1.91%</span></td><td class="n"><span class="down">-19.0%</span></td><td class="n">1.7배</td><td class="n">0.49배</td><td class="n">55억</td><td class="n">21,696억</td><td class="n"><span class="up">+2.83%</span></td><td class="n"><span class="down">-1.73%</span></td><td class="n"><span class="down">-3.84%</span></td><td class="n"><span class="up">+6.68%</span></td><td class="n"><span class="down">-3.30%</span></td></tr><tr><td>2026-08-06</td><td>코리아써키트 <span class="pos-code">007810</span></td><td class="n">55,600</td><td class="n"><span class="up">+0.36%</span></td><td class="n"><span class="down">-19.6%</span></td><td class="n">1.6배</td><td class="n">0.63배</td><td class="n">292억</td><td class="n">13,334억</td><td class="n"><span class="down">-0.03%</span></td><td class="n"><span class="up">+19.21%</span></td><td class="n"><span class="down">-2.01%</span></td><td class="n"><span class="up">+26.62%</span></td><td class="n"><span class="down">-3.60%</span></td></tr><tr><td>2026-08-04</td><td>호텔신라 <span class="pos-code">008770</span></td><td class="n">41,500</td><td class="n"><span class="up">+0.61%</span></td><td class="n"><span class="down">-19.0%</span></td><td class="n">2.5배</td><td class="n">0.58배</td><td class="n">293억</td><td class="n">16,288억</td><td class="n"><span class="up">+1.24%</span></td><td class="n"><span class="up">+7.26%</span></td><td class="n"><span class="up">+1.84%</span></td><td class="n"><span class="up">+8.43%</span></td><td class="n"><span class="up">+0.24%</span></td></tr><tr><td>2026-07-14</td><td>DL <span class="pos-code">000210</span></td><td class="n">45,550</td><td class="n"><span class="">+0.00%</span></td><td class="n"><span class="down">-17.5%</span></td><td class="n">2.2배</td><td class="n">0.69배</td><td class="n">98억</td><td class="n">9,545억</td><td class="n"><span class="up">+3.08%</span></td><td class="n"><span class="up">+0.78%</span></td><td class="n"><span class="down">-9.87%</span></td><td class="n"><span class="up">+5.38%</span></td><td class="n"><span class="down">-5.71%</span></td></tr></tbody></table></div>
+    </details>
   </section>
 </div>
 <div class="tab-panel" id="tab-system" role="tabpanel" hidden>
