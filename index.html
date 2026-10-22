@@ -554,7 +554,7 @@ html{-webkit-text-size-adjust:100%}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-10-22 22:48 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-10-22 23:24 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
     </div>
     <!-- docs/ai-trading.svg 를 빌드 때 인라인한다. 공개 사이트는 index.html 하나만
          복사하므로 외부 파일로 두면 거기서 깨진다. -->
@@ -637,7 +637,7 @@ html{-webkit-text-size-adjust:100%}
   <div class="strip strip-1">
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">10-22 22:48</span>
+      <span class="v num">10-22 23:24</span>
       <span class="s"><span class="dot live"></span>변곡 돌파 · 15:34 종가 판정 → 16:00 애프터마켓 매수</span>
     </div>
   </div>
@@ -648,16 +648,16 @@ html{-webkit-text-size-adjust:100%}
 <button class="tab" role="tab" data-tab="short" aria-selected="false" aria-controls="tab-short">대주후보<span class="n">1</span></button>
 <button class="tab" role="tab" data-tab="bottomvol" aria-selected="false" aria-controls="tab-bottomvol">바닥거래량<span class="n">1</span></button>
 <button class="tab" role="tab" data-tab="close" aria-selected="false" aria-controls="tab-close">종가배팅점수<span class="n">1</span></button>
-<button class="tab" role="tab" data-tab="minervini" aria-selected="false" aria-controls="tab-minervini">마크미너비니<span class="n">1</span></button>
 <button class="tab" role="tab" data-tab="volbreak" aria-selected="false" aria-controls="tab-volbreak">변동성돌파<span class="n">1</span></button>
 <button class="tab" role="tab" data-tab="theme" aria-selected="false" aria-controls="tab-theme">오늘의테마<span class="n">2</span></button>
 <button class="tab" role="tab" data-tab="system" aria-selected="false" aria-controls="tab-system">감시·시스템<span class="n">7</span></button>
+<button class="tab" role="tab" data-tab="minervini" aria-selected="false" aria-controls="tab-minervini">마크미너비니<span class="n">1</span></button>
 <button class="tab" role="tab" data-tab="perf" aria-selected="false" aria-controls="tab-perf">매매현황<span class="n">2</span></button>
 </nav>
 <div class="tab-panel" id="tab-today" role="tabpanel" hidden>
 <section>
     <div class="sechead"><h2>오늘의 후보</h2><span class="rule"></span>
-      <span class="note">판정 기준 <b>2026-10-22 종가</b> · 데이터 추출 2026-10-22 22:48</span></div>
+      <span class="note">판정 기준 <b>2026-10-22 종가</b> · 데이터 추출 2026-10-22 23:24</span></div>
     <div class="callout" style="margin-top:0;margin-bottom:14px"><b>15:34 종가 변곡 판정 — 실매매</b> (2026-10-22 16:00 · 종가 기준 · 2026-09-23 부터 16:00 애프터마켓 매수) 후보 <b>2건</b> — 상위: 삼성E&amp;A (판정가 55,400 · 강도 +6.95%) · 코웨이 (판정가 106,100 · 강도 +4.95%)<br><span style="color:var(--muted)">아래 표는 종가 확정 후 같은 규칙으로 다시 판정한 것이다. 15:00 스캔은 그 시각의 가격으로 판정하므로 종가와 차이가 나면 결과가 달라질 수 있다.</span></div>
     <div class="sieve">
       <span class="sv"><b class="num">2,232</b><small>스캔</small></span>
@@ -965,211 +965,6 @@ html{-webkit-text-size-adjust:100%}
       조건 45개를 탐색해 앞 2년·최근 1년 모두 유지된 조합은 <b>거래대금 100~300억 · 시총 1,000~5,000억 → 익일 시가(또는 10시) 매도</b> 였고,
       등급은 A 이상까지 넓혀도 유지된다(A+ +0.32/+0.33 · A 이상 +0.20/+0.47, 2026-10-05 확대 검증). 그 종목을 초록 띠로 마킹하고 표 맨 위에 둔다. 시총은 FinanceDataReader 상장주식수 × 종가(주 1회 갱신).
     </div>
-  </section>
-</div>
-<div class="tab-panel" id="tab-minervini" role="tabpanel" hidden>
-<section>
-    <div class="sechead"><h2>마크 미너비니 VCP</h2><span class="rule"></span>
-      <span class="note">2026-10-22 종가 · 추세 템플릿 통과 167종목 · 오늘 돌파 1 · 돌파 임박 4 · 확장 6 · 참고용, 주문 없음</span></div>
-    
-    <div class="callout" style="margin:0 0 10px">
-      <b>단계별 점수 (사용자 조건식 2026-10-05)</b> — 전체 → 거래대금 상위(20일 평균 30억↑) → <b>① 추세 템플릿 ≥ 7/8</b>
-      (종가 &gt; 50·150·200일선, 50 &gt; 150 &gt; 200, 200일선 상승, 52주 저점 +30%↑, 52주 고점 −25% 이내)
-      → <b>② 수축</b> 어제까지 60일을 20일씩 T1 &gt; T2 &gt; T3, T3 ≤ T1×0.75, T1 ≤ 50% → <b>③ 거래량 수축</b> V1 ≥ V2 ≥ V3
-      → <b>④ 피벗</b>(어제까지 100일 고가, 10일 이상 전) 근접 0~5% 또는 돌파 → <b>⑤ 종가위치 ≥ 0.70</b>.<br>
-      <b>C 돌파</b> = ①②③ + 피벗 돌파 + 거래량 50일 평균 × 1.5↑ + 고가권 → <b>종가베팅 후보</b> ·
-      <b>B 임박</b> = ①②③ + 피벗까지 ≤ 5% + 오늘 거래량 &lt; 50일 평균 + 고가권 · <b>A 관찰</b> = ①②③만.
-      점수 23점 만점 = 추세 8 + 수축 3 + 거래량 수축 2 + 마름 1 + 근접 2 + 돌파 3 + 돌파 거래량 2 + 고가권 2.
-      프로그램 순매수 단계는 이력 자료가 없어 뺐다. 주문 없음.</div>
-    <div class="sub"><b>C 돌파 · 종가베팅 후보</b> <span class="note">2026-10-22 종가 · 추세 ≥7 통과 100종목 · 단계 진입 3종목</span></div>
-    <div class="blank">오늘 ①~⑤를 모두 채운 돌파 종목이 없습니다.</div>
-    <div class="sub" style="margin-top:14px"><b>B 임박</b> <span class="note">피벗 아래 5% · 거래량 마름 · 고가권 마감</span></div>
-    <div class="blank">오늘 임박 단계 종목이 없습니다.</div>
-    
-    <details class="fold" style="margin-top:10px">
-      <summary><span class="fold-cap">A 관찰 · 추세 + 수축 + 거래량 수축은 됐으나 피벗 근접/돌파 전</span><span class="fold-sub">1종목</span></summary>
-      <div class="tbl-wrap"><table><thead><tr><th style="text-align:right">점수</th><th>종목</th><th style="text-align:right">종가</th>
-          <th style="text-align:right">등락</th><th style="text-align:right">추세</th><th style="text-align:right">수축 T1→T2→T3</th>
-          <th style="text-align:right">거래량 V3/V1</th><th style="text-align:right">피벗</th><th style="text-align:right">피벗까지</th>
-          <th style="text-align:right">종가위치</th><th style="text-align:right">손절(20일 저점)</th><th style="text-align:right">20일 거래대금</th></tr></thead><tbody><tr><td class="n"><b>14</b><span class="note">/23</span></td><td>롯데렌탈 <span class="pos-code">089860</span></td><td class="n">49,850</td><td class="n"><span class="up">+0.50%</span></td><td class="n">8/8</td><td class="n mv-depth">40.9→18→8.2%</td><td class="n">0.6</td><td class="n">53,100</td><td class="n">+6.1%</td><td class="n">0.69</td><td class="n">48,150 <span class="note">−3.4%</span></td><td class="n">52억</td></tr></tbody></table></div>
-    </details>
-    
-    <details class="fold" style="margin-top:10px">
-      <summary><span class="fold-cap">확장 · 20일 평균 거래대금 10~30억</span><span class="fold-sub">C 0 · B 0 · A 2</span></summary>
-      <div class="blank">없음</div><div class="blank">없음</div><div class="tbl-wrap"><table><thead><tr><th style="text-align:right">점수</th><th>종목</th><th style="text-align:right">종가</th>
-          <th style="text-align:right">등락</th><th style="text-align:right">추세</th><th style="text-align:right">수축 T1→T2→T3</th>
-          <th style="text-align:right">거래량 V3/V1</th><th style="text-align:right">피벗</th><th style="text-align:right">피벗까지</th>
-          <th style="text-align:right">종가위치</th><th style="text-align:right">손절(20일 저점)</th><th style="text-align:right">20일 거래대금</th></tr></thead><tbody><tr><td class="n"><b>14</b><span class="note">/23</span></td><td>네오팜 <span class="pos-code">092730</span></td><td class="n">23,150</td><td class="n"><span class="up">+1.54%</span></td><td class="n">8/8</td><td class="n mv-depth">42.4→23.3→17.6%</td><td class="n">0.59</td><td class="n">26,000</td><td class="n">+11.0%</td><td class="n">0.28</td><td class="n">21,250 <span class="note">−8.2%</span></td><td class="n">11억</td></tr><tr><td class="n"><b>13</b><span class="note">/23</span></td><td>코리안리 <span class="pos-code">003690</span></td><td class="n">14,390</td><td class="n"><span class="up">+1.20%</span></td><td class="n">7/8</td><td class="n mv-depth">19.3→11.9→9.9%</td><td class="n">0.56</td><td class="n">15,660</td><td class="n">+8.1%</td><td class="n">0.61</td><td class="n">13,845 <span class="note">−3.8%</span></td><td class="n">27억</td></tr></tbody></table></div>
-    </details>
-    
-    <details class="fold" style="margin-top:12px">
-      <summary><span class="fold-cap">검증 · 최근 3년 (종가 진입 → 다음날)</span>
-        <span class="fold-sub">최근 1년 C 돌파 29건 · 시가 청산 <span class="up">+1.35%</span> · 종가배팅 규칙 <span class="up">+0.93%</span> · 단순 돌파 대조 시가 <span class="up">+0.91%</span></span></summary>
-      <div class="tbl-wrap"><table><thead><tr><th>단계 · 기간</th>
-        <th style="text-align:right">건수</th><th style="text-align:right">다음날 시가</th><th style="text-align:right">승률</th>
-        <th style="text-align:right">건수</th><th style="text-align:right">다음날 종가</th><th style="text-align:right">승률</th>
-        <th style="text-align:right">건수</th><th style="text-align:right">종가배팅 규칙</th><th style="text-align:right">승률</th>
-        <th style="text-align:right">건수</th><th style="text-align:right">미너비니 표준</th><th style="text-align:right">승률</th>
-        <th style="text-align:right">대조 건수</th><th style="text-align:right">대조 시가</th><th style="text-align:right">승률</th></tr></thead>
-        <tbody><tr><td><b>C 돌파</b> 앞 2년</td><td class="n">57</td><td class="n"><span class="up">+0.11%</span></td><td class="n">33.3%</td><td class="n">57</td><td class="n"><span class="down">-1.29%</span></td><td class="n">31.6%</td><td class="n">1</td><td class="n"><span class="down">-0.62%</span></td><td class="n">0.0%</td><td class="n">57</td><td class="n"><span class="up">+0.22%</span></td><td class="n">31.6%</td><td class="n">4,187</td><td class="n"><span class="up">+0.25%</span></td><td class="n">40.5%</td></tr><tr><td><b>C 돌파</b> 최근 1년</td><td class="n">29</td><td class="n"><span class="up">+1.35%</span></td><td class="n">44.8%</td><td class="n">29</td><td class="n"><span class="up">+1.21%</span></td><td class="n">41.4%</td><td class="n">16</td><td class="n"><span class="up">+0.93%</span></td><td class="n">50.0%</td><td class="n">29</td><td class="n"><span class="up">+7.22%</span></td><td class="n">37.9%</td><td class="n">3,489</td><td class="n"><span class="up">+0.91%</span></td><td class="n">46.1%</td></tr><tr><td><b>C 돌파</b> 3년</td><td class="n">86</td><td class="n"><span class="up">+0.54%</span></td><td class="n">37.2%</td><td class="n">86</td><td class="n"><span class="down">-0.50%</span></td><td class="n">34.9%</td><td class="n">17</td><td class="n"><span class="up">+0.83%</span></td><td class="n">47.1%</td><td class="n">86</td><td class="n"><span class="up">+2.51%</span></td><td class="n">33.7%</td><td class="n">7,676</td><td class="n"><span class="up">+0.55%</span></td><td class="n">43.1%</td></tr><tr><td>B 임박 앞 2년</td><td class="n">245</td><td class="n"><span class="down">-0.30%</span></td><td class="n">20.4%</td><td class="n">245</td><td class="n"><span class="down">-0.16%</span></td><td class="n">33.9%</td><td class="n">4</td><td class="n"><span class="down">-0.17%</span></td><td class="n">50.0%</td><td class="n muted" colspan="3">—</td><td class="n">4,187</td><td class="n"><span class="up">+0.25%</span></td><td class="n">40.5%</td></tr><tr><td>B 임박 최근 1년</td><td class="n">93</td><td class="n"><span class="down">-0.19%</span></td><td class="n">25.8%</td><td class="n">93</td><td class="n"><span class="down">-0.36%</span></td><td class="n">31.2%</td><td class="n">26</td><td class="n"><span class="up">+0.05%</span></td><td class="n">42.3%</td><td class="n muted" colspan="3">—</td><td class="n">3,489</td><td class="n"><span class="up">+0.91%</span></td><td class="n">46.1%</td></tr><tr><td>B 임박 3년</td><td class="n">338</td><td class="n"><span class="down">-0.27%</span></td><td class="n">21.9%</td><td class="n">338</td><td class="n"><span class="down">-0.21%</span></td><td class="n">33.1%</td><td class="n">30</td><td class="n"><span class="up">+0.02%</span></td><td class="n">43.3%</td><td class="n muted" colspan="3">—</td><td class="n">7,676</td><td class="n"><span class="up">+0.55%</span></td><td class="n">43.1%</td></tr></tbody></table></div>
-      <div class="mv-note">일봉(2019~) 최근 3년, 20일 평균 거래대금 30억↑, 우선주·ETF 류 제외, 비용 0.21%, 극단 상하위 2% 제외 평균.
-        <b>종가배팅 규칙</b> = 시가 +2%↑ 시가 청산 / 10시 전 +2% / 아니면 10:00 시가 — 5분봉이 있는 2025-09 이후만.
-        <b>미너비니 표준</b> = 손절 최근 20일 저점 · 1:2 절반 익절 후 본전 · 종가 20일선 이탈.
-        <b>대조</b> = 추세 ≥7 + 20일 고가 돌파 + 거래량 1.5배 + 고가권 마감이지만 VCP·거래량 수축은 없는 날 (VCP 조건이 보태는 값을 본다).</div>
-      <div class="sub" style="margin-top:8px"><b>C 돌파 · 추세 점수별</b></div><div class="mv-note" style="margin:2px 0 0">7 7건 시가 <span class="up">+0.65%</span> 종가 <span class="down">-2.62%</span> 표준 <span class="up">+6.14%</span> · 8 79건 시가 <span class="up">+0.66%</span> 종가 <span class="down">-0.14%</span> 표준 <span class="up">+2.63%</span></div><div class="sub" style="margin-top:8px"><b>C 돌파 · 마지막 수축폭 T3 별</b></div><div class="mv-note" style="margin:2px 0 0">≤8% 14건 시가 <span class="up">+0.73%</span> 종가 <span class="up">+0.55%</span> 표준 <span class="down">-4.53%</span> · 8~12% 22건 시가 <span class="up">+0.16%</span> 종가 <span class="down">-2.79%</span> 표준 <span class="up">+1.89%</span> · 12~16% 18건 시가 <span class="down">-0.77%</span> 종가 <span class="down">-1.78%</span> 표준 <span class="up">+3.93%</span> · 16%↑ 32건 시가 <span class="up">+1.78%</span> 종가 <span class="up">+1.75%</span> 표준 <span class="up">+6.31%</span></div><div class="sub" style="margin-top:8px"><b>C 돌파 · 돌파 거래량별</b></div><div class="mv-note" style="margin:2px 0 0">1.5~2배 15건 시가 <span class="up">+0.48%</span> 종가 <span class="down">-1.58%</span> 표준 <span class="up">+8.01%</span> · 2~3배 22건 시가 <span class="down">-0.59%</span> 종가 <span class="down">-0.89%</span> 표준 <span class="down">-3.85%</span> · 3~5배 20건 시가 <span class="up">+0.01%</span> 종가 <span class="down">-0.20%</span> 표준 <span class="up">+9.04%</span> · 5배↑ 29건 시가 <span class="up">+2.15%</span> 종가 <span class="up">+0.62%</span> 표준 <span class="up">+1.19%</span></div><div class="sub" style="margin-top:8px"><b>C 돌파 · 피벗 위 돌파폭별</b></div><div class="mv-note" style="margin:2px 0 0">돌파 0~2% 31건 시가 <span class="up">+0.35%</span> 종가 <span class="down">-1.66%</span> 표준 <span class="down">-2.42%</span> · 2~5% 26건 시가 <span class="down">-0.16%</span> 종가 <span class="down">-0.92%</span> 표준 <span class="up">+8.72%</span> · 5~10% 21건 시가 <span class="up">+1.96%</span> 종가 <span class="up">+1.67%</span> 표준 <span class="up">+1.85%</span> · 10%↑ 8건 시가 <span class="up">+1.12%</span> 종가 <span class="up">+1.32%</span> 표준 <span class="up">+7.53%</span></div>
-    </details>
-    <hr style="border:0;border-top:1px solid var(--line-2);margin:18px 0 14px">
-    <div class="sub"><b>스윙 기반 VCP (2026-10-03 구현, 아래)</b> <span class="note">130일 베이스의 고점→저점 수축을 세는 방식 · 별점 · 표준/단기 운용</span></div>
-    <div class="callout" style="margin-top:0;margin-bottom:14px">
-      <b>추세</b> 종가 &gt; 150일선 &gt; 200일선, 200일선 상승 · <b>유동성</b> 20일 평균 거래대금 30억↑ ·
-      <b>VCP</b> 최근 130일 고점 이후 수축 2회↑, 첫 수축 8~50%, 점점 작아져 마지막 15% 이하, 오른쪽 고점이 베이스 고점의 85%↑ ·
-      <b>돌파</b> 종가 &gt; 피벗(마지막 수축의 고점) · 양봉 · 종가위치 0.5↑ · 거래량 50일 평균의 1.4배↑.<br>
-      <b>운용</b> 아래 표의 표준(1:2 절반 + 20일선) 또는 단기(1:2 전량 + 10거래일) 중 선택.
-      별점 = 수축 3회↑ · 마지막 수축 8%↓ · 거래량 마름 · 첫 수축 30%↓ · 거래량 2배↑(돌파)/피벗 2% 이내(임박).</div>
-    
-    <div class="tbl-wrap" style="margin:4px 0 14px"><table><thead><tr><th>운용</th><th>청산 규칙</th><th style="text-align:right">거래당</th>
-      <th style="text-align:right">평균 보유</th><th style="text-align:right">하루당</th><th style="text-align:right">승률</th></tr></thead><tbody>
-      <tr><td><b>표준</b></td><td>손절 마지막 수축 저점 · 익절가(1:2)에서 절반, 손절을 본전으로 · 나머지는 종가 20일선 이탈</td>
-        <td class="n"><span class="up">+2.06%</span></td><td class="n">14.3일</td><td class="n"><span class="up">+0.14%</span></td><td class="n">38%</td></tr>
-      <tr><td><b>단기</b></td><td>손절 마지막 수축 저점 · 익절가(1:2)에서 전량 · 10거래일 지나면 종가 청산</td>
-        <td class="n"><span class="up">+0.94%</span></td><td class="n">7.4일</td><td class="n"><span class="up">+0.13%</span></td><td class="n">46%</td></tr>
-    </tbody></table></div>
-    <div class="mv-note" style="margin:-8px 0 14px">최근 3년 정통 목록 기준(극단 제외 평균, 비용 0.21%). 단기는 보유가 절반으로 줄고 승률이 오르지만 하루당 수익은 표준의 89%.
-      10일선 청산·1R 절반 익절은 둘 다 표준·단기보다 나빴다 (scripts/research_vcp.py).</div>
-    <div class="sub"><b>B군 · 오늘 돌파</b> <span class="note">전고점 돌파 + 거래량 증가 + 양봉</span></div>
-    <div class="tbl-wrap"><table><thead><tr><th>별점</th><th>종목</th><th style="text-align:right">종가</th>
-          <th style="text-align:right">등락</th><th style="text-align:right">피벗(전고점)</th><th style="text-align:right">수축</th>
-          <th style="text-align:right">거래량 50일 대비</th><th style="text-align:right">종가위치</th><th style="text-align:right">손절</th>
-          <th style="text-align:right">익절(1:2)</th><th style="text-align:right">20일선</th></tr></thead><tbody><tr><td><span class="mv-star">★★★<span class="muted">★★</span></span></td><td>유니퀘스트 <span class="pos-code">077500</span></td><td class="n">11,790</td><td class="n"><span class="up">+14.58%</span></td><td class="n">10,690</td><td class="n mv-depth">18→7.8%</td><td class="n">10.3배</td><td class="n">0.62</td><td class="n">9,860 <span class="note">−16.4%</span></td><td class="n">15,650</td><td class="n">9,910</td></tr></tbody></table></div>
-    <div class="sub" style="margin-top:16px"><b>A군 · 돌파 임박</b> <span class="note">VCP 완성 · 피벗 아래 5% 이내 · 피벗 돌파 때 진입 기준</span></div>
-    <div class="tbl-wrap"><table><thead><tr><th>별점</th><th>종목</th><th style="text-align:right">종가</th>
-          <th style="text-align:right">등락</th><th style="text-align:right">피벗(돌파 가격)</th><th style="text-align:right">피벗까지</th>
-          <th style="text-align:right">수축</th><th style="text-align:right">거래량 마름</th><th style="text-align:right">손절</th>
-          <th style="text-align:right">익절(1:2)</th></tr></thead><tbody><tr><td><span class="mv-star">★★★★<span class="muted">★</span></span></td><td>한국화장품제조 <span class="pos-code">003350</span></td><td class="n">14,950</td><td class="n"><span class="down">-0.99%</span></td><td class="n">15,730</td><td class="n">+5.2%</td><td class="n mv-depth">21.2→19.9→11.8→5.3%</td><td class="n">0.25</td><td class="n">14,900 <span class="note">−5.3%</span></td><td class="n">17,390</td></tr><tr><td><span class="mv-star">★★★<span class="muted">★★</span></span></td><td>롯데렌탈 <span class="pos-code">089860</span></td><td class="n">49,850</td><td class="n"><span class="up">+0.50%</span></td><td class="n">51,400</td><td class="n">+3.1%</td><td class="n mv-depth">11→7.6→4.1%</td><td class="n">1.89</td><td class="n">49,300 <span class="note">−4.1%</span></td><td class="n">55,600</td></tr><tr><td><span class="mv-star">★★★<span class="muted">★★</span></span></td><td>DB손해보험 <span class="pos-code">005830</span></td><td class="n">187,100</td><td class="n"><span class="up">+0.81%</span></td><td class="n">195,600</td><td class="n">+4.5%</td><td class="n mv-depth">13.7→9.4→6.6%</td><td class="n">0.75</td><td class="n">182,700 <span class="note">−6.6%</span></td><td class="n">221,400</td></tr><tr><td><span class="mv-star">★<span class="muted">★★★★</span></span></td><td>SK가스 <span class="pos-code">018670</span></td><td class="n">271,500</td><td class="n"><span class="down">-0.18%</span></td><td class="n">284,500</td><td class="n">+4.8%</td><td class="n mv-depth">35.1→6.9%</td><td class="n">1.06</td><td class="n">265,000 <span class="note">−6.9%</span></td><td class="n">323,500</td></tr></tbody></table></div>
-    
-    <details class="fold" style="margin-top:16px" open>
-      <summary><span class="fold-cap">일자별 추출 흐름 · 최근 29거래일</span>
-        <span class="fold-sub">추출일 종가 대비 이후 5거래일 최고가·최저가·종가 · 매일 종가 판정 뒤 갱신</span></summary>
-      <div class="mv-note" style="margin:0 0 6px">B = 돌파(종가 진입 기준), A = 임박(아직 돌파 전, 참고). 5일이 안 찬 최근 추출은 (n일) 표시.
-        A군 수치는 종가 대비라 실제 진입가(피벗) 대비로는 더 작다. 5일 최고가는 장중 고가이므로 그 가격에 팔 수 있다는 뜻은 아니다.
-        <br>5일이 다 찬 추출 요약 — B군 4건 · 5일 최고 평균 <span class="up">+11.54%</span> (중앙 <span class="up">+10.63%</span>) · 5일 종가 <span class="up">+2.14%</span> · 손절 터치 0% · 최고가 +5%↑ 75% / A군 118건 · 5일 최고 평균 <span class="up">+3.88%</span> (중앙 <span class="up">+2.58%</span>) · 5일 종가 <span class="down">-1.28%</span> · 최고가 +5%↑ 29%</div>
-      <div class="tbl-wrap" style="margin-bottom:4px"><table><thead><tr><th>군·별점</th><th>종목</th><th style="text-align:right">종가</th>
-        <th style="text-align:right">피벗</th><th style="text-align:right">손절폭</th><th style="text-align:right">5일 최고</th>
-        <th style="text-align:right">5일 최저</th><th style="text-align:right">5일 종가</th><th></th></tr></thead></table></div>
-      
-        <div class="sub" style="margin-top:12px"><b>2026-10-22</b> <span class="note">돌파 1 · 임박 4</span></div>
-        <div class="tbl-wrap"><table><tbody><tr><td><b>B</b> <span class="mv-star">★★★<span class="muted">★★</span></span></td><td>유니퀘스트 <span class="pos-code">077500</span></td><td class="n">11,790</td><td class="n">10,690</td><td class="n">−16.4%</td><td class="n"><span class="muted">—</span> <span class="note">(0일)</span> <span class="note">D+-</span></td><td class="n"><span class="muted">—</span></td><td class="n"><span class="muted">—</span></td><td></td></tr></tbody></table></div>
-        <div class="mv-note" style="margin-top:4px"><b>A</b> <span class="note">(0일)</span>: 한국화장품제조 <span class="muted">—</span> · DB손해보험 <span class="muted">—</span> · 롯데렌탈 <span class="muted">—</span> · SK가스 <span class="muted">—</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-10-21</b> <span class="note">돌파 0 · 임박 3</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b> <span class="note">(1일)</span>: 롯데렌탈 <span class="up">+1.6%</span> · 유니퀘스트 <span class="up">+23.3%</span> · SK가스 <span class="up">+0.7%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-10-20</b> <span class="note">돌파 0 · 임박 1</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b> <span class="note">(2일)</span>: 동국제약 <span class="up">+0.8%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-10-19</b> <span class="note">돌파 0 · 임박 1</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b> <span class="note">(3일)</span>: SK가스 <span class="down">-0.9%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-10-16</b> <span class="note">돌파 0 · 임박 3</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b> <span class="note">(4일)</span>: 엔에프씨 <span class="up">+0.8%</span> · 글로벌텍스프리 <span class="down">-0.7%</span> · SK가스 <span class="up">+5.0%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-10-15</b> <span class="note">돌파 0 · 임박 2</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 엔에프씨 <span class="up">+6.7%</span> · 롯데렌탈 <span class="up">+2.6%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-10-14</b> <span class="note">돌파 0 · 임박 4</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 롯데렌탈 <span class="up">+2.6%</span> · 코웨이 <span class="up">+8.4%</span> · 글로벌텍스프리 <span class="up">+8.6%</span> · 엔에프씨 <span class="up">+6.9%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-10-13</b> <span class="note">돌파 0 · 임박 4</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 롯데렌탈 <span class="up">+1.0%</span> · 글로벌텍스프리 <span class="up">+9.7%</span> · 현대해상 <span class="up">+0.6%</span> · 코웨이 <span class="up">+10.5%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-10-12</b> <span class="note">돌파 1 · 임박 2</span></div>
-        <div class="tbl-wrap"><table><tbody><tr><td><b>B</b> <span class="mv-star">★★★<span class="muted">★★</span></span></td><td>팬오션 <span class="pos-code">028670</span></td><td class="n">6,450</td><td class="n">6,320</td><td class="n">−7.1%</td><td class="n"><span class="up">+21.4%</span> <span class="note">D+3</span></td><td class="n"><span class="down">-4.3%</span></td><td class="n"><span class="up">+5.3%</span></td><td></td></tr></tbody></table></div>
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 롯데렌탈 <span class="up">+0.2%</span> · 현대해상 <span class="up">+1.9%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-10-08</b> <span class="note">돌파 0 · 임박 2</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 롯데렌탈 <span class="up">+0.6%</span> · 팬오션 <span class="up">+29.9%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-10-07</b> <span class="note">돌파 0 · 임박 4</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: KT&amp;G <span class="up">+6.3%</span> · 롯데렌탈 <span class="up">+0.8%</span> · iM금융지주 <span class="up">+0.1%</span> · JB금융지주 <span class="up">+0.5%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-10-06</b> <span class="note">돌파 0 · 임박 4</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: KT&amp;G <span class="up">+4.0%</span> · iM금융지주 <span class="down">-0.3%</span> · 코웨이 <span class="up">+4.8%</span> · 롯데렌탈 <span class="up">+1.4%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-10-02</b> <span class="note">돌파 0 · 임박 3</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: KT&amp;G <span class="up">+2.6%</span> · iM금융지주 <span class="up">+1.1%</span> · 메리츠금융지주 <span class="muted">—</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-10-01</b> <span class="note">돌파 0 · 임박 6</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: HMM <span class="up">+5.2%</span> · 팬오션 <span class="up">+11.4%</span> · 롯데렌탈 <span class="up">+2.0%</span> · 티에스이 <span class="up">+10.2%</span> · iM금융지주 <span class="up">+2.6%</span> · HD현대마린솔루션 <span class="up">+0.6%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-30</b> <span class="note">돌파 1 · 임박 8</span></div>
-        <div class="tbl-wrap"><table><tbody><tr><td><b>B</b> <span class="mv-star">★★★<span class="muted">★★</span></span></td><td>씨젠 <span class="pos-code">096530</span></td><td class="n">35,450</td><td class="n">34,800</td><td class="n">−6.6%</td><td class="n"><span class="up">+14.1%</span> <span class="note">D+4</span></td><td class="n"><span class="down">-2.0%</span></td><td class="n"><span class="up">+7.6%</span></td><td></td></tr></tbody></table></div>
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: KT&amp;G <span class="up">+2.6%</span> · 가비아 <span class="up">+1.5%</span> · iM금융지주 <span class="up">+3.2%</span> · 한국콜마 <span class="up">+3.2%</span> · S-Oil <span class="up">+7.4%</span> · HMM <span class="up">+3.6%</span> · HD현대마린솔루션 <span class="up">+1.1%</span> · 지엔씨에너지 <span class="up">+1.7%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-29</b> <span class="note">돌파 0 · 임박 14</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: KT&amp;G <span class="up">+1.5%</span> · 가비아 <span class="up">+1.4%</span> · 아모레퍼시픽 <span class="up">+0.7%</span> · HMM <span class="up">+2.9%</span> · 하나금융지주 <span class="up">+0.3%</span> · 롯데렌탈 <span class="up">+4.7%</span> · 씨젠 <span class="up">+20.0%</span> · KB금융 <span class="up">+0.1%</span> · IPARK현대산업… <span class="up">+2.2%</span> · HD현대마린솔루션 <span class="up">+3.6%</span> · iM금융지주 <span class="up">+0.2%</span> · 한국콜마 <span class="up">+3.0%</span> · SFA <span class="up">+12.6%</span> · 지엔씨에너지 <span class="up">+6.3%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-28</b> <span class="note">돌파 0 · 임박 13</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 가비아 <span class="up">+0.6%</span> · 아모레퍼시픽 <span class="up">+1.1%</span> · 씨젠 <span class="up">+9.8%</span> · 한국콜마 <span class="up">+4.1%</span> · 한진칼 <span class="down">-0.4%</span> · IPARK현대산업… <span class="up">+0.8%</span> · HMM <span class="up">+1.6%</span> · 하나금융지주 <span class="up">+0.3%</span> · 롯데렌탈 <span class="up">+4.8%</span> · KB금융 <span class="up">+0.2%</span> · SFA <span class="up">+14.2%</span> · 지엔씨에너지 <span class="up">+6.7%</span> · HD현대마린솔루션 <span class="up">+0.2%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-23</b> <span class="note">돌파 0 · 임박 9</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: KB금융 <span class="up">+1.2%</span> · IPARK현대산업… <span class="up">+1.3%</span> · 롯데렌탈 <span class="up">+4.9%</span> · 아모레퍼시픽 <span class="up">+1.6%</span> · 씨젠 <span class="up">+10.7%</span> · 한미약품 <span class="up">+1.3%</span> · HD현대마린솔루션 <span class="up">+3.3%</span> · SFA <span class="up">+14.3%</span> · 가비아 <span class="down">-0.7%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-22</b> <span class="note">돌파 1 · 임박 13</span></div>
-        <div class="tbl-wrap"><table><tbody><tr><td><b>B</b> <span class="mv-star">★★★★★<span class="muted"></span></span></td><td>대한항공 <span class="pos-code">003490</span></td><td class="n">31,400</td><td class="n">30,100</td><td class="n">−8.6%</td><td class="n"><span class="up">+3.5%</span> <span class="note">D+4</span></td><td class="n"><span class="down">-1.9%</span></td><td class="n"><span class="down">-0.6%</span></td><td></td></tr></tbody></table></div>
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 팬오션 <span class="up">+5.0%</span> · 하나금융지주 <span class="up">+0.5%</span> · KB금융 <span class="up">+0.7%</span> · IPARK현대산업… <span class="up">+1.5%</span> · HD현대마린솔루션 <span class="up">+1.6%</span> · 코리안리 <span class="up">+3.3%</span> · HMM <span class="up">+1.2%</span> · GS <span class="up">+6.1%</span> · 아모레퍼시픽 <span class="up">+2.0%</span> · 현대해상 <span class="up">+6.1%</span> · 한미약품 <span class="up">+6.0%</span> · 가비아 <span class="up">+0.6%</span> · 지엔씨에너지 <span class="up">+7.5%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-21</b> <span class="note">돌파 0 · 임박 7</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: KB금융 <span class="up">+0.6%</span> · 하나금융지주 <span class="up">+0.7%</span> · 아모레퍼시픽 <span class="">+0.0%</span> · 코리안리 <span class="up">+1.7%</span> · DB손해보험 <span class="up">+2.7%</span> · 한미약품 <span class="up">+5.5%</span> · SFA <span class="up">+2.3%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-18</b> <span class="note">돌파 0 · 임박 7</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 대한항공 <span class="up">+9.6%</span> · iM금융지주 <span class="up">+3.8%</span> · 아모레퍼시픽 <span class="up">+2.7%</span> · KB금융 <span class="up">+2.3%</span> · 지엔씨에너지 <span class="up">+7.0%</span> · 코스메카코리아 <span class="up">+1.4%</span> · SFA <span class="up">+5.2%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-17</b> <span class="note">돌파 0 · 임박 11</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 한화생명 <span class="up">+1.5%</span> · 삼성화재 <span class="up">+0.3%</span> · 대한항공 <span class="up">+9.2%</span> · DB손해보험 <span class="up">+0.1%</span> · 하나금융지주 <span class="up">+2.0%</span> · iM금융지주 <span class="up">+3.5%</span> · BGF리테일 <span class="down">-0.2%</span> · 아모레퍼시픽 <span class="up">+2.9%</span> · KB금융 <span class="up">+1.3%</span> · 메리츠금융지주 <span class="up">+5.4%</span> · 에스원 <span class="up">+1.1%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-16</b> <span class="note">돌파 0 · 임박 1</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 삼성화재 <span class="up">+2.7%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-15</b> <span class="note">돌파 0 · 임박 1</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 삼성화재 <span class="up">+3.2%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-14</b> <span class="note">돌파 0 · 임박 1</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 삼성화재 <span class="up">+1.6%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-10</b> <span class="note">돌파 0 · 임박 1</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 삼성화재 <span class="up">+7.3%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-09</b> <span class="note">돌파 0 · 임박 1</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 삼성화재 <span class="up">+8.3%</span></div>
-        <div class="sub" style="margin-top:12px"><b>2026-09-02</b> <span class="note">돌파 1 · 임박 0</span></div>
-        <div class="tbl-wrap"><table><tbody><tr><td><b>B</b> <span class="mv-star">★<span class="muted">★★★★</span></span></td><td>메리츠금융지주 <span class="pos-code">138040</span></td><td class="n">129,800</td><td class="n">128,000</td><td class="n">−12.8%</td><td class="n"><span class="up">+7.2%</span> <span class="note">D+1</span></td><td class="n"><span class="down">-3.9%</span></td><td class="n"><span class="down">-3.7%</span></td><td></td></tr></tbody></table></div>
-        
-        <div class="sub" style="margin-top:12px"><b>2026-09-01</b> <span class="note">돌파 0 · 임박 1</span></div>
-        
-        <div class="mv-note" style="margin-top:4px"><b>A</b>: 메리츠금융지주 <span class="up">+10.9%</span></div>
-    </details>
-    
-    <details class="fold" style="margin-top:16px" open>
-      <summary><span class="fold-cap">확장 목록 · 20일 평균 거래대금 10~30억</span>
-        <span class="fold-sub">돌파 0 · 임박 6 · 정통 목록보다 근거가 약함</span></summary>
-      <div class="mv-note" style="margin:0 0 8px">대상을 늘리려고 유동성 기준만 30억 → 10억으로 낮춘 목록. 최근 3년 검증에서 신호는 41% 늘지만,
-        새로 들어오는 종목은 최근 1년 단순 돌파 대조군보다 +0.27%p(표준)·+0.05%p(단기) 앞서는 데 그쳤다. 비중을 줄여 참고로만.</div>
-      <div class="sub"><b>오늘 돌파</b></div><div class="blank">확장 목록에서 오늘 돌파한 종목은 없습니다.</div>
-      <div class="sub" style="margin-top:10px"><b>돌파 임박</b></div><div class="tbl-wrap"><table><thead><tr><th>별점</th><th>종목</th><th style="text-align:right">종가</th>
-          <th style="text-align:right">등락</th><th style="text-align:right">피벗(돌파 가격)</th><th style="text-align:right">피벗까지</th>
-          <th style="text-align:right">수축</th><th style="text-align:right">거래량 마름</th><th style="text-align:right">손절</th>
-          <th style="text-align:right">익절(1:2)</th></tr></thead><tbody><tr><td><span class="mv-star">★★★★★<span class="muted"></span></span></td><td>슈프리마 <span class="pos-code">236200</span></td><td class="n">56,500</td><td class="n"><span class="up">+1.62%</span></td><td class="n">57,100</td><td class="n">+1.1%</td><td class="n mv-depth">24.9→14.6→5.1%</td><td class="n">0.67</td><td class="n">54,200 <span class="note">−5.1%</span></td><td class="n">62,900</td></tr><tr><td><span class="mv-star">★★★★<span class="muted">★</span></span></td><td>네오팜 <span class="pos-code">092730</span></td><td class="n">23,150</td><td class="n"><span class="up">+1.54%</span></td><td class="n">23,800</td><td class="n">+2.8%</td><td class="n mv-depth">19.8→15→4.6%</td><td class="n">0.15</td><td class="n">22,700 <span class="note">−4.6%</span></td><td class="n">26,000</td></tr><tr><td><span class="mv-star">★★★<span class="muted">★★</span></span></td><td>코리안리 <span class="pos-code">003690</span></td><td class="n">14,390</td><td class="n"><span class="up">+1.20%</span></td><td class="n">14,680</td><td class="n">+2.0%</td><td class="n mv-depth">11.6→3.6%</td><td class="n">0.58</td><td class="n">14,150 <span class="note">−3.6%</span></td><td class="n">15,740</td></tr><tr><td><span class="mv-star">★★★<span class="muted">★★</span></span></td><td>KSS해운 <span class="pos-code">044450</span></td><td class="n">11,850</td><td class="n"><span class="down">-0.92%</span></td><td class="n">12,300</td><td class="n">+3.8%</td><td class="n mv-depth">38.1→7.8→6.1→3.6%</td><td class="n">0.24</td><td class="n">11,860 <span class="note">−3.6%</span></td><td class="n">13,180</td></tr><tr><td><span class="mv-star">★★<span class="muted">★★★</span></span></td><td>케이아이엔엑스 <span class="pos-code">093320</span></td><td class="n">136,900</td><td class="n"><span class="down">-0.58%</span></td><td class="n">142,000</td><td class="n">+3.7%</td><td class="n mv-depth">26→6.4%</td><td class="n">0.73</td><td class="n">132,900 <span class="note">−6.4%</span></td><td class="n">160,200</td></tr><tr><td><span class="mv-star">★★<span class="muted">★★★</span></span></td><td>한국알콜 <span class="pos-code">017890</span></td><td class="n">14,170</td><td class="n"><span class="down">-2.14%</span></td><td class="n">14,750</td><td class="n">+4.1%</td><td class="n mv-depth">14.6→4.1%</td><td class="n">0.70</td><td class="n">14,150 <span class="note">−4.1%</span></td><td class="n">15,950</td></tr></tbody></table></div>
-    </details>
-    
-    <details class="fold" style="margin-top:14px">
-      <summary><span class="fold-cap">검증 (최근 3년 · B군 돌파 매매)</span>
-        <span class="fold-sub">거래당 극단 제외 평균 VCP <span class="up">+2.85%</span> vs 단순 돌파 <span class="up">+1.05%</span> (최근 1년)</span></summary>
-      <div class="tbl-wrap"><table><thead><tr><th>기간</th><th style="text-align:right">건수</th><th style="text-align:right">거래당 평균</th>
-        <th style="text-align:right">극단 제외 평균</th><th style="text-align:right">중앙값</th><th style="text-align:right">승률</th>
-        <th style="text-align:right">평균 보유</th><th style="text-align:right">대조 건수</th><th style="text-align:right">대조 극단 제외</th></tr></thead>
-        <tbody><tr><td>앞 2년</td><td class="n">750</td><td class="n"><span class="up">+1.92%</span></td><td class="n"><span class="up">+1.49%</span></td><td class="n"><span class="down">-3.24%</span></td><td class="n">36%</td><td class="n">15일</td><td class="n muted">2,726</td><td class="n muted"><span class="up">+0.41%</span></td></tr><tr><td>최근 1년</td><td class="n">617</td><td class="n"><span class="up">+4.01%</span></td><td class="n"><span class="up">+2.85%</span></td><td class="n"><span class="down">-3.90%</span></td><td class="n">40%</td><td class="n">14일</td><td class="n muted">2,755</td><td class="n muted"><span class="up">+1.05%</span></td></tr><tr><td>3년</td><td class="n">1,367</td><td class="n"><span class="up">+2.87%</span></td><td class="n"><span class="up">+2.06%</span></td><td class="n"><span class="down">-3.45%</span></td><td class="n">38%</td><td class="n">14일</td><td class="n muted">5,481</td><td class="n muted"><span class="up">+0.75%</span></td></tr></tbody></table></div>
-      <div class="mv-note">prices.db 최근 3년. 돌파일 종가 진입 → 손절(마지막 수축 저점, 갭이면 시가) · 1:2 에서 절반 익절 후 손절 본전 · 나머지는 종가가 20일선 아래면 다음날 시가, 비용 0.21%.
-        대조 = VCP 없이 같은 추세·거래량 조건의 20일 고점 돌파(손절 최근 10일 저점), 같은 청산. 극단 제외 = 상하위 2% 를 잘라 낸 평균.
-        <b>승률 40% 안팎·중앙값 마이너스의 추세 추종형</b> — 손절을 지키고 몇 번의 큰 수익으로 버는 구조라, 하루 보유 변곡 매매와 성격이 다르다.
-        동시에 여러 종목이 겹치는 자금 제약은 반영하지 않았다.</div>
-    </details>
   </section>
 </div>
 <div class="tab-panel" id="tab-volbreak" role="tabpanel" hidden>
@@ -1635,6 +1430,211 @@ html{-webkit-text-size-adjust:100%}
       </details>
       <div class="sub" style="margin-top:14px"><b>반복해서 드러난 점</b></div>
       <ul class="sv-lessons"><li>영상 사례는 살아남은 몇 건이다. 사례가 영상 자신의 조건에 맞지 않는 경우도 있었다.</li><li>&#x27;며칠 안에 몇 % 오른다&#x27;는 경험칙은 무작위 매수도 비슷하게 성립한다. 대조군 없이는 효과를 알 수 없다.</li><li>당일 매매는 왕복 비용 0.2%가 이점을 대부분 먹는다.</li><li>같은 지표라도 보유 기간에 따라 방향이 바뀐다 (윗꼬리·가짜 돌파·하락 추세 속 돌파는 하루 보유에서만 유리).</li><li>패턴 이름(삼각수렴)보다 그 안의 세부 조건이 수익을 가른다. VCP 는 삼각수렴의 부분집합이지만 나머지 절반은 손실이다.</li></ul>
+    </details>
+  </section>
+</div>
+<div class="tab-panel" id="tab-minervini" role="tabpanel" hidden>
+<section>
+    <div class="sechead"><h2>마크 미너비니 VCP</h2><span class="rule"></span>
+      <span class="note">2026-10-22 종가 · 추세 템플릿 통과 167종목 · 오늘 돌파 1 · 돌파 임박 4 · 확장 6 · 참고용, 주문 없음</span></div>
+    
+    <div class="callout" style="margin:0 0 10px">
+      <b>단계별 점수 (사용자 조건식 2026-10-05)</b> — 전체 → 거래대금 상위(20일 평균 30억↑) → <b>① 추세 템플릿 ≥ 7/8</b>
+      (종가 &gt; 50·150·200일선, 50 &gt; 150 &gt; 200, 200일선 상승, 52주 저점 +30%↑, 52주 고점 −25% 이내)
+      → <b>② 수축</b> 어제까지 60일을 20일씩 T1 &gt; T2 &gt; T3, T3 ≤ T1×0.75, T1 ≤ 50% → <b>③ 거래량 수축</b> V1 ≥ V2 ≥ V3
+      → <b>④ 피벗</b>(어제까지 100일 고가, 10일 이상 전) 근접 0~5% 또는 돌파 → <b>⑤ 종가위치 ≥ 0.70</b>.<br>
+      <b>C 돌파</b> = ①②③ + 피벗 돌파 + 거래량 50일 평균 × 1.5↑ + 고가권 → <b>종가베팅 후보</b> ·
+      <b>B 임박</b> = ①②③ + 피벗까지 ≤ 5% + 오늘 거래량 &lt; 50일 평균 + 고가권 · <b>A 관찰</b> = ①②③만.
+      점수 23점 만점 = 추세 8 + 수축 3 + 거래량 수축 2 + 마름 1 + 근접 2 + 돌파 3 + 돌파 거래량 2 + 고가권 2.
+      프로그램 순매수 단계는 이력 자료가 없어 뺐다. 주문 없음.</div>
+    <div class="sub"><b>C 돌파 · 종가베팅 후보</b> <span class="note">2026-10-22 종가 · 추세 ≥7 통과 100종목 · 단계 진입 3종목</span></div>
+    <div class="blank">오늘 ①~⑤를 모두 채운 돌파 종목이 없습니다.</div>
+    <div class="sub" style="margin-top:14px"><b>B 임박</b> <span class="note">피벗 아래 5% · 거래량 마름 · 고가권 마감</span></div>
+    <div class="blank">오늘 임박 단계 종목이 없습니다.</div>
+    
+    <details class="fold" style="margin-top:10px">
+      <summary><span class="fold-cap">A 관찰 · 추세 + 수축 + 거래량 수축은 됐으나 피벗 근접/돌파 전</span><span class="fold-sub">1종목</span></summary>
+      <div class="tbl-wrap"><table><thead><tr><th style="text-align:right">점수</th><th>종목</th><th style="text-align:right">종가</th>
+          <th style="text-align:right">등락</th><th style="text-align:right">추세</th><th style="text-align:right">수축 T1→T2→T3</th>
+          <th style="text-align:right">거래량 V3/V1</th><th style="text-align:right">피벗</th><th style="text-align:right">피벗까지</th>
+          <th style="text-align:right">종가위치</th><th style="text-align:right">손절(20일 저점)</th><th style="text-align:right">20일 거래대금</th></tr></thead><tbody><tr><td class="n"><b>14</b><span class="note">/23</span></td><td>롯데렌탈 <span class="pos-code">089860</span></td><td class="n">49,850</td><td class="n"><span class="up">+0.50%</span></td><td class="n">8/8</td><td class="n mv-depth">40.9→18→8.2%</td><td class="n">0.6</td><td class="n">53,100</td><td class="n">+6.1%</td><td class="n">0.69</td><td class="n">48,150 <span class="note">−3.4%</span></td><td class="n">52억</td></tr></tbody></table></div>
+    </details>
+    
+    <details class="fold" style="margin-top:10px">
+      <summary><span class="fold-cap">확장 · 20일 평균 거래대금 10~30억</span><span class="fold-sub">C 0 · B 0 · A 2</span></summary>
+      <div class="blank">없음</div><div class="blank">없음</div><div class="tbl-wrap"><table><thead><tr><th style="text-align:right">점수</th><th>종목</th><th style="text-align:right">종가</th>
+          <th style="text-align:right">등락</th><th style="text-align:right">추세</th><th style="text-align:right">수축 T1→T2→T3</th>
+          <th style="text-align:right">거래량 V3/V1</th><th style="text-align:right">피벗</th><th style="text-align:right">피벗까지</th>
+          <th style="text-align:right">종가위치</th><th style="text-align:right">손절(20일 저점)</th><th style="text-align:right">20일 거래대금</th></tr></thead><tbody><tr><td class="n"><b>14</b><span class="note">/23</span></td><td>네오팜 <span class="pos-code">092730</span></td><td class="n">23,150</td><td class="n"><span class="up">+1.54%</span></td><td class="n">8/8</td><td class="n mv-depth">42.4→23.3→17.6%</td><td class="n">0.59</td><td class="n">26,000</td><td class="n">+11.0%</td><td class="n">0.28</td><td class="n">21,250 <span class="note">−8.2%</span></td><td class="n">11억</td></tr><tr><td class="n"><b>13</b><span class="note">/23</span></td><td>코리안리 <span class="pos-code">003690</span></td><td class="n">14,390</td><td class="n"><span class="up">+1.20%</span></td><td class="n">7/8</td><td class="n mv-depth">19.3→11.9→9.9%</td><td class="n">0.56</td><td class="n">15,660</td><td class="n">+8.1%</td><td class="n">0.61</td><td class="n">13,845 <span class="note">−3.8%</span></td><td class="n">27억</td></tr></tbody></table></div>
+    </details>
+    
+    <details class="fold" style="margin-top:12px">
+      <summary><span class="fold-cap">검증 · 최근 3년 (종가 진입 → 다음날)</span>
+        <span class="fold-sub">최근 1년 C 돌파 29건 · 시가 청산 <span class="up">+1.35%</span> · 종가배팅 규칙 <span class="up">+0.93%</span> · 단순 돌파 대조 시가 <span class="up">+0.91%</span></span></summary>
+      <div class="tbl-wrap"><table><thead><tr><th>단계 · 기간</th>
+        <th style="text-align:right">건수</th><th style="text-align:right">다음날 시가</th><th style="text-align:right">승률</th>
+        <th style="text-align:right">건수</th><th style="text-align:right">다음날 종가</th><th style="text-align:right">승률</th>
+        <th style="text-align:right">건수</th><th style="text-align:right">종가배팅 규칙</th><th style="text-align:right">승률</th>
+        <th style="text-align:right">건수</th><th style="text-align:right">미너비니 표준</th><th style="text-align:right">승률</th>
+        <th style="text-align:right">대조 건수</th><th style="text-align:right">대조 시가</th><th style="text-align:right">승률</th></tr></thead>
+        <tbody><tr><td><b>C 돌파</b> 앞 2년</td><td class="n">57</td><td class="n"><span class="up">+0.11%</span></td><td class="n">33.3%</td><td class="n">57</td><td class="n"><span class="down">-1.29%</span></td><td class="n">31.6%</td><td class="n">1</td><td class="n"><span class="down">-0.62%</span></td><td class="n">0.0%</td><td class="n">57</td><td class="n"><span class="up">+0.22%</span></td><td class="n">31.6%</td><td class="n">4,187</td><td class="n"><span class="up">+0.25%</span></td><td class="n">40.5%</td></tr><tr><td><b>C 돌파</b> 최근 1년</td><td class="n">29</td><td class="n"><span class="up">+1.35%</span></td><td class="n">44.8%</td><td class="n">29</td><td class="n"><span class="up">+1.21%</span></td><td class="n">41.4%</td><td class="n">16</td><td class="n"><span class="up">+0.93%</span></td><td class="n">50.0%</td><td class="n">29</td><td class="n"><span class="up">+7.22%</span></td><td class="n">37.9%</td><td class="n">3,489</td><td class="n"><span class="up">+0.91%</span></td><td class="n">46.1%</td></tr><tr><td><b>C 돌파</b> 3년</td><td class="n">86</td><td class="n"><span class="up">+0.54%</span></td><td class="n">37.2%</td><td class="n">86</td><td class="n"><span class="down">-0.50%</span></td><td class="n">34.9%</td><td class="n">17</td><td class="n"><span class="up">+0.83%</span></td><td class="n">47.1%</td><td class="n">86</td><td class="n"><span class="up">+2.51%</span></td><td class="n">33.7%</td><td class="n">7,676</td><td class="n"><span class="up">+0.55%</span></td><td class="n">43.1%</td></tr><tr><td>B 임박 앞 2년</td><td class="n">245</td><td class="n"><span class="down">-0.30%</span></td><td class="n">20.4%</td><td class="n">245</td><td class="n"><span class="down">-0.16%</span></td><td class="n">33.9%</td><td class="n">4</td><td class="n"><span class="down">-0.17%</span></td><td class="n">50.0%</td><td class="n muted" colspan="3">—</td><td class="n">4,187</td><td class="n"><span class="up">+0.25%</span></td><td class="n">40.5%</td></tr><tr><td>B 임박 최근 1년</td><td class="n">93</td><td class="n"><span class="down">-0.19%</span></td><td class="n">25.8%</td><td class="n">93</td><td class="n"><span class="down">-0.36%</span></td><td class="n">31.2%</td><td class="n">26</td><td class="n"><span class="up">+0.05%</span></td><td class="n">42.3%</td><td class="n muted" colspan="3">—</td><td class="n">3,489</td><td class="n"><span class="up">+0.91%</span></td><td class="n">46.1%</td></tr><tr><td>B 임박 3년</td><td class="n">338</td><td class="n"><span class="down">-0.27%</span></td><td class="n">21.9%</td><td class="n">338</td><td class="n"><span class="down">-0.21%</span></td><td class="n">33.1%</td><td class="n">30</td><td class="n"><span class="up">+0.02%</span></td><td class="n">43.3%</td><td class="n muted" colspan="3">—</td><td class="n">7,676</td><td class="n"><span class="up">+0.55%</span></td><td class="n">43.1%</td></tr></tbody></table></div>
+      <div class="mv-note">일봉(2019~) 최근 3년, 20일 평균 거래대금 30억↑, 우선주·ETF 류 제외, 비용 0.21%, 극단 상하위 2% 제외 평균.
+        <b>종가배팅 규칙</b> = 시가 +2%↑ 시가 청산 / 10시 전 +2% / 아니면 10:00 시가 — 5분봉이 있는 2025-09 이후만.
+        <b>미너비니 표준</b> = 손절 최근 20일 저점 · 1:2 절반 익절 후 본전 · 종가 20일선 이탈.
+        <b>대조</b> = 추세 ≥7 + 20일 고가 돌파 + 거래량 1.5배 + 고가권 마감이지만 VCP·거래량 수축은 없는 날 (VCP 조건이 보태는 값을 본다).</div>
+      <div class="sub" style="margin-top:8px"><b>C 돌파 · 추세 점수별</b></div><div class="mv-note" style="margin:2px 0 0">7 7건 시가 <span class="up">+0.65%</span> 종가 <span class="down">-2.62%</span> 표준 <span class="up">+6.14%</span> · 8 79건 시가 <span class="up">+0.66%</span> 종가 <span class="down">-0.14%</span> 표준 <span class="up">+2.63%</span></div><div class="sub" style="margin-top:8px"><b>C 돌파 · 마지막 수축폭 T3 별</b></div><div class="mv-note" style="margin:2px 0 0">≤8% 14건 시가 <span class="up">+0.73%</span> 종가 <span class="up">+0.55%</span> 표준 <span class="down">-4.53%</span> · 8~12% 22건 시가 <span class="up">+0.16%</span> 종가 <span class="down">-2.79%</span> 표준 <span class="up">+1.89%</span> · 12~16% 18건 시가 <span class="down">-0.77%</span> 종가 <span class="down">-1.78%</span> 표준 <span class="up">+3.93%</span> · 16%↑ 32건 시가 <span class="up">+1.78%</span> 종가 <span class="up">+1.75%</span> 표준 <span class="up">+6.31%</span></div><div class="sub" style="margin-top:8px"><b>C 돌파 · 돌파 거래량별</b></div><div class="mv-note" style="margin:2px 0 0">1.5~2배 15건 시가 <span class="up">+0.48%</span> 종가 <span class="down">-1.58%</span> 표준 <span class="up">+8.01%</span> · 2~3배 22건 시가 <span class="down">-0.59%</span> 종가 <span class="down">-0.89%</span> 표준 <span class="down">-3.85%</span> · 3~5배 20건 시가 <span class="up">+0.01%</span> 종가 <span class="down">-0.20%</span> 표준 <span class="up">+9.04%</span> · 5배↑ 29건 시가 <span class="up">+2.15%</span> 종가 <span class="up">+0.62%</span> 표준 <span class="up">+1.19%</span></div><div class="sub" style="margin-top:8px"><b>C 돌파 · 피벗 위 돌파폭별</b></div><div class="mv-note" style="margin:2px 0 0">돌파 0~2% 31건 시가 <span class="up">+0.35%</span> 종가 <span class="down">-1.66%</span> 표준 <span class="down">-2.42%</span> · 2~5% 26건 시가 <span class="down">-0.16%</span> 종가 <span class="down">-0.92%</span> 표준 <span class="up">+8.72%</span> · 5~10% 21건 시가 <span class="up">+1.96%</span> 종가 <span class="up">+1.67%</span> 표준 <span class="up">+1.85%</span> · 10%↑ 8건 시가 <span class="up">+1.12%</span> 종가 <span class="up">+1.32%</span> 표준 <span class="up">+7.53%</span></div>
+    </details>
+    <hr style="border:0;border-top:1px solid var(--line-2);margin:18px 0 14px">
+    <div class="sub"><b>스윙 기반 VCP (2026-10-03 구현, 아래)</b> <span class="note">130일 베이스의 고점→저점 수축을 세는 방식 · 별점 · 표준/단기 운용</span></div>
+    <div class="callout" style="margin-top:0;margin-bottom:14px">
+      <b>추세</b> 종가 &gt; 150일선 &gt; 200일선, 200일선 상승 · <b>유동성</b> 20일 평균 거래대금 30억↑ ·
+      <b>VCP</b> 최근 130일 고점 이후 수축 2회↑, 첫 수축 8~50%, 점점 작아져 마지막 15% 이하, 오른쪽 고점이 베이스 고점의 85%↑ ·
+      <b>돌파</b> 종가 &gt; 피벗(마지막 수축의 고점) · 양봉 · 종가위치 0.5↑ · 거래량 50일 평균의 1.4배↑.<br>
+      <b>운용</b> 아래 표의 표준(1:2 절반 + 20일선) 또는 단기(1:2 전량 + 10거래일) 중 선택.
+      별점 = 수축 3회↑ · 마지막 수축 8%↓ · 거래량 마름 · 첫 수축 30%↓ · 거래량 2배↑(돌파)/피벗 2% 이내(임박).</div>
+    
+    <div class="tbl-wrap" style="margin:4px 0 14px"><table><thead><tr><th>운용</th><th>청산 규칙</th><th style="text-align:right">거래당</th>
+      <th style="text-align:right">평균 보유</th><th style="text-align:right">하루당</th><th style="text-align:right">승률</th></tr></thead><tbody>
+      <tr><td><b>표준</b></td><td>손절 마지막 수축 저점 · 익절가(1:2)에서 절반, 손절을 본전으로 · 나머지는 종가 20일선 이탈</td>
+        <td class="n"><span class="up">+2.06%</span></td><td class="n">14.3일</td><td class="n"><span class="up">+0.14%</span></td><td class="n">38%</td></tr>
+      <tr><td><b>단기</b></td><td>손절 마지막 수축 저점 · 익절가(1:2)에서 전량 · 10거래일 지나면 종가 청산</td>
+        <td class="n"><span class="up">+0.94%</span></td><td class="n">7.4일</td><td class="n"><span class="up">+0.13%</span></td><td class="n">46%</td></tr>
+    </tbody></table></div>
+    <div class="mv-note" style="margin:-8px 0 14px">최근 3년 정통 목록 기준(극단 제외 평균, 비용 0.21%). 단기는 보유가 절반으로 줄고 승률이 오르지만 하루당 수익은 표준의 89%.
+      10일선 청산·1R 절반 익절은 둘 다 표준·단기보다 나빴다 (scripts/research_vcp.py).</div>
+    <div class="sub"><b>B군 · 오늘 돌파</b> <span class="note">전고점 돌파 + 거래량 증가 + 양봉</span></div>
+    <div class="tbl-wrap"><table><thead><tr><th>별점</th><th>종목</th><th style="text-align:right">종가</th>
+          <th style="text-align:right">등락</th><th style="text-align:right">피벗(전고점)</th><th style="text-align:right">수축</th>
+          <th style="text-align:right">거래량 50일 대비</th><th style="text-align:right">종가위치</th><th style="text-align:right">손절</th>
+          <th style="text-align:right">익절(1:2)</th><th style="text-align:right">20일선</th></tr></thead><tbody><tr><td><span class="mv-star">★★★<span class="muted">★★</span></span></td><td>유니퀘스트 <span class="pos-code">077500</span></td><td class="n">11,790</td><td class="n"><span class="up">+14.58%</span></td><td class="n">10,690</td><td class="n mv-depth">18→7.8%</td><td class="n">10.3배</td><td class="n">0.62</td><td class="n">9,860 <span class="note">−16.4%</span></td><td class="n">15,650</td><td class="n">9,910</td></tr></tbody></table></div>
+    <div class="sub" style="margin-top:16px"><b>A군 · 돌파 임박</b> <span class="note">VCP 완성 · 피벗 아래 5% 이내 · 피벗 돌파 때 진입 기준</span></div>
+    <div class="tbl-wrap"><table><thead><tr><th>별점</th><th>종목</th><th style="text-align:right">종가</th>
+          <th style="text-align:right">등락</th><th style="text-align:right">피벗(돌파 가격)</th><th style="text-align:right">피벗까지</th>
+          <th style="text-align:right">수축</th><th style="text-align:right">거래량 마름</th><th style="text-align:right">손절</th>
+          <th style="text-align:right">익절(1:2)</th></tr></thead><tbody><tr><td><span class="mv-star">★★★★<span class="muted">★</span></span></td><td>한국화장품제조 <span class="pos-code">003350</span></td><td class="n">14,950</td><td class="n"><span class="down">-0.99%</span></td><td class="n">15,730</td><td class="n">+5.2%</td><td class="n mv-depth">21.2→19.9→11.8→5.3%</td><td class="n">0.25</td><td class="n">14,900 <span class="note">−5.3%</span></td><td class="n">17,390</td></tr><tr><td><span class="mv-star">★★★<span class="muted">★★</span></span></td><td>롯데렌탈 <span class="pos-code">089860</span></td><td class="n">49,850</td><td class="n"><span class="up">+0.50%</span></td><td class="n">51,400</td><td class="n">+3.1%</td><td class="n mv-depth">11→7.6→4.1%</td><td class="n">1.89</td><td class="n">49,300 <span class="note">−4.1%</span></td><td class="n">55,600</td></tr><tr><td><span class="mv-star">★★★<span class="muted">★★</span></span></td><td>DB손해보험 <span class="pos-code">005830</span></td><td class="n">187,100</td><td class="n"><span class="up">+0.81%</span></td><td class="n">195,600</td><td class="n">+4.5%</td><td class="n mv-depth">13.7→9.4→6.6%</td><td class="n">0.75</td><td class="n">182,700 <span class="note">−6.6%</span></td><td class="n">221,400</td></tr><tr><td><span class="mv-star">★<span class="muted">★★★★</span></span></td><td>SK가스 <span class="pos-code">018670</span></td><td class="n">271,500</td><td class="n"><span class="down">-0.18%</span></td><td class="n">284,500</td><td class="n">+4.8%</td><td class="n mv-depth">35.1→6.9%</td><td class="n">1.06</td><td class="n">265,000 <span class="note">−6.9%</span></td><td class="n">323,500</td></tr></tbody></table></div>
+    
+    <details class="fold" style="margin-top:16px" open>
+      <summary><span class="fold-cap">일자별 추출 흐름 · 최근 29거래일</span>
+        <span class="fold-sub">추출일 종가 대비 이후 5거래일 최고가·최저가·종가 · 매일 종가 판정 뒤 갱신</span></summary>
+      <div class="mv-note" style="margin:0 0 6px">B = 돌파(종가 진입 기준), A = 임박(아직 돌파 전, 참고). 5일이 안 찬 최근 추출은 (n일) 표시.
+        A군 수치는 종가 대비라 실제 진입가(피벗) 대비로는 더 작다. 5일 최고가는 장중 고가이므로 그 가격에 팔 수 있다는 뜻은 아니다.
+        <br>5일이 다 찬 추출 요약 — B군 4건 · 5일 최고 평균 <span class="up">+11.54%</span> (중앙 <span class="up">+10.63%</span>) · 5일 종가 <span class="up">+2.14%</span> · 손절 터치 0% · 최고가 +5%↑ 75% / A군 118건 · 5일 최고 평균 <span class="up">+3.88%</span> (중앙 <span class="up">+2.58%</span>) · 5일 종가 <span class="down">-1.28%</span> · 최고가 +5%↑ 29%</div>
+      <div class="tbl-wrap" style="margin-bottom:4px"><table><thead><tr><th>군·별점</th><th>종목</th><th style="text-align:right">종가</th>
+        <th style="text-align:right">피벗</th><th style="text-align:right">손절폭</th><th style="text-align:right">5일 최고</th>
+        <th style="text-align:right">5일 최저</th><th style="text-align:right">5일 종가</th><th></th></tr></thead></table></div>
+      
+        <div class="sub" style="margin-top:12px"><b>2026-10-22</b> <span class="note">돌파 1 · 임박 4</span></div>
+        <div class="tbl-wrap"><table><tbody><tr><td><b>B</b> <span class="mv-star">★★★<span class="muted">★★</span></span></td><td>유니퀘스트 <span class="pos-code">077500</span></td><td class="n">11,790</td><td class="n">10,690</td><td class="n">−16.4%</td><td class="n"><span class="muted">—</span> <span class="note">(0일)</span> <span class="note">D+-</span></td><td class="n"><span class="muted">—</span></td><td class="n"><span class="muted">—</span></td><td></td></tr></tbody></table></div>
+        <div class="mv-note" style="margin-top:4px"><b>A</b> <span class="note">(0일)</span>: 한국화장품제조 <span class="muted">—</span> · DB손해보험 <span class="muted">—</span> · 롯데렌탈 <span class="muted">—</span> · SK가스 <span class="muted">—</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-10-21</b> <span class="note">돌파 0 · 임박 3</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b> <span class="note">(1일)</span>: 롯데렌탈 <span class="up">+1.6%</span> · 유니퀘스트 <span class="up">+23.3%</span> · SK가스 <span class="up">+0.7%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-10-20</b> <span class="note">돌파 0 · 임박 1</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b> <span class="note">(2일)</span>: 동국제약 <span class="up">+0.8%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-10-19</b> <span class="note">돌파 0 · 임박 1</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b> <span class="note">(3일)</span>: SK가스 <span class="down">-0.9%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-10-16</b> <span class="note">돌파 0 · 임박 3</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b> <span class="note">(4일)</span>: 엔에프씨 <span class="up">+0.8%</span> · 글로벌텍스프리 <span class="down">-0.7%</span> · SK가스 <span class="up">+5.0%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-10-15</b> <span class="note">돌파 0 · 임박 2</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 엔에프씨 <span class="up">+6.7%</span> · 롯데렌탈 <span class="up">+2.6%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-10-14</b> <span class="note">돌파 0 · 임박 4</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 롯데렌탈 <span class="up">+2.6%</span> · 코웨이 <span class="up">+8.4%</span> · 글로벌텍스프리 <span class="up">+8.6%</span> · 엔에프씨 <span class="up">+6.9%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-10-13</b> <span class="note">돌파 0 · 임박 4</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 롯데렌탈 <span class="up">+1.0%</span> · 글로벌텍스프리 <span class="up">+9.7%</span> · 현대해상 <span class="up">+0.6%</span> · 코웨이 <span class="up">+10.5%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-10-12</b> <span class="note">돌파 1 · 임박 2</span></div>
+        <div class="tbl-wrap"><table><tbody><tr><td><b>B</b> <span class="mv-star">★★★<span class="muted">★★</span></span></td><td>팬오션 <span class="pos-code">028670</span></td><td class="n">6,450</td><td class="n">6,320</td><td class="n">−7.1%</td><td class="n"><span class="up">+21.4%</span> <span class="note">D+3</span></td><td class="n"><span class="down">-4.3%</span></td><td class="n"><span class="up">+5.3%</span></td><td></td></tr></tbody></table></div>
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 롯데렌탈 <span class="up">+0.2%</span> · 현대해상 <span class="up">+1.9%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-10-08</b> <span class="note">돌파 0 · 임박 2</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 롯데렌탈 <span class="up">+0.6%</span> · 팬오션 <span class="up">+29.9%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-10-07</b> <span class="note">돌파 0 · 임박 4</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: KT&amp;G <span class="up">+6.3%</span> · 롯데렌탈 <span class="up">+0.8%</span> · iM금융지주 <span class="up">+0.1%</span> · JB금융지주 <span class="up">+0.5%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-10-06</b> <span class="note">돌파 0 · 임박 4</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: KT&amp;G <span class="up">+4.0%</span> · iM금융지주 <span class="down">-0.3%</span> · 코웨이 <span class="up">+4.8%</span> · 롯데렌탈 <span class="up">+1.4%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-10-02</b> <span class="note">돌파 0 · 임박 3</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: KT&amp;G <span class="up">+2.6%</span> · iM금융지주 <span class="up">+1.1%</span> · 메리츠금융지주 <span class="muted">—</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-10-01</b> <span class="note">돌파 0 · 임박 6</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: HMM <span class="up">+5.2%</span> · 팬오션 <span class="up">+11.4%</span> · 롯데렌탈 <span class="up">+2.0%</span> · 티에스이 <span class="up">+10.2%</span> · iM금융지주 <span class="up">+2.6%</span> · HD현대마린솔루션 <span class="up">+0.6%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-30</b> <span class="note">돌파 1 · 임박 8</span></div>
+        <div class="tbl-wrap"><table><tbody><tr><td><b>B</b> <span class="mv-star">★★★<span class="muted">★★</span></span></td><td>씨젠 <span class="pos-code">096530</span></td><td class="n">35,450</td><td class="n">34,800</td><td class="n">−6.6%</td><td class="n"><span class="up">+14.1%</span> <span class="note">D+4</span></td><td class="n"><span class="down">-2.0%</span></td><td class="n"><span class="up">+7.6%</span></td><td></td></tr></tbody></table></div>
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: KT&amp;G <span class="up">+2.6%</span> · 가비아 <span class="up">+1.5%</span> · iM금융지주 <span class="up">+3.2%</span> · 한국콜마 <span class="up">+3.2%</span> · S-Oil <span class="up">+7.4%</span> · HMM <span class="up">+3.6%</span> · HD현대마린솔루션 <span class="up">+1.1%</span> · 지엔씨에너지 <span class="up">+1.7%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-29</b> <span class="note">돌파 0 · 임박 14</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: KT&amp;G <span class="up">+1.5%</span> · 가비아 <span class="up">+1.4%</span> · 아모레퍼시픽 <span class="up">+0.7%</span> · HMM <span class="up">+2.9%</span> · 하나금융지주 <span class="up">+0.3%</span> · 롯데렌탈 <span class="up">+4.7%</span> · 씨젠 <span class="up">+20.0%</span> · KB금융 <span class="up">+0.1%</span> · IPARK현대산업… <span class="up">+2.2%</span> · HD현대마린솔루션 <span class="up">+3.6%</span> · iM금융지주 <span class="up">+0.2%</span> · 한국콜마 <span class="up">+3.0%</span> · SFA <span class="up">+12.6%</span> · 지엔씨에너지 <span class="up">+6.3%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-28</b> <span class="note">돌파 0 · 임박 13</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 가비아 <span class="up">+0.6%</span> · 아모레퍼시픽 <span class="up">+1.1%</span> · 씨젠 <span class="up">+9.8%</span> · 한국콜마 <span class="up">+4.1%</span> · 한진칼 <span class="down">-0.4%</span> · IPARK현대산업… <span class="up">+0.8%</span> · HMM <span class="up">+1.6%</span> · 하나금융지주 <span class="up">+0.3%</span> · 롯데렌탈 <span class="up">+4.8%</span> · KB금융 <span class="up">+0.2%</span> · SFA <span class="up">+14.2%</span> · 지엔씨에너지 <span class="up">+6.7%</span> · HD현대마린솔루션 <span class="up">+0.2%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-23</b> <span class="note">돌파 0 · 임박 9</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: KB금융 <span class="up">+1.2%</span> · IPARK현대산업… <span class="up">+1.3%</span> · 롯데렌탈 <span class="up">+4.9%</span> · 아모레퍼시픽 <span class="up">+1.6%</span> · 씨젠 <span class="up">+10.7%</span> · 한미약품 <span class="up">+1.3%</span> · HD현대마린솔루션 <span class="up">+3.3%</span> · SFA <span class="up">+14.3%</span> · 가비아 <span class="down">-0.7%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-22</b> <span class="note">돌파 1 · 임박 13</span></div>
+        <div class="tbl-wrap"><table><tbody><tr><td><b>B</b> <span class="mv-star">★★★★★<span class="muted"></span></span></td><td>대한항공 <span class="pos-code">003490</span></td><td class="n">31,400</td><td class="n">30,100</td><td class="n">−8.6%</td><td class="n"><span class="up">+3.5%</span> <span class="note">D+4</span></td><td class="n"><span class="down">-1.9%</span></td><td class="n"><span class="down">-0.6%</span></td><td></td></tr></tbody></table></div>
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 팬오션 <span class="up">+5.0%</span> · 하나금융지주 <span class="up">+0.5%</span> · KB금융 <span class="up">+0.7%</span> · IPARK현대산업… <span class="up">+1.5%</span> · HD현대마린솔루션 <span class="up">+1.6%</span> · 코리안리 <span class="up">+3.3%</span> · HMM <span class="up">+1.2%</span> · GS <span class="up">+6.1%</span> · 아모레퍼시픽 <span class="up">+2.0%</span> · 현대해상 <span class="up">+6.1%</span> · 한미약품 <span class="up">+6.0%</span> · 가비아 <span class="up">+0.6%</span> · 지엔씨에너지 <span class="up">+7.5%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-21</b> <span class="note">돌파 0 · 임박 7</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: KB금융 <span class="up">+0.6%</span> · 하나금융지주 <span class="up">+0.7%</span> · 아모레퍼시픽 <span class="">+0.0%</span> · 코리안리 <span class="up">+1.7%</span> · DB손해보험 <span class="up">+2.7%</span> · 한미약품 <span class="up">+5.5%</span> · SFA <span class="up">+2.3%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-18</b> <span class="note">돌파 0 · 임박 7</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 대한항공 <span class="up">+9.6%</span> · iM금융지주 <span class="up">+3.8%</span> · 아모레퍼시픽 <span class="up">+2.7%</span> · KB금융 <span class="up">+2.3%</span> · 지엔씨에너지 <span class="up">+7.0%</span> · 코스메카코리아 <span class="up">+1.4%</span> · SFA <span class="up">+5.2%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-17</b> <span class="note">돌파 0 · 임박 11</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 한화생명 <span class="up">+1.5%</span> · 삼성화재 <span class="up">+0.3%</span> · 대한항공 <span class="up">+9.2%</span> · DB손해보험 <span class="up">+0.1%</span> · 하나금융지주 <span class="up">+2.0%</span> · iM금융지주 <span class="up">+3.5%</span> · BGF리테일 <span class="down">-0.2%</span> · 아모레퍼시픽 <span class="up">+2.9%</span> · KB금융 <span class="up">+1.3%</span> · 메리츠금융지주 <span class="up">+5.4%</span> · 에스원 <span class="up">+1.1%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-16</b> <span class="note">돌파 0 · 임박 1</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 삼성화재 <span class="up">+2.7%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-15</b> <span class="note">돌파 0 · 임박 1</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 삼성화재 <span class="up">+3.2%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-14</b> <span class="note">돌파 0 · 임박 1</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 삼성화재 <span class="up">+1.6%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-10</b> <span class="note">돌파 0 · 임박 1</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 삼성화재 <span class="up">+7.3%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-09</b> <span class="note">돌파 0 · 임박 1</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 삼성화재 <span class="up">+8.3%</span></div>
+        <div class="sub" style="margin-top:12px"><b>2026-09-02</b> <span class="note">돌파 1 · 임박 0</span></div>
+        <div class="tbl-wrap"><table><tbody><tr><td><b>B</b> <span class="mv-star">★<span class="muted">★★★★</span></span></td><td>메리츠금융지주 <span class="pos-code">138040</span></td><td class="n">129,800</td><td class="n">128,000</td><td class="n">−12.8%</td><td class="n"><span class="up">+7.2%</span> <span class="note">D+1</span></td><td class="n"><span class="down">-3.9%</span></td><td class="n"><span class="down">-3.7%</span></td><td></td></tr></tbody></table></div>
+        
+        <div class="sub" style="margin-top:12px"><b>2026-09-01</b> <span class="note">돌파 0 · 임박 1</span></div>
+        
+        <div class="mv-note" style="margin-top:4px"><b>A</b>: 메리츠금융지주 <span class="up">+10.9%</span></div>
+    </details>
+    
+    <details class="fold" style="margin-top:16px" open>
+      <summary><span class="fold-cap">확장 목록 · 20일 평균 거래대금 10~30억</span>
+        <span class="fold-sub">돌파 0 · 임박 6 · 정통 목록보다 근거가 약함</span></summary>
+      <div class="mv-note" style="margin:0 0 8px">대상을 늘리려고 유동성 기준만 30억 → 10억으로 낮춘 목록. 최근 3년 검증에서 신호는 41% 늘지만,
+        새로 들어오는 종목은 최근 1년 단순 돌파 대조군보다 +0.27%p(표준)·+0.05%p(단기) 앞서는 데 그쳤다. 비중을 줄여 참고로만.</div>
+      <div class="sub"><b>오늘 돌파</b></div><div class="blank">확장 목록에서 오늘 돌파한 종목은 없습니다.</div>
+      <div class="sub" style="margin-top:10px"><b>돌파 임박</b></div><div class="tbl-wrap"><table><thead><tr><th>별점</th><th>종목</th><th style="text-align:right">종가</th>
+          <th style="text-align:right">등락</th><th style="text-align:right">피벗(돌파 가격)</th><th style="text-align:right">피벗까지</th>
+          <th style="text-align:right">수축</th><th style="text-align:right">거래량 마름</th><th style="text-align:right">손절</th>
+          <th style="text-align:right">익절(1:2)</th></tr></thead><tbody><tr><td><span class="mv-star">★★★★★<span class="muted"></span></span></td><td>슈프리마 <span class="pos-code">236200</span></td><td class="n">56,500</td><td class="n"><span class="up">+1.62%</span></td><td class="n">57,100</td><td class="n">+1.1%</td><td class="n mv-depth">24.9→14.6→5.1%</td><td class="n">0.67</td><td class="n">54,200 <span class="note">−5.1%</span></td><td class="n">62,900</td></tr><tr><td><span class="mv-star">★★★★<span class="muted">★</span></span></td><td>네오팜 <span class="pos-code">092730</span></td><td class="n">23,150</td><td class="n"><span class="up">+1.54%</span></td><td class="n">23,800</td><td class="n">+2.8%</td><td class="n mv-depth">19.8→15→4.6%</td><td class="n">0.15</td><td class="n">22,700 <span class="note">−4.6%</span></td><td class="n">26,000</td></tr><tr><td><span class="mv-star">★★★<span class="muted">★★</span></span></td><td>코리안리 <span class="pos-code">003690</span></td><td class="n">14,390</td><td class="n"><span class="up">+1.20%</span></td><td class="n">14,680</td><td class="n">+2.0%</td><td class="n mv-depth">11.6→3.6%</td><td class="n">0.58</td><td class="n">14,150 <span class="note">−3.6%</span></td><td class="n">15,740</td></tr><tr><td><span class="mv-star">★★★<span class="muted">★★</span></span></td><td>KSS해운 <span class="pos-code">044450</span></td><td class="n">11,850</td><td class="n"><span class="down">-0.92%</span></td><td class="n">12,300</td><td class="n">+3.8%</td><td class="n mv-depth">38.1→7.8→6.1→3.6%</td><td class="n">0.24</td><td class="n">11,860 <span class="note">−3.6%</span></td><td class="n">13,180</td></tr><tr><td><span class="mv-star">★★<span class="muted">★★★</span></span></td><td>케이아이엔엑스 <span class="pos-code">093320</span></td><td class="n">136,900</td><td class="n"><span class="down">-0.58%</span></td><td class="n">142,000</td><td class="n">+3.7%</td><td class="n mv-depth">26→6.4%</td><td class="n">0.73</td><td class="n">132,900 <span class="note">−6.4%</span></td><td class="n">160,200</td></tr><tr><td><span class="mv-star">★★<span class="muted">★★★</span></span></td><td>한국알콜 <span class="pos-code">017890</span></td><td class="n">14,170</td><td class="n"><span class="down">-2.14%</span></td><td class="n">14,750</td><td class="n">+4.1%</td><td class="n mv-depth">14.6→4.1%</td><td class="n">0.70</td><td class="n">14,150 <span class="note">−4.1%</span></td><td class="n">15,950</td></tr></tbody></table></div>
+    </details>
+    
+    <details class="fold" style="margin-top:14px">
+      <summary><span class="fold-cap">검증 (최근 3년 · B군 돌파 매매)</span>
+        <span class="fold-sub">거래당 극단 제외 평균 VCP <span class="up">+2.85%</span> vs 단순 돌파 <span class="up">+1.05%</span> (최근 1년)</span></summary>
+      <div class="tbl-wrap"><table><thead><tr><th>기간</th><th style="text-align:right">건수</th><th style="text-align:right">거래당 평균</th>
+        <th style="text-align:right">극단 제외 평균</th><th style="text-align:right">중앙값</th><th style="text-align:right">승률</th>
+        <th style="text-align:right">평균 보유</th><th style="text-align:right">대조 건수</th><th style="text-align:right">대조 극단 제외</th></tr></thead>
+        <tbody><tr><td>앞 2년</td><td class="n">750</td><td class="n"><span class="up">+1.92%</span></td><td class="n"><span class="up">+1.49%</span></td><td class="n"><span class="down">-3.24%</span></td><td class="n">36%</td><td class="n">15일</td><td class="n muted">2,726</td><td class="n muted"><span class="up">+0.41%</span></td></tr><tr><td>최근 1년</td><td class="n">617</td><td class="n"><span class="up">+4.01%</span></td><td class="n"><span class="up">+2.85%</span></td><td class="n"><span class="down">-3.90%</span></td><td class="n">40%</td><td class="n">14일</td><td class="n muted">2,755</td><td class="n muted"><span class="up">+1.05%</span></td></tr><tr><td>3년</td><td class="n">1,367</td><td class="n"><span class="up">+2.87%</span></td><td class="n"><span class="up">+2.06%</span></td><td class="n"><span class="down">-3.45%</span></td><td class="n">38%</td><td class="n">14일</td><td class="n muted">5,481</td><td class="n muted"><span class="up">+0.75%</span></td></tr></tbody></table></div>
+      <div class="mv-note">prices.db 최근 3년. 돌파일 종가 진입 → 손절(마지막 수축 저점, 갭이면 시가) · 1:2 에서 절반 익절 후 손절 본전 · 나머지는 종가가 20일선 아래면 다음날 시가, 비용 0.21%.
+        대조 = VCP 없이 같은 추세·거래량 조건의 20일 고점 돌파(손절 최근 10일 저점), 같은 청산. 극단 제외 = 상하위 2% 를 잘라 낸 평균.
+        <b>승률 40% 안팎·중앙값 마이너스의 추세 추종형</b> — 손절을 지키고 몇 번의 큰 수익으로 버는 구조라, 하루 보유 변곡 매매와 성격이 다르다.
+        동시에 여러 종목이 겹치는 자금 제약은 반영하지 않았다.</div>
     </details>
   </section>
 </div>
