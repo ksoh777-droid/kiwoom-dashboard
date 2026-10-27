@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>스레드 인증 코드</title>
+<style>
+  :root { --bg:#f6f7f9; --fg:#1b1f24; --box:#fff; --line:#d7dbe0; --ok:#1a7f37; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0f1115; --fg:#e6e8eb; --box:#171a20; --line:#2b3038; --ok:#4cc26a; } }
+  :root[data-theme="dark"] { --bg:#0f1115; --fg:#e6e8eb; --box:#171a20; --line:#2b3038; --ok:#4cc26a; }
+  body { margin:0; padding:32px 16px; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif; }
+  main { max-width:720px; margin:0 auto; }
+  h1 { font-size:20px; margin:0 0 12px; }
+  .box { background:var(--box); border:1px solid var(--line); border-radius:10px; padding:16px; margin:12px 0; }
+  code, textarea { font:14px/1.4 ui-monospace, Consolas, monospace; }
+  textarea { width:100%; box-sizing:border-box; min-height:84px; background:transparent; color:inherit; border:1px solid var(--line); border-radius:6px; padding:8px; }
+  button { font:inherit; padding:8px 14px; border-radius:8px; border:1px solid var(--line); background:var(--box); color:inherit; cursor:pointer; }
+  .ok { color:var(--ok); }
+  .muted { opacity:.7; font-size:14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>스레드(Threads) 인증 코드</h1>
+  <div class="box" id="result">
+    <p id="msg">주소에서 <code>code</code> 값을 읽는 중입니다…</p>
+    <textarea id="code" readonly spellcheck="false"></textarea>
+    <p><button id="copy" type="button">코드 복사</button> <span id="copied" class="ok"></span></p>
+  </div>
+  <p class="muted">이 페이지는 <code>scripts/threads_setup.py</code>의 리디렉션 주소입니다. 코드는 브라우저 안에서만 표시되고 어디로도 전송되지 않습니다.
+  코드는 1시간 안에 한 번만 쓸 수 있습니다. 위 코드를 복사해 터미널 프롬프트에 붙여 넣으세요 (주소창 전체를 붙여도 됩니다).</p>
+</main>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var code = (q.get("code") || "").replace(/#_$/, "");
+  var err = q.get("error");
+  var msg = document.getElementById("msg");
+  var ta = document.getElementById("code");
+  if (code) {
+    msg.innerHTML = '<span class="ok">허용되었습니다.</span> 아래 코드를 복사해 <code>python -m scripts.threads_setup</code> 프롬프트에 붙여 넣으세요.';
+    ta.value = code;
+  } else if (err) {
+    msg.textContent = "허용되지 않았습니다: " + err + " (" + (q.get("error_description") || q.get("error_reason") || "") + ")";
+  } else {
+    msg.textContent = "code 값이 없습니다. threads_setup 이 보여주는 동의 주소로 다시 시작하세요.";
+  }
+  document.getElementById("copy").addEventListener("click", function () {
+    if (!ta.value) return;
+    ta.select();
+    try { navigator.clipboard.writeText(ta.value); } catch (e) { document.execCommand("copy"); }
+    document.getElementById("copied").textContent = "복사됨";
+  });
+})();
+</script>
+</body>
+</html>
