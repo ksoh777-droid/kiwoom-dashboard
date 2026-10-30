@@ -554,7 +554,7 @@ html{-webkit-text-size-adjust:100%}
       <span class="who" id="who"></span>
       <span class="authmsg" id="authmsg"></span>
     </div>
-    <div class="stamp">기준 시각 <b>2026-10-30 12:31 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
+    <div class="stamp">기준 시각 <b>2026-10-30 12:44 KST</b> · 계좌 <b><span data-secret="account" data-masked="5252****10">5252****10</span></b> · 전략 <b>변곡 / 돌파강도 3%↑</b></div>
     </div>
     <!-- docs/ai-trading.svg 를 빌드 때 인라인한다. 공개 사이트는 index.html 하나만
          복사하므로 외부 파일로 두면 거기서 깨진다. -->
@@ -637,7 +637,7 @@ html{-webkit-text-size-adjust:100%}
   <div class="strip strip-1">
     <div class="chip">
       <span class="k">마지막 갱신</span>
-      <span class="v num">10-30 12:31</span>
+      <span class="v num">10-30 12:44</span>
       <span class="s"><span class="dot live"></span>변곡 돌파 · 15:34 종가 판정 → 16:00 애프터마켓 매수</span>
     </div>
   </div>
@@ -654,7 +654,7 @@ html{-webkit-text-size-adjust:100%}
 <div class="tab-panel" id="tab-today" role="tabpanel" hidden>
 <section>
     <div class="sechead"><h2>오늘의 후보</h2><span class="rule"></span>
-      <span class="note">판정 기준 <b>2026-10-30 종가</b> · 데이터 추출 2026-10-30 12:31</span></div>
+      <span class="note">판정 기준 <b>2026-10-30 종가</b> · 데이터 추출 2026-10-30 12:44</span></div>
     
     <div class="sieve">
       <span class="sv"><b class="num">2,226</b><small>스캔</small></span>
@@ -793,8 +793,8 @@ html{-webkit-text-size-adjust:100%}
     
     <div class="sub"><b>종가배팅 1종목</b> <span class="note">참고용 · A+·A · 거래대금 100~300억 · 시총 1,000~5,000억 · 청산: 익일 시가 +2%↑면 시가, 아니면 10시 전 +2% 도달 시, 못 가면 10시 매도 (5분봉 1년 +0.57% · 승률 62%)</span></div>
     <div class="mv-note" style="margin:0 0 10px">지씨지놈(A)
-      &nbsp;— <b>청산 규칙</b>: 익일 시가가 +2% 이상이면 시가에 매도, 아니면 10시 전에 +2% 닿으면 매도, 못 가면 10시에 매도.
-      5분봉 1년 표본(A 이상·927건): 거래당 +0.57% · 승률 62% · 날짜평균 +0.54% · 하루 4.4건 · 청산 비중 시가 27%·+2% 32%·10시 40% (비교: 시가 매도 +0.70, 10시 매도 +0.32, 종가 +0.18).
+      &nbsp;— <b>청산 규칙</b>: 익일 시가가 +2.25% 이상이면 시가에 매도, 아니면 10시 전에 +2.25% 닿으면 매도, 못 가면 10시에 매도.
+      5분봉 1년 표본(A 이상·927건): 거래당 +0.57% · 승률 62% · 날짜평균 +0.54% · 하루 4.4건 · 청산 비중 시가 27%·목표 32%·10시 40% (표본은 목표 +2% 당시) (비교: 시가 매도 +0.70, 10시 매도 +0.32, 종가 +0.18).
       3년 일봉 A 이상 익일 시가 +0.20% / +0.47%. 등급은 참조용(A가 A+보다 나음: 규칙 +0.86 vs +0.07). 변곡 종가매수(+0.35%)와 같은 크기·같은 자본이라 참고 마킹이며 자동매매는 없다.</div><div class="tbl-wrap">
       <table id="cbTbl"><thead><tr>
           <th style="width:44px">등급</th><th style="width:44px">점수</th><th>종목</th>
@@ -806,7 +806,7 @@ html{-webkit-text-size-adjust:100%}
     <details class="fold" style="margin-top:14px" open>
       <summary><span class="fold-cap">종가배팅 일지</span>
         <span class="fold-sub">실측 73건 (정산 71) · 익일 시가 +2%↑ → 시가 매도 / 아니면 15:10 전 +2% 도달 → +2% 매도 / 못 가면 15:10 자동청산 · 비용 0.21%</span></summary>
-      <div class="mv-note" style="margin:0 0 8px">매일 20:02 에 그날 '종가배팅' 마킹 종목을 적고, 다음 거래일 16:02 에 5분봉으로 청산 규칙(+2% 도달 시 매도, 15:10까지 못 가면 자동청산 — 10-27 사용자 확정)을 적용해 성공(수익 &gt; 0) 여부를 채운다. 복리 = 신호일 일평균 수익을 날짜순으로 연결. 주문 없음.</div>
+      <div class="mv-note" style="margin:0 0 8px">매일 20:02 에 그날 '종가배팅' 마킹 종목을 적고, 다음 거래일 16:02 에 5분봉으로 청산 규칙(+2.25% 도달 시 매도, 15:10까지 못 가면 자동청산 — 10-27 사용자 확정)을 적용해 성공(수익 &gt; 0) 여부를 채운다. 복리 = 신호일 일평균 수익을 날짜순으로 연결. 주문 없음.</div>
       <div class="sub"><b>실측 누적</b> <span class="note">정산 71건 · 대기 2</span></div>
             <div class="tbl-wrap"><table><thead><tr><th style="text-align:right">건수</th><th style="text-align:right">거래당</th><th style="text-align:right">중앙</th>
               <th style="text-align:right">성공률</th><th style="text-align:right">날짜평균</th><th style="text-align:right">신호일</th><th style="text-align:right">누적(단리)</th><th style="text-align:right">복리</th><th>청산 비중</th></tr></thead>
@@ -1319,7 +1319,7 @@ html{-webkit-text-size-adjust:100%}
         <th style="text-align:right">대조 건수</th><th style="text-align:right">대조 시가</th><th style="text-align:right">승률</th></tr></thead>
         <tbody><tr><td><b>C 돌파</b> 앞 2년</td><td class="n">57</td><td class="n"><span class="up">+0.11%</span></td><td class="n">33.3%</td><td class="n">57</td><td class="n"><span class="down">-1.29%</span></td><td class="n">31.6%</td><td class="n">1</td><td class="n"><span class="down">-0.62%</span></td><td class="n">0.0%</td><td class="n">57</td><td class="n"><span class="up">+0.22%</span></td><td class="n">31.6%</td><td class="n">4,187</td><td class="n"><span class="up">+0.25%</span></td><td class="n">40.5%</td></tr><tr><td><b>C 돌파</b> 최근 1년</td><td class="n">29</td><td class="n"><span class="up">+1.35%</span></td><td class="n">44.8%</td><td class="n">29</td><td class="n"><span class="up">+1.21%</span></td><td class="n">41.4%</td><td class="n">16</td><td class="n"><span class="up">+0.93%</span></td><td class="n">50.0%</td><td class="n">29</td><td class="n"><span class="up">+7.22%</span></td><td class="n">37.9%</td><td class="n">3,489</td><td class="n"><span class="up">+0.91%</span></td><td class="n">46.1%</td></tr><tr><td><b>C 돌파</b> 3년</td><td class="n">86</td><td class="n"><span class="up">+0.54%</span></td><td class="n">37.2%</td><td class="n">86</td><td class="n"><span class="down">-0.50%</span></td><td class="n">34.9%</td><td class="n">17</td><td class="n"><span class="up">+0.83%</span></td><td class="n">47.1%</td><td class="n">86</td><td class="n"><span class="up">+2.51%</span></td><td class="n">33.7%</td><td class="n">7,676</td><td class="n"><span class="up">+0.55%</span></td><td class="n">43.1%</td></tr><tr><td>B 임박 앞 2년</td><td class="n">245</td><td class="n"><span class="down">-0.30%</span></td><td class="n">20.4%</td><td class="n">245</td><td class="n"><span class="down">-0.16%</span></td><td class="n">33.9%</td><td class="n">4</td><td class="n"><span class="down">-0.17%</span></td><td class="n">50.0%</td><td class="n muted" colspan="3">—</td><td class="n">4,187</td><td class="n"><span class="up">+0.25%</span></td><td class="n">40.5%</td></tr><tr><td>B 임박 최근 1년</td><td class="n">93</td><td class="n"><span class="down">-0.19%</span></td><td class="n">25.8%</td><td class="n">93</td><td class="n"><span class="down">-0.36%</span></td><td class="n">31.2%</td><td class="n">26</td><td class="n"><span class="up">+0.05%</span></td><td class="n">42.3%</td><td class="n muted" colspan="3">—</td><td class="n">3,489</td><td class="n"><span class="up">+0.91%</span></td><td class="n">46.1%</td></tr><tr><td>B 임박 3년</td><td class="n">338</td><td class="n"><span class="down">-0.27%</span></td><td class="n">21.9%</td><td class="n">338</td><td class="n"><span class="down">-0.21%</span></td><td class="n">33.1%</td><td class="n">30</td><td class="n"><span class="up">+0.02%</span></td><td class="n">43.3%</td><td class="n muted" colspan="3">—</td><td class="n">7,676</td><td class="n"><span class="up">+0.55%</span></td><td class="n">43.1%</td></tr></tbody></table></div>
       <div class="mv-note">일봉(2019~) 최근 3년, 20일 평균 거래대금 30억↑, 우선주·ETF 류 제외, 비용 0.21%, 극단 상하위 2% 제외 평균.
-        <b>종가배팅 규칙</b> = 시가 +2%↑ 시가 청산 / 10시 전 +2% / 아니면 10:00 시가 — 5분봉이 있는 2025-09 이후만.
+        <b>종가배팅 규칙</b> = 시가 +2.25%↑ 시가 청산 / 10시 전 +2.25% / 아니면 10:00 시가 — 5분봉이 있는 2025-09 이후만.
         <b>미너비니 표준</b> = 손절 최근 20일 저점 · 1:2 절반 익절 후 본전 · 종가 20일선 이탈.
         <b>대조</b> = 추세 ≥7 + 20일 고가 돌파 + 거래량 1.5배 + 고가권 마감이지만 VCP·거래량 수축은 없는 날 (VCP 조건이 보태는 값을 본다).</div>
       <div class="sub" style="margin-top:8px"><b>C 돌파 · 추세 점수별</b></div><div class="mv-note" style="margin:2px 0 0">7 7건 시가 <span class="up">+0.65%</span> 종가 <span class="down">-2.62%</span> 표준 <span class="up">+6.14%</span> · 8 79건 시가 <span class="up">+0.66%</span> 종가 <span class="down">-0.14%</span> 표준 <span class="up">+2.63%</span></div><div class="sub" style="margin-top:8px"><b>C 돌파 · 마지막 수축폭 T3 별</b></div><div class="mv-note" style="margin:2px 0 0">≤8% 14건 시가 <span class="up">+0.73%</span> 종가 <span class="up">+0.55%</span> 표준 <span class="down">-4.53%</span> · 8~12% 22건 시가 <span class="up">+0.16%</span> 종가 <span class="down">-2.79%</span> 표준 <span class="up">+1.89%</span> · 12~16% 18건 시가 <span class="down">-0.77%</span> 종가 <span class="down">-1.78%</span> 표준 <span class="up">+3.93%</span> · 16%↑ 32건 시가 <span class="up">+1.78%</span> 종가 <span class="up">+1.75%</span> 표준 <span class="up">+6.31%</span></div><div class="sub" style="margin-top:8px"><b>C 돌파 · 돌파 거래량별</b></div><div class="mv-note" style="margin:2px 0 0">1.5~2배 15건 시가 <span class="up">+0.48%</span> 종가 <span class="down">-1.58%</span> 표준 <span class="up">+8.01%</span> · 2~3배 22건 시가 <span class="down">-0.59%</span> 종가 <span class="down">-0.89%</span> 표준 <span class="down">-3.85%</span> · 3~5배 20건 시가 <span class="up">+0.01%</span> 종가 <span class="down">-0.20%</span> 표준 <span class="up">+9.04%</span> · 5배↑ 29건 시가 <span class="up">+2.15%</span> 종가 <span class="up">+0.62%</span> 표준 <span class="up">+1.19%</span></div><div class="sub" style="margin-top:8px"><b>C 돌파 · 피벗 위 돌파폭별</b></div><div class="mv-note" style="margin:2px 0 0">돌파 0~2% 31건 시가 <span class="up">+0.35%</span> 종가 <span class="down">-1.66%</span> 표준 <span class="down">-2.42%</span> · 2~5% 26건 시가 <span class="down">-0.16%</span> 종가 <span class="down">-0.92%</span> 표준 <span class="up">+8.72%</span> · 5~10% 21건 시가 <span class="up">+1.96%</span> 종가 <span class="up">+1.67%</span> 표준 <span class="up">+1.85%</span> · 10%↑ 8건 시가 <span class="up">+1.12%</span> 종가 <span class="up">+1.32%</span> 표준 <span class="up">+7.53%</span></div>
